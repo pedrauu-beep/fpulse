@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FPulse · Cuaderno docente para FP</title>
-<meta name="description" content="FPulse, el cuaderno docente para Formación Profesional: pasar lista, calificar por RA y CE, recuperaciones, diario de sesiones y fase en empresa. Un solo archivo, tus datos en tu ordenador.">
+<title>FPulse · Evaluación por RA para FP</title>
+<meta name="description" content="FPulse: evaluación por resultados de aprendizaje para Formación Profesional en Andalucía, conforme a la Orden de 18 de septiembre de 2025. Calificación por CE ponderados, trazabilidad, recuperaciones, informes y, además, asistencia, diario y fase en empresa.">
 <link rel="icon" href="assets/fpulse-icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,6 +63,25 @@ nav .btn{padding:8px 16px;font-size:14px}
 .cd{font-size:11.5px;font-weight:700;padding:3px 7px;border-radius:6px;border:1px solid var(--line);color:var(--ink2)}
 .cd.on{color:#fff;border-color:transparent}
 .c-F{background:#e05252}.c-R{background:#e8a33a}.c-A{background:#2fa36b}.c-D{background:#7a62d6}
+.tz{display:grid;grid-template-columns:1.4fr .6fr 1.3fr 1fr;gap:8px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:10px;font-size:13px}
+.tz.th{border:0;padding:0 10px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);font-weight:600}
+.tz .muted{color:var(--ink2)}
+.st{font-size:11.5px;font-weight:700;padding:3px 7px;border-radius:6px;text-align:center;white-space:nowrap}
+.st.ok{background:var(--soft);color:var(--teal-d)} .st.warn{background:#fdf1dc;color:#a76a07} .st.bad{background:#fde3e3;color:#c03535}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .st.warn{background:#3a2c10;color:#f2c063} :root:not([data-theme="light"]) .st.bad{background:#3d1a1a;color:#f19494} }
+:root[data-theme="dark"] .st.warn{background:#3a2c10;color:#f2c063} :root[data-theme="dark"] .st.bad{background:#3d1a1a;color:#f19494}
+@media (max-width:480px){ .tz{grid-template-columns:1.2fr .5fr 1fr;} .tz span:nth-child(3){display:none} }
+/* cadena de cálculo */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:34px;position:relative}
+.flow .fs{background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px;position:relative}
+.flow .fs:not(:last-child)::after{content:"";position:absolute;right:-14px;top:50%;width:14px;height:2px;background:var(--teal)}
+.flow .k{font:800 13px Montserrat,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-d)}
+.flow h3{font-size:20px;margin:4px 0 8px}
+.flow p{margin:0;color:var(--ink2);font-size:14.5px}
+@media (max-width:860px){ .flow{grid-template-columns:1fr 1fr} .flow .fs::after{display:none} }
+@media (max-width:520px){ .flow{grid-template-columns:1fr} }
+.art{display:inline-block;font:600 11.5px Inter,sans-serif;color:var(--blue);background:var(--soft2);padding:2px 8px;border-radius:999px;margin-bottom:8px}
+.grid.small .card{padding:18px} .grid.small .card h3{font-size:15.5px} .grid.small .card p{font-size:14px}
 .mock .grade{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .mock .grade div{border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;font-size:12px;color:var(--ink2)}
 .mock .grade b{display:block;font:700 20px Montserrat,sans-serif;color:var(--ink)}
@@ -75,7 +94,7 @@ section.alt{background:var(--panel);border-top:1px solid var(--line);border-bott
 .head p{color:var(--ink2);margin:12px 0 0;font-size:17px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-section.alt .card{background:var(--bg)}
+section.alt .card,section.alt .step,section.alt .ver,section.alt details{background:var(--bg)}
 .card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--teal-d);margin-bottom:14px}
 .card .ic svg{width:24px;height:24px}
 .card h3{font-size:17px;margin-bottom:6px}
@@ -129,11 +148,11 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <a href="#" class="logo" aria-label="FPulse, inicio"><img src="assets/fpulse-logo-horizontal.svg" alt="FPulse · El pulso de tu aula de FP"></a>
     <nav>
-      <a href="#funciones">Funciones</a>
+      <a href="#evaluacion">Evaluación por RA</a>
+      <a href="#complementos">Además</a>
       <a href="#empezar">Cómo empezar</a>
       <a href="#materiales">Materiales</a>
       <a href="#novedades">Novedades</a>
-      <a href="#preguntas">Preguntas</a>
       <a class="btn pri js-registro" href="#acceso">Prueba piloto</a>
     </nav>
   </div>
@@ -143,23 +162,24 @@ footer a{color:var(--ink2)}
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Cuaderno docente para Formación Profesional</span>
-      <h1>Pasa lista, califica y sigue tu programación <span>desde un solo sitio</span></h1>
-      <p class="lead">FPulse es un cuaderno docente pensado para FP en Andalucía: asistencia, calificación por resultados de aprendizaje y criterios de evaluación, recuperaciones, diario de sesiones y fase en empresa. Un único archivo que abres en el navegador. Tus datos no salen de tu ordenador.</p>
+      <span class="eyebrow">Evaluación por RA · FP en Andalucía</span>
+      <h1>Evalúa por resultados de aprendizaje <span>cumpliendo la normativa</span></h1>
+      <p class="lead">FPulse calcula la nota de cada RA a partir de los criterios de evaluación y sus pesos, como establece la Orden de 18 de septiembre de 2025. Comprueba que ningún CE se queda sin evaluar, gestiona recuperaciones y finales, y prepara los informes que hay que entregar al alumnado. Y para que todo esté en el mismo sitio, también llevas la asistencia, el diario y la fase en empresa.</p>
       <div class="cta">
         <a class="btn pri js-registro" href="#acceso">Quiero participar en la prueba piloto</a>
-        <a class="btn sec" href="#funciones">Ver qué hace</a>
+        <a class="btn sec" href="#evaluacion">Cómo evalúa</a>
       </div>
-      <small>Prueba piloto gratuita para profesorado de FP · Sin instalación · Funciona sin internet</small>
+      <small>Prueba piloto gratuita para profesorado de FP · Un solo archivo, sin instalación · Tus datos en tu ordenador</small>
     </div>
     <div class="mock" aria-hidden="true">
-      <div class="bar"><i></i><i></i><i></i><b>Hoy · 1ª hora · Pasar lista</b></div>
+      <div class="bar"><i></i><i></i><i></i><b>RA2 · Trazabilidad de criterios</b></div>
       <div class="body">
-        <div class="row"><span class="av">AG</span><span class="nm">García López, Ana</span><span class="cd">F</span><span class="cd">R</span><span class="cd on c-A">A+</span></div>
-        <div class="row"><span class="av">JP</span><span class="nm">Pérez Ruiz, Juan</span><span class="cd on c-F">F</span><span class="cd">R</span><span class="cd">A+</span></div>
-        <div class="row"><span class="av">LM</span><span class="nm">Martín Sanz, Lucía</span><span class="cd">F</span><span class="cd on c-R">R</span><span class="cd on c-D">D−</span></div>
+        <div class="tz th"><span>CE</span><span>Peso</span><span>Instrumento</span><span>Estado</span></div>
+        <div class="tz"><span><b>a)</b> Identifica…</span><span>30 %</span><span>Examen · 1ª ev.</span><span class="st ok">22/22 ✓</span></div>
+        <div class="tz"><span><b>b)</b> Configura…</span><span>40 %</span><span>Práctica 2 · 1ª ev.</span><span class="st warn">18/22</span></div>
+        <div class="tz"><span><b>c)</b> Verifica…</span><span>30 %</span><span class="muted">—</span><span class="st bad">Sin instrumento</span></div>
         <div class="grade">
-          <div class="ok"><b>7,4</b>RA1</div><div class="ok"><b>6,1</b>RA2</div><div><b>—</b>RA3</div><div class="ok"><b>7</b>1ª ev.</div>
+          <div class="ok"><b>6,8</b>RA2</div><div class="ok"><b>7,4</b>RA1</div><div><b>—</b>RA3</div><div class="ok"><b>7</b>1ª ev.</div>
         </div>
       </div>
     </div>
@@ -167,43 +187,63 @@ footer a{color:var(--ink2)}
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none"><polyline fill="none" stroke="#16c2a3" stroke-width="3" points="0,60 380,60 420,60 440,20 465,85 490,10 515,60 1200,60"/></svg>
 </section>
 
-<section class="alt" id="funciones">
+<section class="alt" id="evaluacion">
   <div class="wrap">
-    <div class="head"><h2>Todo lo que haces en clase, en una sola herramienta</h2><p>Hecho por un profesor de FP para el día a día del aula y para lo que pide la normativa de evaluación.</p></div>
+    <div class="head"><h2>Evaluar por RA, como dice la normativa</h2><p>Es el corazón de FPulse. La nota no sale de una media de exámenes: sale de los criterios de evaluación, con los pesos de tu programación didáctica, y llega hasta el módulo sin pasos a mano.</p></div>
+    <div class="flow">
+      <div class="fs"><div class="k">1</div><h3>Instrumento</h3><p>Pones la nota de cada CE que evalúa. Cuenta la mayor entre la original y sus recuperaciones. NP cuenta 0; FJ queda como prueba pendiente.</p></div>
+      <div class="fs"><div class="k">2</div><h3>Criterio (CE)</h3><p>Media de los instrumentos que lo evalúan, en la evaluación en la que cuentan.</p></div>
+      <div class="fs"><div class="k">3</div><h3>Resultado (RA)</h3><p>Media de sus CE ponderada con el peso de cada uno, tal como figura en tu programación.</p></div>
+      <div class="fs"><div class="k">4</div><h3>Módulo</h3><p>Media de los RA con su ponderación. Con algún RA suspenso, el módulo no sale aprobado en el boletín.</p></div>
+    </div>
     <div class="grid">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Pasar lista en segundos</h3><p>Faltas, retrasos, actitud y deberes con un clic. Al abrir la app te lleva a la clase que tienes según tu horario y te avisa del absentismo.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><h3>Calificación por RA y CE</h3><p>Notas por instrumento y criterio de evaluación, con los pesos de tu programación. Calcula cada RA, cada evaluación, la Final FP 1 y la Final FP 2.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div><h3>Recuperaciones sin líos</h3><p>Recupera por instrumento mientras el RA está abierto y el RA completo cuando se cierra. Genera los informes de recuperación de cada alumno.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Trazabilidad y normativa</h3><p>Comprueba que todos los criterios se evalúan y prepara la información inicial al alumnado y los informes de progreso de la Orden de 18 de septiembre de 2025.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><h3>Plano del aula con fotos</h3><p>Coloca a tu alumnado en su sitio, marca la asistencia tocando su foto y elige a alguien al azar para preguntar, sin repetir.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Diario y seguimiento de la programación</h3><p>Todas las sesiones del curso con UD, actividad e incidencias. Indicadores de calidad, porcentaje impartido y sesiones no dadas, listos para copiar.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Fase en empresa (dual)</h3><p>Empresa, tutor laboral y seguimientos de cada alumno, comunes a todos sus módulos, con las notas de los instrumentos de empresa.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Tus datos, en tu ordenador</h3><p>No hay servidor ni cuentas: todo se guarda en la carpeta que elijas, con copia diaria automática. Si esa carpeta está en OneDrive o Drive, tienes copia en la nube.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-3 7a4 4 0 0 0 6 0z"/><path d="M19 7l-3 7a4 4 0 0 0 6 0z"/></svg></div><span class=art>Orden 18/09/2025 · art. 2.7</span><h3>Calificación por CE ponderados</h3><p>La calificación final sale de aplicar la ponderación de la programación a los criterios de evaluación. Tú pones los pesos; FPulse hace las cuentas.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2 2 4-4"/></svg></div><h3>Trazabilidad CE</h3><p>Criterio a criterio: qué instrumentos lo evalúan, cuántos alumnos están calificados y la media del grupo. Avisa de los CE sin instrumento y de los que se quedan sin nota al cerrar la evaluación.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg></div><span class=art>art. 5.3</span><h3>Información inicial al alumnado</h3><p>RA y su ponderación, CE, instrumentos y criterios de calificación, con hoja de recibí. Para entregar antes de que acabe octubre.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><span class=art>art. 5.4</span><h3>Informes de progreso</h3><p>Tras cada evaluación, uno por alumno: su nota, la situación de cada RA, los criterios por debajo de 5 y lo que tiene que recuperar.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div><h3>Recuperaciones y finales</h3><p>Recupera por instrumento mientras el RA está abierto y el RA completo cuando se cierra. Final FP 1 y Final FP 2, también para subir nota, con sus informes.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg></div><h3>Pérdida de evaluación continua</h3><p>Marca la evaluación afectada y pon la nota de la prueba final de todo el módulo; el cálculo se ajusta solo.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Evaluaciones que se cierran solas</h3><p>Cada evaluación se cierra en su fecha según el calendario del módulo, para que una nota puesta tarde no cambie una evaluación ya cerrada.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div><h3>Hoja para la sesión de evaluación</h3><p>Todos tus módulos de un grupo en una tabla: nota, RA pendientes, faltas y % de aprobados, lista para la junta.</p></div>
     </div>
   </div>
 </section>
 
-<section id="empezar">
+<section id="complementos">
   <div class="wrap">
-    <div class="head"><h2>Cómo empezar</h2><p>En diez minutos tienes tu primer módulo listo para pasar lista.</p></div>
+    <div class="head"><h2>Y además, todo en el mismo sitio</h2><p>El seguimiento diario del grupo vive junto a la evaluación, para no saltar de un Excel a otro.</p></div>
+    <div class="grid small">
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Asistencia y actitud</h3><p>Faltas, retrasos, actitud y deberes con un clic, con aviso de absentismo y pérdida de evaluación continua.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><h3>Plano del aula con fotos</h3><p>Marca desde la foto de cada alumno y elige a alguien al azar para preguntar.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h3>Diario y programación</h3><p>Sesiones del curso, UD impartidas, sesiones no dadas e indicadores de calidad.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h3>Fase en empresa</h3><p>Empresa, tutor laboral y seguimientos de cada alumno, comunes a todos sus módulos.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div><h3>Ficha y familias</h3><p>Ficha completa de cada alumno y correos a la familia preparados desde tu cuenta.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Tus datos, en tu ordenador</h3><p>Sin servidor ni cuentas. Copia diaria automática y, si quieres, en OneDrive o Drive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="empezar">
+  <div class="wrap">
+    <div class="head"><h2>Cómo empezar</h2><p>Configuras el módulo una vez con tu programación y a partir de ahí solo pones notas.</p></div>
     <div class="steps">
       <div class="step"><h3>Pide tu plaza</h3><p>Escribe a contacto@fpulse.eu con tu nombre, tu centro y los módulos que impartes, y te enviaré FPulse.</p></div>
       <div class="step"><h3>Crea tu curso escolar</h3><p>Abre el archivo con Chrome o Edge y elige la carpeta donde se guardará todo.</p></div>
-      <div class="step"><h3>Añade tus módulos</h3><p>RA, criterios, pesos, instrumentos, fechas y la lista de clase. También desde CSV.</p></div>
-      <div class="step"><h3>¡A clase!</h3><p>Pasa lista, califica y lleva el diario. La guía de uso está dentro de la app.</p></div>
+      <div class="step"><h3>Configura tus módulos</h3><p>RA y su ponderación, CE con su peso, instrumentos y en qué evaluación cuentan. También desde CSV.</p></div>
+      <div class="step"><h3>Califica y evalúa</h3><p>Pon las notas por CE y FPulse calcula RA, evaluaciones y finales. La guía de uso está dentro de la app.</p></div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="acceso">
+<section id="acceso">
   <div class="wrap acc">
     <div class="big">
       <h2>Prueba piloto 2026-27</h2>
       <p>FPulse está en prueba piloto con un grupo reducido de profesorado de FP. Si quieres participar, escríbeme a <a href="mailto:contacto@fpulse.eu">contacto@fpulse.eu</a> con tu nombre, tu centro y los módulos que impartes. A cambio, solo te pediré tu opinión para mejorarla.</p>
       <ul>
-        <li>FPulse completo, con tu licencia personal</li>
+        <li>Descarga de la última versión de FPulse</li>
         <li>Guía de uso en PDF y plantillas</li>
-        <li>Aviso por correo de cada versión nueva y ayuda directa</li>
+        <li>Aviso por correo de cada versión nueva</li>
       </ul>
       <a class="btn pri js-registro" href="#acceso">Quiero participar en la prueba piloto</a>
     </div>
@@ -215,7 +255,7 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
-<section id="materiales">
+<section class="alt" id="materiales">
   <div class="wrap">
     <div class="head"><h2>Materiales</h2><p>Recursos para sacarle partido a FPulse. Disponibles para el profesorado de la prueba piloto.</p></div>
     <div class="grid">
@@ -226,7 +266,7 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
-<section class="alt" id="novedades">
+<section id="novedades">
   <div class="wrap">
     <div class="head"><h2>Novedades</h2><p>FPulse mejora con lo que pedimos en el aula.</p></div>
     <div class="log">
@@ -238,9 +278,10 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
-<section id="preguntas">
+<section class="alt" id="preguntas">
   <div class="wrap">
     <div class="head"><h2>Preguntas frecuentes</h2></div>
+    <details><summary>¿Qué normativa tiene en cuenta?</summary><p>La Orden de 18 de septiembre de 2025, que regula la evaluación de la FP en Andalucía: la calificación por criterios de evaluación ponderados (art. 2.7), la información inicial al alumnado (art. 5.3) y la información tras cada evaluación (art. 5.4). El documento de referencia es siempre tu programación didáctica: FPulse aplica los pesos que tú pones.</p></details>
     <details><summary>¿Dónde se guardan los datos de mi alumnado?</summary><p>En tu ordenador, en la carpeta del curso que elijas al empezar. FPulse no tiene servidor y no envía datos a ningún sitio. Cada día guarda una copia fechada y puedes descargar copias de seguridad cuando quieras.</p></details>
     <details><summary>¿Necesito internet?</summary><p>No. Es un único archivo que se abre con el navegador y funciona sin conexión. Internet solo hace falta para descargarlo o para que OneDrive o Drive suban tu carpeta a la nube.</p></details>
     <details><summary>¿Sirve para mis módulos aunque no sean de Automatización?</summary><p>Sí. Tú configuras los RA, los criterios, sus pesos y los instrumentos de cada módulo, de cualquier ciclo de FP.</p></details>
