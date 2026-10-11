@@ -140,6 +140,12 @@ footer{padding:36px 0;color:var(--ink2);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 footer img{height:28px;opacity:.9}
 footer a{color:var(--ink2)}
+#dlgPiloto{border:1px solid var(--line);border-radius:var(--r);background:var(--panel);color:var(--ink);padding:26px;max-width:440px;width:calc(100% - 32px);box-shadow:0 24px 60px rgba(0,0,0,.25)}
+#dlgPiloto::backdrop{background:rgba(8,20,40,.55)}
+#dlgPiloto h3{margin:0 0 8px}#dlgPiloto p{margin:0 0 12px}
+#dlgPiloto .dpCorreo{font-size:18px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px;text-align:center;user-select:all}
+#dlgPiloto .dpBtns{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}#dlgPiloto .dpBtns .btn{flex:1;justify-content:center;text-align:center}
+#dlgPiloto .dpOtro{font-size:13px;opacity:.8;margin:0}#dlgPiloto .dpOtro button{background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
 </style>
 </head>
 <body>
@@ -227,7 +233,7 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <div class="head"><h2>Cómo empezar</h2><p>Configuras el módulo una vez con tu programación y a partir de ahí solo pones notas.</p></div>
     <div class="steps">
-      <div class="step"><h3>Pide tu plaza</h3><p>Escribe a pedrauu@gmail.com con tu nombre, tu centro y los módulos que impartes, y te enviaré FPulse.</p></div>
+      <div class="step"><h3>Pide tu plaza</h3><p>Rellena el formulario de la prueba piloto (un minuto) y te enviaré FPulse.</p></div>
       <div class="step"><h3>Crea tu curso escolar</h3><p>Abre el archivo con Chrome o Edge y elige la carpeta donde se guardará todo.</p></div>
       <div class="step"><h3>Configura tus módulos</h3><p>RA y su ponderación, CE con su peso, instrumentos y en qué evaluación cuentan. También desde CSV.</p></div>
       <div class="step"><h3>Califica y evalúa</h3><p>Pon las notas por CE y FPulse calcula RA, evaluaciones y finales. La guía de uso está dentro de la app.</p></div>
@@ -239,7 +245,7 @@ footer a{color:var(--ink2)}
   <div class="wrap acc">
     <div class="big">
       <h2>Prueba piloto 2026-27</h2>
-      <p>FPulse está en prueba piloto con un grupo reducido de profesorado de FP. Si quieres participar, escríbeme a <a href="mailto:pedrauu@gmail.com">pedrauu@gmail.com</a> con tu nombre, tu centro y los módulos que impartes. A cambio, solo te pediré tu opinión para mejorarla.</p>
+      <p>FPulse está en prueba piloto con un grupo reducido de profesorado de FP. Si quieres participar, rellena el <a href="https://docs.google.com/forms/d/1wKgwDB-u3IByt_fjrsyRvYqF_K85smqJA6z81-MeeNk/viewform" target="_blank" rel="noopener">formulario de inscripción</a>: nombre, centro y módulos que impartes. A cambio, solo te pediré tu opinión para mejorarla.</p>
       <ul>
         <li>Descarga de la última versión de FPulse</li>
         <li>Guía de uso en PDF y plantillas</li>
@@ -299,13 +305,34 @@ footer a{color:var(--ink2)}
   </div>
 </footer>
 
+<dialog id="dlgPiloto" aria-labelledby="dpTit">
+  <h3 id="dpTit">Quiero participar en la prueba piloto</h3>
+  <p>Escríbeme con tu nombre, tu centro y los módulos que impartes, y te enviaré FPulse.</p>
+  <p class="dpCorreo"><b id="dpCorreo">pedrauu@gmail.com</b></p>
+  <div class="dpBtns">
+    <button class="btn sec" id="dpCopiar" type="button">Copiar correo</button>
+    <a class="btn pri" id="dpGmail" href="#" target="_blank" rel="noopener">Escribir con Gmail</a>
+  </div>
+  <p class="dpOtro"><a id="dpMail" href="#">Usar mi programa de correo</a> · <button id="dpCerrar" type="button">Cerrar</button></p>
+</dialog>
 <script>
-// PRUEBA PILOTO: los botones abren un correo a pedrauu@gmail.com. Más adelante se puede poner aquí el enlace de la plataforma de descarga.
-const ENLACE_REGISTRO = 'mailto:pedrauu@gmail.com?subject=' + encodeURIComponent('Quiero participar en la prueba piloto de FPulse')
-  + '&body=' + encodeURIComponent('Hola, Pedro:\n\nMe gustaría participar en la prueba piloto de FPulse.\n\nNombre:\nCentro:\nMódulos que imparto:\n\nUn saludo.');
-if (ENLACE_REGISTRO) document.querySelectorAll('.js-registro').forEach(a => { a.href = ENLACE_REGISTRO; if (!ENLACE_REGISTRO.startsWith('mailto:')){ a.target = '_blank'; a.rel = 'noopener'; } });
+// PRUEBA PILOTO. Cuando exista el formulario de inscripción, pega aquí su enlace y los botones lo abrirán.
+// Mientras esté vacío, los botones muestran una ventana con el correo (copiar o escribir con Gmail).
+const ENLACE_FORMULARIO = 'https://docs.google.com/forms/d/1wKgwDB-u3IByt_fjrsyRvYqF_K85smqJA6z81-MeeNk/viewform';
+const CORREO = 'pedrauu@gmail.com';
+const ASUNTO = 'Quiero participar en la prueba piloto de FPulse';
+const CUERPO = 'Hola, Pedro:\n\nMe gustaría participar en la prueba piloto de FPulse.\n\nNombre:\nCentro:\nMódulos que imparto:\n\nUn saludo.';
+const dlgP = document.getElementById('dlgPiloto');
+document.getElementById('dpGmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + CORREO + '&su=' + encodeURIComponent(ASUNTO) + '&body=' + encodeURIComponent(CUERPO);
+document.getElementById('dpMail').href = 'mailto:' + CORREO + '?subject=' + encodeURIComponent(ASUNTO) + '&body=' + encodeURIComponent(CUERPO);
+document.getElementById('dpCopiar').onclick = async e => { try { await navigator.clipboard.writeText(CORREO); } catch(x) { const r = document.createRange(); r.selectNodeContents(document.getElementById('dpCorreo')); getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand('copy'); }
+  e.target.textContent = '¡Copiado!'; setTimeout(() => e.target.textContent = 'Copiar correo', 1800); };
+document.getElementById('dpCerrar').onclick = () => dlgP.close();
+dlgP.addEventListener('click', e => { if (e.target === dlgP) dlgP.close(); });
+document.querySelectorAll('.js-registro').forEach(a => {
+  if (ENLACE_FORMULARIO){ a.href = ENLACE_FORMULARIO; a.target = '_blank'; a.rel = 'noopener'; }
+  else a.addEventListener('click', e => { e.preventDefault(); dlgP.showModal(); });
+});
 </script>
 </body>
-</html>
-
 </html>
