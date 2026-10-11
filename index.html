@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FPulse · Evaluación por RA para FP</title>
 <meta name="description" content="FPulse: evaluación por resultados de aprendizaje para Formación Profesional en Andalucía, conforme a la Orden de 18 de septiembre de 2025. Calificación por CE ponderados, trazabilidad, recuperaciones, informes y, además, asistencia, diario y fase en empresa.">
-<link rel="icon" href="assets/fpulse-icono.svg" type="image/svg+xml">
+<link rel="icon" href="fpulse-icono.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -146,7 +146,7 @@ footer a{color:var(--ink2)}
 
 <header>
   <div class="wrap">
-    <a href="#" class="logo" aria-label="FPulse, inicio"><img src="assets/fpulse-logo-horizontal.svg" alt="FPulse · El pulso de tu aula de FP"></a>
+    <a href="#" class="logo" aria-label="FPulse, inicio"><img src="fpulse-logo-horizontal.svg" alt="FPulse · El pulso de tu aula de FP"></a>
     <nav>
       <a href="#evaluacion">Evaluación por RA</a>
       <a href="#complementos">Además</a>
@@ -202,7 +202,7 @@ footer a{color:var(--ink2)}
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6M9 11h3"/></svg></div><span class=art>art. 5.3</span><h3>Información inicial al alumnado</h3><p>RA y su ponderación, CE, instrumentos y criterios de calificación, con hoja de recibí. Para entregar antes de que acabe octubre.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><span class=art>art. 5.4</span><h3>Informes de progreso</h3><p>Tras cada evaluación, uno por alumno: su nota, la situación de cada RA, los criterios por debajo de 5 y lo que tiene que recuperar.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></div><h3>Recuperaciones y finales</h3><p>Recupera por instrumento mientras el RA está abierto y el RA completo cuando se cierra. Final FP 1 y Final FP 2, también para subir nota, con sus informes.</p></div>
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg></div><h3>Pérdida de evaluación continua</h3><p>Marca la evaluación afectada y pon la nota de la prueba final de todo el módulo; el cálculo se ajusta solo.</p></div>
+      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg></div><h3>Pérdida de evaluación continua</h3><p>Marca la evaluación afectada y pon la nota de la prueba final de los RA no superados (art. 2.5); los RA ya aprobados conservan su nota y el cálculo se ajusta solo.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h3>Evaluaciones que se cierran solas</h3><p>Cada evaluación se cierra en su fecha según el calendario del módulo, para que una nota puesta tarde no cambie una evaluación ya cerrada.</p></div>
       <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg></div><h3>Hoja para la sesión de evaluación</h3><p>Todos tus módulos de un grupo en una tabla: nota, RA pendientes, faltas y % de aprobados, lista para la junta.</p></div>
     </div>
@@ -293,7 +293,7 @@ footer a{color:var(--ink2)}
 
 <footer>
   <div class="wrap">
-    <img src="assets/fpulse-icono.svg" alt="">
+    <img src="fpulse-icono.svg" alt="">
     <span>© 2026 Pedro Serrano Hermoso · FPulse. Todos los derechos reservados.</span>
     <span><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="mailto:pedrauu@gmail.com">Contacto</a></span>
   </div>
@@ -306,4 +306,6 @@ const ENLACE_REGISTRO = 'mailto:pedrauu@gmail.com?subject=' + encodeURIComponent
 if (ENLACE_REGISTRO) document.querySelectorAll('.js-registro').forEach(a => { a.href = ENLACE_REGISTRO; if (!ENLACE_REGISTRO.startsWith('mailto:')){ a.target = '_blank'; a.rel = 'noopener'; } });
 </script>
 </body>
+</html>
+
 </html>
