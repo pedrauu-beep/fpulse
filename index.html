@@ -146,6 +146,19 @@ footer a{color:var(--ink2)}
 #dlgPiloto .dpCorreo{font-size:18px;padding:10px 12px;border:1px dashed var(--line);border-radius:10px;text-align:center;user-select:all}
 #dlgPiloto .dpBtns{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}#dlgPiloto .dpBtns .btn{flex:1;justify-content:center;text-align:center}
 #dlgPiloto .dpOtro{font-size:13px;opacity:.8;margin:0}#dlgPiloto .dpOtro button{background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+/* vídeo curso siguiente */
+.vid{background:radial-gradient(120% 120% at 15% 0%,#14407f 0%,#0b2d62 45%,#0c1522 100%);color:#fff;border-top:1px solid var(--line)}
+.vid .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.vid .eyebrow{background:rgba(22,194,163,.16);color:#5fe3c9}
+.vid h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;color:#fff}
+.vid h2 span{color:#18d0b0}
+.vid p{color:#c9d7ea;font-size:17px;margin:14px 0 0}
+.vid ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:8px;color:#e6eef8;font-size:15.5px}
+.vid li{padding-left:28px;position:relative}
+.vid li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:#16c2a3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/12px no-repeat}
+.vid video{width:100%;display:block;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.45);background:#0c1522;aspect-ratio:16/9}
+.vid .nota{font-size:13px;color:#9fb3cc;margin-top:10px;text-align:center}
+@media (max-width:860px){ .vid .wrap{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -191,6 +204,25 @@ footer a{color:var(--ink2)}
     </div>
   </div>
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none"><polyline fill="none" stroke="#16c2a3" stroke-width="3" points="0,60 380,60 420,60 440,20 465,85 490,10 515,60 1200,60"/></svg>
+</section>
+
+<section class="vid" id="curso-siguiente">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Curso nuevo, sin empezar de cero</span>
+      <h2>El curso que viene empieza <span>donde lo dejaste</span></h2>
+      <p>Con un clic preparas el curso siguiente. Tu trabajo pasa solo y el curso anterior se queda tal cual, a un clic en el selector.</p>
+      <ul>
+        <li>RA, CE, pesos e instrumentos</li>
+        <li>Horario, sesiones y planificación del diario</li>
+        <li>Asistencia y notas empiezan limpias</li>
+      </ul>
+    </div>
+    <div>
+      <video src="fpulse-curso-siguiente.mp4" poster="fpulse-curso-siguiente.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Vídeo: preparar el curso siguiente en FPulse"></video>
+      <div class="nota">Pulsa el altavoz para escucharlo con música · 40 s</div>
+    </div>
+  </div>
 </section>
 
 <section class="alt" id="evaluacion">
