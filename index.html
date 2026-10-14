@@ -442,7 +442,7 @@ const TUTORIALES = [
   $('tutLista').innerHTML = TUTORIALES.map(g => `<div class="tut-grp"><h3>${g.grupo}</h3><ol>${g.items.map(x => `<li><button type="button" class="tut-i" data-i="${n++}"><span class="n">${n}</span><span><b>${x.tit}</b><small>${x.res}</small></span><span class="t">${x.dur}</span></button></li>`).join('')}</ol></div>`).join('');
   const ir = (i, jugar) => { act = i; const x = L[i];
     v.poster = x.vid + '.jpg'; v.src = x.vid + '.mp4'; v.muted = true;
-    $('tutPaso').textContent = 'Tutorial ' + (i + 1) + ' de ' + L.length + (x.sonido ? ' · pulsa el altavoz para oír la música' : '');
+    $('tutPaso').textContent = 'Tutorial ' + (i + 1) + ' de ' + L.length + ' · pulsa el altavoz para oír la música';
     $('tutTit').textContent = x.tit; $('tutTxt').textContent = x.txt; $('tutPuntos').innerHTML = x.puntos.map(p => `<li>${p}</li>`).join('');
     document.querySelectorAll('.tut-i').forEach(b => b.setAttribute('aria-current', +b.dataset.i === i ? 'true' : 'false'));
     $('tutAnt').disabled = i === 0; $('tutSig').textContent = i === L.length - 1 ? 'Volver al primero ↺' : 'Siguiente →';
