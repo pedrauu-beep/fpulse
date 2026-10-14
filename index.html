@@ -87,7 +87,7 @@ nav .btn{padding:8px 16px;font-size:14px}
 .mock .grade b{display:block;font:700 20px Montserrat,sans-serif;color:var(--ink)}
 .mock .grade .ok b{color:var(--teal-d)}
 /* secciones */
-section{padding:72px 0}
+section{padding:72px 0;scroll-margin-top:68px}
 section.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .head{max-width:680px;margin-bottom:36px}
 .head h2{font-size:clamp(26px,3.4vw,36px);font-weight:800}
@@ -160,6 +160,40 @@ footer a{color:var(--ink2)}
 .vid video{width:100%;display:block;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.45);background:#0c1522;aspect-ratio:16/9}
 .vid .nota{font-size:13px;color:#9fb3cc;margin-top:10px;text-align:center}
 @media (max-width:860px){ .vid .wrap{grid-template-columns:1fr} }
+/* tutoriales */
+.tut{background:radial-gradient(120% 120% at 15% 0%,#14407f 0%,#0b2d62 45%,#0c1522 100%);color:#fff;border-top:1px solid var(--line)}
+.tut .head h2{color:#fff} .tut .head p{color:#c9d7ea} .tut .eyebrow{background:rgba(22,194,163,.16);color:#5fe3c9}
+.tut-g{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}
+.tut-l{display:grid;gap:18px}
+.tut-grp h3{font:700 12.5px Inter,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#7fb4e8;margin:0 0 8px}
+.tut-grp ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tut-i{width:100%;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;text-align:left;cursor:pointer;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 14px;color:#e6eef8;font:500 15px Inter,sans-serif;transition:background .15s,border-color .15s}
+.tut-i:hover{background:rgba(255,255,255,.1)}
+.tut-i .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:800 15px Montserrat,sans-serif;background:rgba(255,255,255,.12);color:#fff}
+.tut-i b{display:block;font-weight:600;color:#fff;line-height:1.3} .tut-i small{display:block;color:#a9bfd9;font-size:13px;margin-top:2px;line-height:1.35}
+.tut-i .t{font-size:12.5px;color:#a9bfd9;white-space:nowrap}
+.tut-i[aria-current="true"]{background:rgba(22,194,163,.16);border-color:#16c2a3} .tut-i[aria-current="true"] .n{background:#16c2a3}
+.tut-i.visto .n::after{content:"✓";position:absolute;font-size:0}
+.tut-v video{width:100%;display:block;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.45);background:#0c1522;aspect-ratio:16/9}
+.tut-v .meta{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-top:16px;flex-wrap:wrap}
+.tut-v h3{font-size:22px;color:#fff;margin:0} .tut-v .paso{font:700 12.5px Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#5fe3c9;margin-bottom:4px}
+.tut-v p{color:#c9d7ea;margin:6px 0 0;font-size:16px;max-width:40em}
+.tut-v ul{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:6px;color:#e6eef8;font-size:15px}
+.tut-v li{padding-left:26px;position:relative}
+.tut-v li::before{content:"";position:absolute;left:0;top:4px;width:17px;height:17px;border-radius:50%;background:#16c2a3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/11px no-repeat}
+.tut-nav{display:flex;gap:8px;flex:none}
+.tut-nav button{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:9px 16px;font:600 14px Inter,sans-serif;cursor:pointer}
+.tut-nav button:hover{background:rgba(255,255,255,.16)} .tut-nav button:disabled{opacity:.35;cursor:default}
+.tut-nav .sig{background:linear-gradient(90deg,var(--teal),var(--teal-d));border-color:transparent}
+@media (max-width:900px){ .tut-g{grid-template-columns:1fr} .tut-v{order:-1} }
+/* donativos */
+.don{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px 32px}
+.don h2{font-size:clamp(24px,3vw,30px);font-weight:800} .don p{color:var(--ink2);margin:10px 0 0}
+.don ul{margin:14px 0 0;padding-left:20px;color:var(--ink2)} .don li{margin:3px 0}
+.don .pp{display:grid;gap:10px;justify-items:center;text-align:center}
+.btn.pp-b{background:#ffc439;color:#111;box-shadow:0 6px 18px rgba(255,196,57,.35);font-size:17px;padding:14px 28px}
+.don .pp small{color:var(--ink2);font-size:13px}
+@media (max-width:820px){ .don{grid-template-columns:1fr;padding:24px} }
 </style>
 </head>
 <body>
@@ -170,8 +204,9 @@ footer a{color:var(--ink2)}
     <nav>
       <a href="#evaluacion">Evaluación por RA</a>
       <a href="#complementos">Además</a>
+      <a href="#tutoriales">Tutoriales</a>
       <a href="#empezar">Cómo empezar</a>
-      <a href="#materiales">Materiales</a>
+      <a href="#donativos">Colabora</a>
       <a href="#novedades">Novedades</a>
       <a class="btn pri js-registro" href="#acceso">Avísame</a>
     </nav>
@@ -187,9 +222,9 @@ footer a{color:var(--ink2)}
       <p class="lead">FPulse calcula la nota de cada RA a partir de los criterios de evaluación y sus pesos, como establece la Orden de 18 de septiembre de 2025. Comprueba que ningún CE se queda sin evaluar, gestiona recuperaciones y finales, y prepara los informes que hay que entregar al alumnado. Y para que todo esté en el mismo sitio, también llevas la asistencia, el diario y la fase en empresa.</p>
       <div class="cta">
         <a class="btn pri js-registro" href="#acceso">Avísame cuando salga</a>
-        <a class="btn sec" href="#evaluacion">Cómo evalúa</a>
+        <a class="btn sec" href="#tutoriales">Ver tutoriales</a>
       </div>
-      <small>Ya en uso en el aula · Un solo archivo, sin instalación · Tus datos en tu ordenador</small>
+      <small>Gratuita · Ya en uso en el aula · Un solo archivo, sin instalación · Tus datos en tu ordenador</small>
     </div>
     <div class="mock" aria-hidden="true">
       <div class="bar"><i></i><i></i><i></i><b>RA2 · Trazabilidad de criterios</b></div>
@@ -207,21 +242,16 @@ footer a{color:var(--ink2)}
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none"><polyline fill="none" stroke="#16c2a3" stroke-width="3" points="0,60 380,60 420,60 440,20 465,85 490,10 515,60 1200,60"/></svg>
 </section>
 
-<section class="vid" id="curso-siguiente">
+<section class="tut" id="tutoriales">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Curso nuevo, sin empezar de cero</span>
-      <h2>El curso que viene empieza <span>donde lo dejaste</span></h2>
-      <p>Con un clic preparas el curso siguiente. Tu trabajo pasa solo y el curso anterior se queda tal cual, a un clic en el selector.</p>
-      <ul>
-        <li>RA, CE, pesos e instrumentos</li>
-        <li>Horario, sesiones y planificación del diario</li>
-        <li>Asistencia y notas empiezan limpias</li>
-      </ul>
-    </div>
-    <div>
-      <video src="fpulse-curso-siguiente.mp4" poster="fpulse-curso-siguiente.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Vídeo: preparar el curso siguiente en FPulse"></video>
-      <div class="nota">Pulsa el altavoz para escucharlo con música · 40 s</div>
+    <div class="head"><span class="eyebrow">Tutoriales · aprende en minutos</span><h2>FPulse, paso a paso</h2><p>Vídeos cortos, en el orden en que los vas a necesitar: primero el día a día en clase y después cómo mantenerlo al día. Elige uno de la lista o síguelos en orden.</p></div>
+    <div class="tut-g">
+      <div class="tut-l" id="tutLista"></div>
+      <div class="tut-v">
+        <video id="tutVideo" playsinline controls preload="metadata" muted></video>
+        <div class="meta"><div><div class="paso" id="tutPaso"></div><h3 id="tutTit"></h3><p id="tutTxt"></p><ul id="tutPuntos"></ul></div>
+          <div class="tut-nav"><button type="button" id="tutAnt">← Anterior</button><button type="button" class="sig" id="tutSig">Siguiente →</button></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -274,25 +304,6 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
-<section class="vid" id="cambiar-version">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">Versiones nuevas, sin perder nada</span>
-      <h2>Actualizar es elegir <span>la misma carpeta</span></h2>
-      <p>FPulse mejora a menudo. Tus faltas, notas y diario no viven en el programa, sino en tu carpeta: abres la versión nueva, eliges la carpeta de siempre y todo aparece donde lo dejaste.</p>
-      <ul>
-        <li>Sin instalar nada y sin cargar copias</li>
-        <li>Funciona en Windows y en Mac, con Chrome o Edge</li>
-        <li>Copias de seguridad automáticas en tu carpeta</li>
-      </ul>
-    </div>
-    <div>
-      <video src="fpulse-cambiar-version.mp4" poster="fpulse-cambiar-version.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Vídeo: cómo pasar a una versión nueva de FPulse"></video>
-      <div class="nota">Pulsa el altavoz para escucharlo con música · 46 s</div>
-    </div>
-  </div>
-</section>
-
 <section id="acceso">
   <div class="wrap acc">
     <div class="big">
@@ -307,8 +318,25 @@ footer a{color:var(--ink2)}
     </div>
     <div class="req">
       <div class="card"><h3>Qué necesitas</h3><p>Un ordenador con <b>Google Chrome</b> o <b>Microsoft Edge</b>. Funciona en Windows y en Mac. No hay que instalar nada ni tener internet en clase.</p></div>
-      <div class="card"><h3>Gratuita <span class="tag">por ahora</span></h3><p>FPulse se desarrolla y mantiene de forma independiente. Más adelante podrá pedirse un pequeño donativo para sostener su mantenimiento y el soporte.</p></div>
+      <div class="card"><h3>Gratuita</h3><p>FPulse es gratuita para el profesorado. Se desarrolla y mantiene de forma independiente; si quieres, puedes <a href="#donativos">apoyarla con un donativo voluntario</a>.</p></div>
       <div class="card"><h3>Tus datos</h3><p>Tu nombre y tu correo solo se usan para avisarte de la salida de FPulse y de sus novedades. Los datos de tu alumnado nunca llegan aquí: se quedan en tu ordenador.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="donativos">
+  <div class="wrap">
+    <div class="don">
+      <div>
+        <span class="eyebrow">Colabora</span>
+        <h2>FPulse es gratuita. Si te ahorra tiempo, puedes echar una mano</h2>
+        <p>La desarrolla y mantiene un profesor de FP en su tiempo libre. Los donativos son totalmente voluntarios y no dan acceso a nada distinto: FPulse es la misma para todos. Ayudan a cubrir:</p>
+        <ul><li>El dominio y la web fpulse.eu</li><li>Las herramientas de desarrollo y pruebas</li><li>Las horas de mantenimiento, mejoras y soporte</li></ul>
+      </div>
+      <div class="pp">
+        <a class="btn pp-b" id="btnDonar" href="#" target="_blank" rel="noopener">♥ Haz un donativo con PayPal</a>
+        <small id="donNota">La cantidad la eliges tú. Gracias por apoyar FPulse.</small>
+      </div>
     </div>
   </div>
 </section>
@@ -328,6 +356,10 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <div class="head"><h2>Novedades</h2><p>FPulse mejora con lo que pedimos en el aula.</p></div>
     <div class="log">
+      <div class="ver"><div><div class="v">1.63</div><div class="d">Octubre 2026</div></div>
+        <ul><li><b>Informe individual en PDF</b>: todos los resultados de un alumno (evaluaciones, RA, CE, instrumentos y asistencia) para tutorías y familias.</li><li><b>Exportar a Excel</b> los RA, los CE y el peso de cada instrumento en cada evaluación y en la nota final.</li><li>Pesos con dos decimales que suman exactamente el 100 %.</li></ul></div>
+      <div class="ver"><div><div class="v">1.62</div><div class="d">Octubre 2026</div></div>
+        <ul><li><b>Estadillo de asistencia</b> por semanas, meses o trimestres, para justificar faltas de un vistazo.</li><li><b>Faltas por fechas</b>: pon o quita faltas de un tramo de días de una vez.</li></ul></div>
       <div class="ver"><div><div class="v">1.53</div><div class="d">Octubre 2026</div></div>
         <ul><li><b>Marcas desde la foto</b>: en Clase, toca la foto de un alumno para poner F, Fj, R, Rj, A±, D±.</li><li><b>Preguntar a alguien</b>: elige al azar entre los presentes, sin repetir hasta que salgan todos.</li></ul></div>
       <div class="ver"><div><div class="v">1.52</div><div class="d">Octubre 2026</div></div>
@@ -339,6 +371,7 @@ footer a{color:var(--ink2)}
 <section class="alt" id="preguntas">
   <div class="wrap">
     <div class="head"><h2>Preguntas frecuentes</h2></div>
+    <details><summary>¿Cuánto cuesta?</summary><p>Nada: FPulse es gratuita. Si te resulta útil, puedes apoyar su mantenimiento con un <a href="#donativos">donativo voluntario</a>, de la cantidad que quieras.</p></details>
     <details><summary>¿Qué normativa tiene en cuenta?</summary><p>La Orden de 18 de septiembre de 2025, que regula la evaluación de la FP en Andalucía: la calificación por criterios de evaluación ponderados (art. 2.7), la información inicial al alumnado (art. 5.3) y la información tras cada evaluación (art. 5.4). El documento de referencia es siempre tu programación didáctica: FPulse aplica los pesos que tú pones.</p></details>
     <details><summary>¿Dónde se guardan los datos de mi alumnado?</summary><p>En tu ordenador, en la carpeta del curso que elijas al empezar. FPulse no tiene servidor y no envía datos a ningún sitio. Cada día guarda una copia fechada y puedes descargar copias de seguridad cuando quieras.</p></details>
     <details><summary>¿Necesito internet?</summary><p>No. Es un único archivo que se abre con el navegador y funciona sin conexión. Internet solo hace falta para descargarlo o para que OneDrive o Drive suban tu carpeta a la nube.</p></details>
@@ -385,6 +418,44 @@ document.querySelectorAll('.js-registro').forEach(a => {
   if (ENLACE_FORMULARIO){ a.href = ENLACE_FORMULARIO; a.target = '_blank'; a.rel = 'noopener'; }
   else a.addEventListener('click', e => { e.preventDefault(); dlgP.showModal(); });
 });
+</script>
+<script>
+// DONATIVOS: pega aquí tu enlace de PayPal (p. ej. https://paypal.me/tunombre). Mientras esté vacío, el botón no se muestra.
+const ENLACE_DONATIVO = '';
+(() => { const b = document.getElementById('btnDonar'), n = document.getElementById('donNota');
+  if (ENLACE_DONATIVO) b.href = ENLACE_DONATIVO; else { b.style.display = 'none'; n.textContent = 'Muy pronto podrás hacer tu donativo desde aquí.'; } })();
+// TUTORIALES: en orden. Para añadir uno, sube el .mp4 y su .jpg y añade una entrada aquí.
+const TUTORIALES = [
+  { grupo: 'En clase, el día a día', items: [
+    { id: 'pasar-lista', tit: 'Pasar lista en 20 segundos', dur: '0:24', vid: 'fpulse-pasar-lista', res: 'Un clic por alumno y FPulse lleva la cuenta.',
+      txt: 'En «Hoy» tienes la sesión del día y la lista del grupo. Sin marca, el alumno está presente; con un clic, falta.', puntos: ['F, Fj, R y Rj, y además actitud y deberes', 'El recuento se actualiza y se guarda solo', 'Estadillo de faltas por semanas, meses o trimestres'] },
+    { id: 'notas-ra', tit: 'Notas por RA, automáticas', dur: '0:22', vid: 'fpulse-notas-ra', res: 'Pones la nota del instrumento; FPulse calcula CE, RA y módulo.',
+      txt: 'En «Calificar» eliges el instrumento y escribes la nota. Puedes ponerla en todos sus criterios a la vez o CE a CE.', puntos: ['La nota del RA sale de los CE con los pesos de tu programación', 'Evaluaciones y nota final al momento', 'Recuperaciones: cuenta siempre la mejor nota'] },
+    { id: 'informe', tit: 'Informe individual en 10 segundos', dur: '0:22', vid: 'fpulse-informe-individual', res: 'Todo el rendimiento de un alumno en un PDF.',
+      txt: 'Desde la ficha del alumno, «Informe individual (PDF)». Ideal para tutorías, reuniones con la familia o para justificar su rendimiento.', puntos: ['Evaluaciones, RA y cada criterio con sus instrumentos y notas', 'Asistencia por trimestres y, si quieres, observaciones', 'De un módulo o de todos en los que está'] } ] },
+  { grupo: 'Mantener FPulse al día', items: [
+    { id: 'version', tit: 'Pasar a una versión nueva', dur: '0:46', vid: 'fpulse-cambiar-version', res: 'Actualizar es elegir la misma carpeta.', sonido: true,
+      txt: 'Tus faltas, notas y diario no viven en el programa, sino en tu carpeta: abres la versión nueva, eliges la carpeta de siempre y todo aparece donde lo dejaste.', puntos: ['Sin instalar nada y sin cargar copias', 'Windows y Mac, con Chrome o Edge', 'Copias de seguridad automáticas en tu carpeta'] },
+    { id: 'curso-siguiente', tit: 'Preparar el curso siguiente', dur: '0:40', vid: 'fpulse-curso-siguiente', res: 'El curso que viene empieza donde lo dejaste.', sonido: true,
+      txt: 'Con un clic preparas el curso siguiente. Tu trabajo pasa solo y el curso anterior se queda tal cual, a un clic en el selector.', puntos: ['RA, CE, pesos e instrumentos', 'Horario, sesiones y planificación del diario', 'Asistencia y notas empiezan limpias'] } ] } ];
+(() => { const L = TUTORIALES.flatMap(g => g.items), $ = id => document.getElementById(id), v = $('tutVideo'); let act = 0, n = 0;
+  $('tutLista').innerHTML = TUTORIALES.map(g => `<div class="tut-grp"><h3>${g.grupo}</h3><ol>${g.items.map(x => `<li><button type="button" class="tut-i" data-i="${n++}"><span class="n">${n}</span><span><b>${x.tit}</b><small>${x.res}</small></span><span class="t">${x.dur}</span></button></li>`).join('')}</ol></div>`).join('');
+  const ir = (i, jugar) => { act = i; const x = L[i];
+    v.poster = x.vid + '.jpg'; v.src = x.vid + '.mp4'; v.muted = true;
+    $('tutPaso').textContent = 'Tutorial ' + (i + 1) + ' de ' + L.length + (x.sonido ? ' · pulsa el altavoz para oír la música' : '');
+    $('tutTit').textContent = x.tit; $('tutTxt').textContent = x.txt; $('tutPuntos').innerHTML = x.puntos.map(p => `<li>${p}</li>`).join('');
+    document.querySelectorAll('.tut-i').forEach(b => b.setAttribute('aria-current', +b.dataset.i === i ? 'true' : 'false'));
+    $('tutAnt').disabled = i === 0; $('tutSig').textContent = i === L.length - 1 ? 'Volver al primero ↺' : 'Siguiente →';
+    if (jugar) v.play().catch(() => {}); };
+  document.querySelectorAll('.tut-i').forEach(b => b.onclick = () => { ir(+b.dataset.i, true); if (innerWidth < 900) document.getElementById('tutoriales').scrollIntoView({ behavior: 'smooth' }); history.replaceState(null, '', '#tutorial-' + L[+b.dataset.i].id); });
+  $('tutAnt').onclick = () => ir(Math.max(0, act - 1), true);
+  $('tutSig').onclick = () => ir((act + 1) % L.length, true);
+  v.addEventListener('ended', () => { if (act < L.length - 1) setTimeout(() => ir(act + 1, true), 900); });
+  const h = (location.hash.match(/^#tutorial-(.+)$/) || [])[1], ini = Math.max(0, L.findIndex(x => x.id === h));
+  ir(ini, false); if (h) document.getElementById('tutoriales').scrollIntoView();
+  // reproduce en silencio cuando el reproductor entra en pantalla
+  new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && v.paused && !v.dataset.ya){ v.dataset.ya = 1; v.play().catch(() => {}); } }), { threshold: .5 }).observe(v);
+})();
 </script>
 </body>
 </html>
