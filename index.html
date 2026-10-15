@@ -194,6 +194,19 @@ footer a{color:var(--ink2)}
 .btn.pp-b{background:#ffc439;color:#111;box-shadow:0 6px 18px rgba(255,196,57,.35);font-size:17px;padding:14px 28px}
 .don .pp small{color:var(--ink2);font-size:13px}
 @media (max-width:820px){ .don{grid-template-columns:1fr;padding:24px} }
+.dlForm{display:flex;flex-direction:column;gap:10px;max-width:520px;margin:14px 0}
+.dlForm input[type=text],.dlForm input[type=email],.dlCod input{border:1px solid var(--line);border-radius:12px;padding:11px 13px;font:15px Inter,sans-serif;background:var(--panel);color:var(--ink)}
+.dlForm .ck{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.45;color:var(--ink2)} .dlForm .ck input{margin-top:4px}
+.dlForm .btn{align-self:flex-start}
+.dlErr{color:#c03535;font-size:14px;min-height:1em}
+.dlHola{font-weight:600;margin:14px 0 10px} .dlNota{font-size:14px;color:var(--ink2);margin-top:10px}
+.dlCod{margin-top:22px;padding:18px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)} .dlCod h3{font-size:16px;margin-bottom:4px} .dlCod p{font-size:14.5px;color:var(--ink2);margin:0 0 10px}
+.dlCod form{display:flex;gap:8px;flex-wrap:wrap} .dlCod input{flex:1;min-width:180px;font-family:ui-monospace,Consolas,monospace;text-transform:uppercase}
+.dlPasos{font-size:14.5px;margin:12px 0 0;padding-left:20px} .dlOtro{font-size:13px;margin-top:14px} .dlOtro a{color:var(--ink2)}
+.dlLista{margin:6px 0 0;padding-left:18px;font-size:14.5px} .dlLista li{margin:4px 0}
+#descargas .big .ck,#descargas .dlNota,#descargas .dlCod p,#descargas .dlPasos{color:#d6e2f2}
+#descargas .dlCod{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+#descargas .big .dlErr{color:#ffb8b8} #descargas .dlOtro a{color:#b9cbe3}
 </style>
 </head>
 <body>
@@ -209,7 +222,7 @@ footer a{color:var(--ink2)}
       <a href="#configuracion">Configuración</a>
       <a href="#donativos">Colabora</a>
       <a href="#novedades">Novedades</a>
-      <a class="btn pri js-registro" href="#acceso">Avísame</a>
+      <a class="btn pri" href="#descargas">Descargar</a>
     </nav>
   </div>
 </header>
@@ -222,7 +235,7 @@ footer a{color:var(--ink2)}
       <h1>Evalúa por resultados de aprendizaje <span>cumpliendo la normativa</span></h1>
       <p class="lead">FPulse calcula la nota de cada RA a partir de los criterios de evaluación y sus pesos, como establece la Orden de 18 de septiembre de 2025. Comprueba que ningún CE se queda sin evaluar, gestiona recuperaciones y finales, y prepara los informes que hay que entregar al alumnado. Y para que todo esté en el mismo sitio, también llevas la asistencia, el diario y la fase en empresa.</p>
       <div class="cta">
-        <a class="btn pri js-registro" href="#acceso">Avísame cuando salga</a>
+        <a class="btn pri" href="#descargas">Descargar FPulse gratis</a>
         <a class="btn sec" href="#tutoriales">Ver tutoriales</a>
       </div>
       <small>Gratuita · Ya en uso en el aula · Un solo archivo, sin instalación · Tus datos en tu ordenador</small>
@@ -305,22 +318,53 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
-<section id="acceso">
+<section id="descargas">
   <div class="wrap acc">
     <div class="big">
-      <h2>Prueba piloto completa</h2>
-      <p>FPulse ya se usa a diario en clase con un grupo de profesorado de FP, y las plazas de la prueba piloto están cubiertas. Si te interesa, apúntate a la <a href="https://docs.google.com/forms/d/1wKgwDB-u3IByt_fjrsyRvYqF_K85smqJA6z81-MeeNk/viewform" target="_blank" rel="noopener">lista de aviso</a> y te escribiré en cuanto salga la versión para todo el profesorado.</p>
-      <ul>
-        <li>Aviso en cuanto FPulse esté disponible</li>
-        <li>Guía de uso en PDF y plantillas</li>
-        <li>Novedades de cada versión nueva</li>
-      </ul>
-      <a class="btn pri js-registro" href="#acceso">Avísame cuando salga</a>
+      <span class="eyebrow">Descargas</span>
+      <h2>Descarga FPulse</h2>
+      <p>FPulse 1.63 para Windows y Mac. Regístrate una sola vez y descarga al momento tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
+      <div id="dlReg">
+        <form id="dlForm" class="dlForm">
+          <input type="text" id="dlN" placeholder="Nombre y apellidos" maxlength="80" autocomplete="name" required>
+          <input type="email" id="dlC" placeholder="Correo electrónico" maxlength="120" autocomplete="email" required>
+          <input type="text" id="dlE" placeholder="Centro educativo (y localidad)" maxlength="120" required>
+          <label class="ck"><input type="checkbox" id="dlA" required> <span>Acepto las <a href="#" class="js-cond">condiciones de uso</a> y que mi nombre, correo y centro se guarden para dar acceso a las descargas y al asistente y contactar conmigo sobre FPulse (<a href="legal.html#privacidad" target="_blank">privacidad</a>).</span></label>
+          <label class="ck"><input type="checkbox" id="dlV" checked> <span>Quiero recibir avisos de nuevas versiones.</span></label>
+          <div class="dlErr" id="dlErr"></div>
+          <button class="btn pri" type="submit">Registrarme y descargar</button>
+        </form>
+      </div>
+      <div id="dlOk" hidden>
+        <p class="dlHola" id="dlHola"></p>
+        <button class="btn pri" type="button" id="dlBtn">⬇ Descargar FPulse 1.63</button>
+        <p class="dlNota" id="dlMsg">Se descarga un único archivo .html. Ábrelo con Chrome o Edge y sigue la <a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">guía de instalación</a>.</p>
+        <div class="dlCod">
+          <h3>¿Tienes un código de configuración?</h3>
+          <p>Si has usado el <a href="#configuracion">servicio de configuración</a>, escribe el código que te hemos enviado y descarga tus módulos ya preparados.</p>
+          <form id="dlCodF"><input type="text" id="dlCod" placeholder="XXXX-XXXX-XXXX" maxlength="20" autocomplete="off" spellcheck="false"><button class="btn sec" type="submit">Descargar mi configuración</button></form>
+          <div class="dlErr" id="dlCodErr"></div>
+          <ol class="dlPasos" id="dlPasos" hidden>
+            <li>Crea una carpeta para el curso, por ejemplo <b>Seguimiento 26-27</b> (mejor dentro de OneDrive o Google Drive).</li>
+            <li>Mueve a esa carpeta el archivo <b>cuaderno-datos.json</b> que se acaba de descargar. No le cambies el nombre.</li>
+            <li>Abre FPulse con Chrome o Edge, pulsa <b>«Crear mi curso escolar»</b> y elige esa carpeta.</li>
+            <li>Verás «Esta carpeta ya tiene datos de FPulse: se recuperan». Acepta y tus módulos aparecerán configurados.</li>
+          </ol>
+        </div>
+        <p class="dlOtro"><a href="#" id="dlSalir">No soy yo · usar otro registro</a></p>
+      </div>
     </div>
     <div class="req">
       <div class="card"><h3>Qué necesitas</h3><p>Un ordenador con <b>Google Chrome</b> o <b>Microsoft Edge</b>. Funciona en Windows y en Mac. No hay que instalar nada ni tener internet en clase.</p></div>
-      <div class="card"><h3>Gratuita</h3><p>FPulse es gratuita para el profesorado. Se desarrolla y mantiene de forma independiente; si quieres, puedes <a href="#donativos">apoyarla con un donativo voluntario</a>.</p></div>
-      <div class="card"><h3>Tus datos</h3><p>Tu nombre y tu correo solo se usan para avisarte de la salida de FPulse y de sus novedades. Los datos de tu alumnado nunca llegan aquí: se quedan en tu ordenador. <a href="legal.html#privacidad">Política de privacidad</a>.</p></div>
+      <div class="card"><h3>Documentación y extras</h3><ul class="dlLista">
+        <li><a href="descargas/Manual%20de%20FPulse%201.63.pdf" target="_blank">Manual de FPulse 1.63 (PDF)</a></li>
+        <li><a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">Instalación, versión nueva y acceso directo (PDF)</a></li>
+        <li><a href="plantilla-configuracion-fpulse.xlsx" download>Plantilla de configuración (Excel)</a></li>
+        <li>Acceso directo en Windows: <a href="descargas/Crear%20acceso%20directo%20FPulse.bat" download>Crear acceso directo FPulse.bat</a> y <a href="descargas/fpulse-icono.ico" download>fpulse-icono.ico</a></li>
+        <li>Icono para Mac: <a href="descargas/fpulse-icono.png" download>fpulse-icono.png</a></li>
+      </ul></div>
+      <div class="card"><h3>Gratuita</h3><p>FPulse es gratuita para el profesorado. Se desarrolla y mantiene de forma independiente; si te resulta útil, puedes <a href="#donativos">apoyarla con un donativo voluntario</a>.</p></div>
+      <div class="card"><h3>Tus datos</h3><p>Los datos de tu alumnado nunca llegan aquí: se quedan en tu ordenador. Tu nombre, correo y centro solo se usan para las descargas, el asistente y los avisos. <a href="legal.html#privacidad">Política de privacidad</a>.</p></div>
     </div>
   </div>
 </section>
@@ -332,7 +376,7 @@ footer a{color:var(--ink2)}
       <div class="step"><h3>Descarga la plantilla</h3><p>Una hoja de Excel con tres pestañas: datos del módulo y fechas, RA y CE con sus pesos, e instrumentos con la evaluación en la que cuentan. <a href="plantilla-configuracion-fpulse.xlsx" download>Descargar plantilla (.xlsx)</a></p></div>
       <div class="step"><h3>Rellénala o envía tu programación</h3><p>Una plantilla por módulo. Si lo prefieres, envía directamente tu programación didáctica o tus criterios de calificación en Word, PDF o Excel y extraemos los datos de ahí.</p></div>
       <div class="step"><h3>Envíala por correo</h3><p>A <b>pedrauu@gmail.com</b> con el asunto «Configuración FPulse», indicando tu nombre, tu centro y si usas Windows o Mac.</p></div>
-      <div class="step"><h3>Descarga tu versión</h3><p>Te enviamos un enlace para descargar tu FPulse con los módulos configurados. Al abrirlo eliges la carpeta y ya puedes añadir el alumnado y empezar a calificar.</p></div>
+      <div class="step"><h3>Descarga tu versión</h3><p>Te enviamos un código. En <a href="#descargas">Descargas</a> lo escribes y bajas tus módulos ya configurados, junto con tu copia de FPulse. Solo te queda añadir el alumnado y empezar a calificar.</p></div>
     </div>
     <div class="card" style="margin-top:22px">
       <h3>Antes de enviar</h3>
@@ -479,6 +523,45 @@ const TUTORIALES = [
   new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && v.paused && !v.dataset.ya){ v.dataset.ya = 1; v.play().catch(() => {}); } }), { threshold: .5 }).observe(v);
 })();
 </script>
+<script>
+// DESCARGAS: registro (el mismo que el asistente) y copia personal de FPulse.
+(() => {
+  const U = 'https://fpulse-asistente.pedrauu.workers.dev', $ = id => document.getElementById(id);
+  const LS = { get: k => { try { return localStorage.getItem(k); } catch(e){ return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch(e){} }, del: k => { try { localStorage.removeItem(k); } catch(e){} } };
+  const post = b => fetch(U, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) });
+  const guardarArchivo = (blob, nombre) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); };
+  const pintar = () => { const p = LS.get('fpBotPase'), n = LS.get('fpBotNombre') || '';
+    $('dlReg').hidden = !!p; $('dlOk').hidden = !p; if (p) $('dlHola').textContent = '¡Hola' + (n ? ', ' + n.split(' ')[0] : '') + '! Ya puedes descargar tu copia de FPulse.'; };
+  const caducado = () => { LS.del('fpBotPase'); pintar(); $('dlErr').textContent = 'Tu registro ha caducado. Vuelve a registrarte, por favor.'; };
+  $('dlForm').onsubmit = async e => { e.preventDefault(); const b = e.target.querySelector('button'); b.disabled = true; $('dlErr').textContent = '';
+    try { const r = await post({ accion: 'registro', nombre: $('dlN').value, correo: $('dlC').value, centro: $('dlE').value, acepta: $('dlA').checked, avisos: $('dlV').checked });
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok || !d.pase){ $('dlErr').textContent = d.error || 'No se ha podido completar el registro.'; b.disabled = false; return; }
+      LS.set('fpBotPase', d.pase); LS.set('fpBotNombre', d.nombre || ''); pintar(); descargar();
+    } catch(x){ $('dlErr').textContent = 'Sin conexión. Revisa tu internet e inténtalo de nuevo.'; } b.disabled = false; };
+  async function descargar(){ const b = $('dlBtn'), m = $('dlMsg'), txt = b.textContent; b.disabled = true; b.textContent = 'Preparando tu copia…';
+    try { const r = await post({ accion: 'descarga', pase: LS.get('fpBotPase') });
+      if (r.status === 401) return caducado();
+      if (!r.ok){ const d = await r.json().catch(() => ({})); throw new Error(d.error || 'No se ha podido descargar.'); }
+      const cd = r.headers.get('Content-Disposition') || '', mm = cd.match(/filename\*=UTF-8''([^;]+)/);
+      guardarArchivo(await r.blob(), mm ? decodeURIComponent(mm[1]) : 'FPulse.html');
+      b.textContent = '✓ Descargado · volver a descargar';
+    } catch(x){ alertar(x.message); b.textContent = txt; } b.disabled = false; }
+  const alertar = s => { $('dlMsg').innerHTML = '<span style="color:#c03535">' + s.replace(/[<>&]/g, '') + '</span>'; };
+  $('dlBtn').onclick = descargar;
+  $('dlCodF').onsubmit = async e => { e.preventDefault(); $('dlCodErr').textContent = ''; const b = e.target.querySelector('button'); b.disabled = true;
+    try { const r = await post({ accion: 'configurada', pase: LS.get('fpBotPase'), codigo: $('dlCod').value });
+      if (r.status === 401) return caducado();
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok || !d.datos){ $('dlCodErr').textContent = d.error || 'No se ha podido descargar.'; b.disabled = false; return; }
+      guardarArchivo(new Blob([JSON.stringify(d.datos)], { type: 'application/json' }), 'cuaderno-datos.json');
+      $('dlPasos').hidden = false; $('dlCodErr').innerHTML = '<span style="color:#0e9c83">Configuración de ' + String(d.nombre || '').replace(/[<>&]/g, '') + ' descargada. Sigue estos pasos:</span>';
+    } catch(x){ $('dlCodErr').textContent = 'Sin conexión. Inténtalo de nuevo.'; } b.disabled = false; };
+  $('dlSalir').onclick = e => { e.preventDefault(); LS.del('fpBotPase'); LS.del('fpBotNombre'); pintar(); };
+  document.querySelectorAll('.js-cond').forEach(a => a.onclick = e => { e.preventDefault(); window.open('legal.html#aviso', '_blank'); });
+  pintar();
+})();
+</script>
 <!-- ===== Asistente FPulse (chat) ===== -->
 <style>
 #fpBot{position:fixed;right:18px;bottom:18px;z-index:50;font-family:Inter,system-ui,sans-serif}
@@ -532,7 +615,7 @@ const TUTORIALES = [
   const bot = document.getElementById('fpBot');
   if (!URL_ASISTENTE || URL_ASISTENTE.startsWith('__')) { bot.remove(); return; }
   const ms = document.getElementById('fpBotMs'), inp = document.getElementById('fpBotIn'), env = document.getElementById('fpBotEnv'), form = document.getElementById('fpBotF');
-  const SUG = ['¿Cómo paso a una versión nueva sin perder datos?', '¿Dónde se guardan los datos del alumnado?', '¿Cómo calcula FPulse la nota de un RA?', '¿Cómo justifico una falta?', '¿Funciona en Mac?', '¿Cómo consigo FPulse?'];
+  const SUG = ['¿Cómo paso a una versión nueva sin perder datos?', '¿Dónde se guardan los datos del alumnado?', '¿Cómo calcula FPulse la nota de un RA?', '¿Cómo justifico una falta?', '¿Funciona en Mac?', '¿Cómo descargo FPulse?'];
   const LS = { get: k => { try { return localStorage.getItem(k); } catch(e){ return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch(e){} }, del: k => { try { localStorage.removeItem(k); } catch(e){} } };
   let pase = LS.get('fpBotPase'), quien = LS.get('fpBotNombre') || '';
   let hist = []; try { hist = JSON.parse(sessionStorage.getItem('fpBotHist') || '[]'); } catch(e) {}
@@ -566,6 +649,7 @@ const TUTORIALES = [
       } catch(e2){ err.textContent = 'Sin conexión con el asistente. Revisa tu internet.'; b.disabled = false; } };
   }
   const pintar = () => {
+    pase = LS.get('fpBotPase'); quien = LS.get('fpBotNombre') || quien;
     if (!pase) return registro();
     ms.innerHTML = ''; form.style.display = '';
     burbuja('a', `¡Hola${quien ? ', ' + quien.split(' ')[0] : ''}! Pregúntame cómo se hace cualquier cosa en FPulse: pasar lista, calificar por RA y CE, recuperaciones, informes, cambiar de versión…`);

@@ -62,7 +62,7 @@ FPulse no se instala: basta con guardar el archivo .html en una carpeta y abrirl
 
 ### Primera vez
 
-1. Descarga el archivo de FPulse desde el enlace de Google Drive que te ha enviado el autor (en Drive: botón de descarga, arriba a la derecha).
+1. Entra en fpulse.eu, sección «Descargas». Regístrate una sola vez (nombre, correo y centro) y pulsa «Descargar FPulse 1.63». Se descarga tu copia personal, con tu nombre dentro. Allí tienes también el manual en PDF, la guía de instalación y los archivos del acceso directo.
 2. Muévelo de «Descargas» a una carpeta tuya, por ejemplo «Documentos › FPulse».
 3. Clic derecho sobre el archivo → «Abrir con» → «Google Chrome» o «Microsoft Edge».
 4. Lee las condiciones de uso y pulsa «Aceptar y continuar». Si pulsas «No acepto», la app no se abre.
@@ -444,7 +444,7 @@ Para volver a una copia: pestaña Copias → «Abrir copia de seguridad…» y e
 
 No hace falta exportar ni cargar copias: la versión nueva lee tu carpeta.
 
-1. Descarga el archivo de la versión nueva desde el enlace de Google Drive del autor.
+1. Descarga la versión nueva desde fpulse.eu, sección «Descargas» (si ya te registraste en ese navegador, sale directamente el botón de descarga).
 2. Guárdalo en la misma carpeta donde tenías la versión anterior. La antigua puedes moverla a una carpeta aparte por si acaso.
 3. Ábrelo con Chrome o Edge (clic derecho → «Abrir con»).
 4. Acepta las condiciones de uso.
@@ -464,9 +464,10 @@ No uses «Abrir copia de seguridad» para cambiar de versión. Rehaz el acceso d
 
 Los cursos anteriores siguen en el selector de arriba y en Ajustes («Abrir») para consultarlos; su carpeta no se toca. En Ajustes también puedes renombrar un curso, «Cambiar carpeta…» o «Quitar» de la lista (sin borrar archivos).
 
-### Copias de prueba con fecha de caducidad
+### Copias con fecha de caducidad
 
-- Las copias de la prueba piloto tienen fecha de caducidad. Durante los 15 días anteriores avisan al abrirse.
+- Las copias que se descargan de fpulse.eu funcionan hasta el 30/09/2027 (un curso escolar). Las de la prueba piloto tienen su propia fecha. Durante los 15 días anteriores avisan al abrirse.
+- Cuando llegue la fecha, descarga la versión nueva en fpulse.eu y elige tu carpeta de siempre.
 - Al llegar la fecha se bloquean con un mensaje, pero los datos no se pierden: siguen en tu carpeta y se recuperan con la versión nueva eligiendo la misma carpeta.
 
 ## 8. Preguntas frecuentes
@@ -513,7 +514,7 @@ Casi todos los problemas se resuelven eligiendo la carpeta correcta o abriendo F
 
 **He estropeado algo en los datos.** Copias → «Abrir copia de seguridad…» y elige en «copias del cuaderno» la copia «cuaderno-datos ANTES DE …» o la diaria del día anterior.
 
-**Mis compañeros, ¿pueden usar mi copia?** No. Cada copia es personal e intransferible. Pueden apuntarse a la lista de aviso en fpulse.eu.
+**Mis compañeros, ¿pueden usar mi copia?** No. Cada copia es personal e intransferible. Pueden descargar la suya gratis en fpulse.eu, sección «Descargas».
 
 **¿FPulse sustituye a Séneca?** No. FPulse te ayuda a calcular y organizar; las notas y faltas oficiales se pasan a Séneca, revisándolas antes.
 
@@ -551,7 +552,8 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 - FPulse lo crea y mantiene Pedro Serrano Hermoso, profesor de FP. Es una herramienta independiente, no oficial, y una obra registrada.
 - FPulse es gratuito. Quien quiera colaborar con el dominio, la web y el mantenimiento puede hacer un donativo voluntario por PayPal en [paypal.me/PedroSerrano21](https://paypal.me/PedroSerrano21).
-- Ahora mismo está en prueba piloto con un grupo de profesorado y las plazas están cubiertas. Para recibir aviso cuando esté disponible: botón «Avísame cuando salga» en [fpulse.eu](https://fpulse.eu).
+- Se descarga gratis en [fpulse.eu](https://fpulse.eu), sección «Descargas», tras un registro sencillo (nombre, correo y centro). Cada copia lleva el nombre de su titular y funciona hasta el 30/09/2027.
+- Servicio de configuración: envía la plantilla de la web (o tu programación) a pedrauu@gmail.com con el asunto «Configuración FPulse» y recibirás un código para descargar tus módulos ya configurados en la sección «Descargas». Es gratuito para el docente, pero tiene un coste (IA y revisión): se agradece un donativo.
 - Tutoriales en vídeo: sección «Tutoriales» de fpulse.eu.
 - Dudas y sugerencias: pedrauu@gmail.com. No envíes datos personales del alumnado.
 
