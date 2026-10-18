@@ -1,12 +1,12 @@
-Manual de FPulse (versión 1.63) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.72, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
 - Si empiezas de cero, lee en orden los apartados 2 a 5: en media hora tendrás tu curso montado.
-- Si ya usas FPulse, ve directo al apartado que necesites o a las Preguntas frecuentes (apartado 8).
+- Si ya usas FPulse, ve directo al apartado que necesites o a las Preguntas frecuentes (apartado 9). Las novedades de cada versión están al final.
 - Los nombres entre comillas («Crear mi curso escolar») son textos que verás tal cual en la pantalla.
-- La flecha (→) indica el camino: «Alumnado → Estadillo…» significa «pulsa la pestaña Alumnado y después el botón Estadillo…».
-- Dentro de la app tienes un resumen en el botón «Ayuda» (arriba a la derecha), que se puede guardar en PDF con «Exportar a PDF».
+- La flecha (→) indica el camino: «Programación → Trazabilidad» significa «pulsa la sección Programación (a la izquierda) y después la pestaña Trazabilidad (arriba)».
+- Dentro de la app tienes un resumen en «Ayuda» (abajo a la izquierda), que se puede guardar en PDF con «Exportar a PDF».
 
 | Apartado | Para qué sirve |
 | --- | --- |
@@ -14,11 +14,12 @@ Manual de FPulse (versión 1.63) para profesorado de FP: cada apartado explica q
 | 2. Instalación en Windows y Mac | Abrir la app y crear el acceso directo |
 | 3. Crear el curso y configurar módulos | RA, CE, pesos, instrumentos, fechas y horario |
 | 4. Alumnado | Listas, contactos, mayores de edad, bajas, diversidad, informes individuales |
-| 5. Día a día | Hoy, Estadillo, Clase, Diario, Proyectos y equipos, Empresa, Programación, Material |
-| 6. Calificación | Calificar, recuperaciones, evaluaciones, boletín, trazabilidad y Excel |
-| 7. Datos seguros | Copias, varios ordenadores, versión nueva, curso siguiente, caducidad |
-| 8. Preguntas frecuentes | Problemas habituales y su solución |
-| 9. Glosario y contacto | Términos y cómo contactar con el autor |
+| 5. Día a día | Pasar lista, estadillo, plano del aula, equipos y proyectos, empresa (dual) |
+| 6. Programación | Diario, unidades didácticas, trazabilidad, seguimiento, material, informes y Excel |
+| 7. Calificación | Calificar, recuperaciones, evaluaciones, boletín y revisión de CE |
+| 8. Datos seguros | Copias, varios ordenadores, versión nueva, curso siguiente, caducidad |
+| 9. Preguntas frecuentes | Problemas habituales y su solución |
+| 10. Glosario y contacto | Términos, novedades de cada versión y contacto |
 
 ## 1. Qué es FPulse y cómo guarda los datos
 
@@ -62,7 +63,7 @@ FPulse no se instala: basta con guardar el archivo .html en una carpeta y abrirl
 
 ### Primera vez
 
-1. Entra en fpulse.eu, sección «Descargas». Regístrate una sola vez (nombre, correo y centro) y pulsa «Descargar FPulse 1.63». Se descarga tu copia personal, con tu nombre dentro. Allí tienes también el manual en PDF, la guía de instalación y los archivos del acceso directo.
+1. Entra en fpulse.eu, sección «Descargas». Regístrate una sola vez (nombre, correo y centro) y pulsa «Descargar FPulse». Se descarga tu copia personal, con tu nombre dentro. Allí tienes también el manual en PDF, la guía de instalación y los archivos del acceso directo.
 2. Muévelo de «Descargas» a una carpeta tuya, por ejemplo «Documentos › FPulse».
 3. Clic derecho sobre el archivo → «Abrir con» → «Google Chrome» o «Microsoft Edge».
 4. Lee las condiciones de uso y pulsa «Aceptar y continuar». Si pulsas «No acepto», la app no se abre.
@@ -90,10 +91,18 @@ Al pasar a una versión nueva hay que rehacer el acceso directo apuntando al arc
 
 | Zona | Qué hay |
 | --- | --- |
-| Arriba | El curso escolar, tus módulos (un punto naranja indica que hoy hay clase y al lado sale la hora) y el indicador de guardado |
-| Arriba a la derecha | Configuración, Ajustes, Copias y Ayuda |
-| Pestañas de la izquierda (seguimiento) | Hoy, Alumnado, Diversidad, Proyectos y equipos, Clase, Diario de sesiones, Empresa (dual), Programación, Material didáctico |
-| Pestañas de la derecha (calificación) | Calificar, Recuperaciones, Evaluaciones, Trazabilidad CE |
+| Arriba | El curso escolar, tus módulos (un punto naranja indica que hoy hay clase y al lado sale la hora), el indicador de guardado y tu nombre con la fecha hasta la que vale tu copia |
+| Izquierda | Las secciones: Hoy, Alumnado, Calificación, Programación, Informes, Configuración y Ayuda |
+| Pestañas de arriba | Los apartados de la sección elegida. Cada sección recuerda el último que abriste |
+
+| Sección | Apartados (pestañas) |
+| --- | --- |
+| Hoy | Pasar lista · Plano del aula |
+| Alumnado | Listado y fichas · Diversidad · Equipos y proyectos · Empresa (dual) |
+| Calificación | Calificar · Recuperaciones · Evaluaciones · Revisión de CE |
+| Programación | Diario de sesiones · Unidades didácticas · Trazabilidad · Seguimiento · Material didáctico |
+| Informes | Todos los documentos para imprimir o guardar en PDF, en un solo sitio |
+| Configuración | Módulo · Ajustes del curso · Copias de seguridad |
 
 - Si tienes puesto tu horario, al abrir la app te lleva al módulo que tienes en clase. Cuando empieza otra clase sale un aviso con el botón «Ir a pasar lista».
 - Pulsa el nombre de cualquier alumno, en cualquier pestaña, para abrir su ficha.
@@ -112,7 +121,7 @@ El curso escolar es una carpeta con tus datos; dentro de él creas un módulo po
 
 ### Paso 2 · Ajustes del curso (una sola vez)
 
-Pulsa «Ajustes», arriba a la derecha. Lo que pongas aquí vale para todos tus módulos.
+Configuración → Ajustes del curso. Lo que pongas aquí vale para todos tus módulos.
 
 | Ajuste | Qué poner |
 | --- | --- |
@@ -127,21 +136,21 @@ El horario sirve para que FPulse te lleve al módulo que tienes en clase y te av
 
 ### Paso 3 · Crear los módulos
 
-1. Pulsa «＋ Nuevo módulo» (junto a los módulos de arriba, o en Ajustes).
+1. Pulsa «＋ Nuevo módulo» (junto a los módulos de arriba, o en Configuración → Ajustes del curso).
 2. Elige partir de uno en blanco o copiar la configuración de otro módulo (útil si das el mismo módulo a dos grupos).
 3. Pulsa «Crear módulo». Repite con cada módulo.
 
 ### Paso 4 · Configuración de cada módulo
 
-Elige el módulo arriba y pulsa «Configuración». Rellena, en este orden:
+Elige el módulo arriba y ve a Configuración → Módulo. Rellena, en este orden:
 
 1. Datos del módulo: ciclo, módulo con su código (por ejemplo 0960), curso y grupo.
 2. RA y su ponderación en el módulo, con «＋ Añadir RA» (hasta 10). Las ponderaciones deben sumar 100 %.
 3. CE de cada RA, con «＋ Añadir CE» (hasta 17 por RA), y el peso de cada CE dentro de su RA. Si dejas los pesos vacíos, todos los CE pesan lo mismo.
-4. Instrumentos, con «＋ Añadir instrumento» (examen, práctica, proyecto, cuestionario…).
-5. En cada RA, marca qué CE evalúa cada instrumento y en qué evaluación cuenta (1ª, 2ª o 3ª). Cada instrumento cuenta en una sola evaluación; si un examen se repite en otro trimestre, crea dos instrumentos.
-6. Fechas: primer y último día de clase, inicio de cada trimestre, sesiones por día de la semana y horas totales del módulo.
-7. Pulsa «Guardar configuración». Si te has equivocado, «Descartar cambios» lo deja como estaba.
+4. Fechas: primer y último día de clase, inicio de cada trimestre, sesiones por día de la semana y horas totales del módulo.
+5. Pulsa «Guardar configuración». Si te has equivocado, «Descartar cambios» lo deja como estaba.
+
+Los instrumentos de evaluación se crean después, en cada unidad didáctica (Programación → Unidades didácticas, apartado 6): así cada instrumento evalúa solo los CE programados en su UD y cuenta en la evaluación del trimestre de la UD. En Configuración → Módulo sigue estando la vista por RA de los instrumentos, para revisar o renombrar.
 
 Antes de guardar, FPulse comprueba que todo cuadre (pesos al 100 %, fechas en orden, CE sin instrumento, instrumentos en más de una evaluación) y te enseña el calendario de sesiones que sale.
 
@@ -149,7 +158,7 @@ Antes de guardar, FPulse comprueba que todo cuadre (pesos al 100 %, fechas en or
 
 En vez de escribirlos, puedes cargar los RA, CE y pesos desde un CSV:
 
-1. Configuración → «Importar desde CSV…».
+1. Configuración → Módulo → «Importar desde CSV…».
 2. Pulsa «Descargar un ejemplo» para ver el formato, rellénalo en Excel y guárdalo como CSV.
 3. Elige el archivo, revisa la vista previa y pulsa «Cargar en Configuración». Después, «Guardar configuración».
 
@@ -159,7 +168,7 @@ La asistencia y las incidencias se quedan en su fecha; la planificación del dia
 
 ## 4. Alumnado
 
-La pestaña Alumnado tiene la lista de clase de cada módulo con el resumen de cada alumno; desde ella se añade, importa, corrige y da de baja al alumnado y se sacan sus informes.
+Alumnado → Listado y fichas tiene la lista de clase de cada módulo con el resumen de cada alumno; desde ella se añade, importa, corrige y da de baja al alumnado y se sacan sus informes.
 
 ### Añadir alumnado
 
@@ -170,6 +179,7 @@ La pestaña Alumnado tiene la lista de clase de cada módulo con el resumen de c
 | Desde un archivo | «Importar CSV…» y elige el CSV (por ejemplo, el exportado de Séneca) |
 
 - «Ordenar A-Z» pone la lista por orden alfabético.
+- **Alumnado común**: los módulos del mismo curso (1º, 2º…) comparten la lista de alumnado y sus datos de contacto. Lo que añades en un módulo pasa a los demás del mismo curso. Si alguien tiene un módulo convalidado o no lo cursa, dale de baja solo en ese módulo. «Alumnado común del curso…» trae a este módulo el alumnado y los contactos de los otros.
 - Para corregir un nombre, pulsa ✎ a su lado.
 - «Baja» da de baja a un alumno: desaparece de las listas pero se conservan sus datos. «Recuperar» lo vuelve a dar de alta.
 
@@ -217,7 +227,7 @@ Incluye evaluaciones, cada RA, cada CE con su peso, sus instrumentos, notas y re
 
 Alumnado con medidas de apoyo (dificultades de aprendizaje) o de ampliación. Son adaptaciones no significativas: los RA y CE son los mismos y la nota se calcula igual.
 
-1. Pestaña Diversidad → «＋ Añadir» (o desde la ficha del alumno).
+1. Alumnado → Diversidad → «＋ Añadir» (o desde la ficha del alumno).
 2. Marca el tipo (apoyo o ampliación), el motivo y las medidas: tiempo extra en pruebas, formato adaptado, prueba oral o instrumento alternativo, ubicación y actividades.
 3. Registra las actividades de refuerzo o ampliación con «＋ Nueva actividad» (fecha, RA, alumnado y resultado) y las notas de seguimiento con «＋ Nota».
 4. «Informe para el equipo docente» lo imprime. «Aplicar también en mis otros módulos» copia las medidas a sus otros módulos.
@@ -226,9 +236,9 @@ En Hoy, Alumnado, Calificar, Recuperaciones, Evaluaciones y en la cabecera de su
 
 ## 5. Día a día
 
-En clase se trabaja casi siempre en la pestaña Hoy: pasar lista, anotar la sesión y ver los avisos; el resto de pestañas de la izquierda completan el seguimiento.
+En clase se trabaja casi siempre en Hoy → Pasar lista: pasar lista, anotar la sesión y ver los avisos.
 
-### Hoy: pasar lista
+### Hoy → Pasar lista
 
 1. Elige el módulo arriba (si tienes el horario puesto, ya está elegido). Si ese día tiene varias horas, elige la hora («1ª hora», «2ª hora»…).
 2. Sin marca = presente. Solo marcas a quien falta o destaca.
@@ -272,23 +282,15 @@ Para poner o quitar faltas en bloque: por ejemplo, si te incorporas con el curso
 3. Elige si respetas lo ya anotado o lo sustituyes. Verás cuántas horas se van a cambiar.
 4. Pulsa «Aplicar». Antes se guarda una copia de seguridad automática.
 
-### Clase: fotos y plano del aula
+### Hoy → Plano del aula (fotos)
 
-- Clic en la foto de un alumno para marcar F, Fj, R, Rj, A+, A−, D+ o D− en la sesión de hoy. Es lo mismo que pasar lista en Hoy. Doble clic abre su ficha.
+- Clic en la foto de un alumno para marcar F, Fj, R, Rj, A+, A−, D+ o D− en la sesión de hoy. Es lo mismo que pasar lista. Doble clic abre su ficha.
 - «🎲 Preguntar a alguien» elige al azar entre los presentes, sin repetir hasta que hayan salido todos. Su foto se agranda para poner A+ o A−.
 - «👥 Grupos» crea grupos de trabajo heterogéneos (según la nota actual de cada alumno, con medias parecidas), al azar o a mano. Se guardan con nombre, se imprimen y se ven en el plano con un color por grupo.
 - Para colocar el aula: «✋ Colocar alumnos», arrastra a cada alumno a su sitio (o haz clic en uno y luego en el hueco o en el compañero con quien cambiarlo) y termina con «✓ Terminar de colocar». Los huecos vacíos sirven de pasillo.
 - También: «Colocar por orden alfabético», «Pizarra arriba / abajo» para girar el plano, copiar el plano de otro módulo e imprimirlo.
 
-### Diario de sesiones
-
-Todas las sesiones del curso, por trimestre.
-
-- Edita la UD, la actividad, los deberes y las incidencias de cada sesión.
-- Marca «No impartida» en las que no se dieron (huelga, excursión, actividad del centro…) y su motivo.
-- Para cargar la planificación de golpe: «Descargar plantilla» (sale con tus sesiones y fechas), rellénala en Excel y súbela con «Importar Excel / CSV».
-
-### Proyectos y equipos
+### Alumnado → Equipos y proyectos
 
 Trabajo cooperativo y Aprendizaje Basado en Proyectos (ABP) del módulo. Si nunca has trabajado con dinámicas cooperativas, empieza por «¿Nuevo en el aprendizaje cooperativo? Empieza aquí»: explica los cinco elementos del trabajo cooperativo y cinco pasos para empezar.
 
@@ -304,6 +306,7 @@ Trabajo cooperativo y Aprendizaje Basado en Proyectos (ABP) del módulo. Si nunc
 - Cada ficha explica para qué sirve, material, paso a paso, cómo evaluarla, consejos y un ejemplo de Automatización y Robótica. «Imprimir ficha» o «Tarjeta para el alumnado» (pasos en grande).
 - Puedes añadir dinámicas tuyas.
 - «Usar en una sesión» (o «＋ Nueva sesión») registra la sesión: dinámica, RA, cómo funcionó cada equipo y qué cambiarías la próxima vez.
+- **Calificar una dinámica** (opcional): en la sesión, abre «Calificar esta dinámica», elige el instrumento de Calificar y pon la nota de cada equipo (va a todos sus miembros; si alguien merece otra nota, escríbela en su casilla). Puedes no poner nota a quien faltó ese día. Después, en la lista de sesiones, «Pasar a Calificar» te dice qué notas son nuevas y cuáles cambian antes de escribirlas.
 
 **Proyectos ABP**
 
@@ -316,18 +319,61 @@ Trabajo cooperativo y Aprendizaje Basado en Proyectos (ABP) del módulo. Si nunc
 
 En el módulo 0969 (Proyecto intermodular) se puede marcar un proyecto como intermodular y anotar, como referencia, los módulos y CE que integra. Si cambias los equipos con un proyecto a medias, pasa antes sus notas a Calificar.
 
-### Empresa (dual)
+### Alumnado → Empresa (dual)
 
-- Empresa, tutor o tutora laboral y seguimientos de cada alumno («Añadir seguimiento»: visitas, llamadas, valoraciones). Son comunes a todos sus módulos.
-- Muestra las notas de los instrumentos de empresa del módulo.
-- «Escribir al tutor/a laboral» abre el correo en Gmail. También se imprime el seguimiento.
+Empresa, tutor o tutora laboral, periodos y seguimientos de cada alumno. Son comunes a todos sus módulos.
 
-### Programación
+- **Varios periodos**: un alumno puede tener varios periodos, en la misma empresa o en otras. Pulsa su nombre: cada periodo tiene empresa, localidad, tutor/a laboral, teléfono, correo, inicio, fin, horario y notas. «＋ Añadir otro periodo» crea uno vacío y «＋ Otro periodo en la misma empresa» copia empresa y tutor para que solo pongas las fechas. «✕ Quitar» borra un periodo.
+- La tabla muestra todos los periodos de cada alumno y resalta el que está en curso (y la marca «en la empresa»).
+- Seguimientos: «Añadir seguimiento» (visitas, llamadas, correos, reuniones, valoraciones, incidencias). «Escribir al tutor/a laboral» abre el correo en Gmail al tutor del periodo en curso.
+- **Importar desde Excel**: «Descargar plantilla» te da un archivo con tu alumnado ya puesto. Rellénalo con una fila por periodo (repite el nombre para dar varios periodos) y súbelo con «Importar Excel / CSV» (.xlsx o .csv). Da igual escribir «Apellidos, Nombre» o «Nombre Apellidos». FPulse avisa de los nombres que no reconoce y, si un alumno ya tenía periodos, pregunta si los sustituye o añade los nuevos.
+- «Exportar a Excel» saca los periodos y los seguimientos; ese mismo archivo se puede volver a importar. También se imprime.
+- Muestra las notas de los instrumentos de empresa del módulo (los que llevan FFE, empresa o dual en el nombre).
 
-- Indicadores de calidad: absentismo, alumnado sobre el umbral, % de aprobados por módulo y por RA, por evaluación o del curso.
-- Seguimiento de la programación: % impartido, % del módulo dado, UD en curso y sesiones no impartidas con su motivo, por módulo y trimestre.
-- Temporalización por UD: con «＋ Añadir UD» pones las horas previstas de cada unidad. FPulse las compara con las planificadas en el Diario y las impartidas, y marca su estado (no iniciada, en curso, terminada o «se alarga»). Avisa si el total no cuadra con las horas del módulo y puede repartir las UD en el Diario.
-- «Copiar las tablas (para pegar en Word o Excel)» o imprimir: listo para la memoria o el informe de calidad.
+## 6. Programación
+
+La sección Programación reúne el diario de clase, las unidades didácticas con sus RA, CE e instrumentos, la trazabilidad de la programación, el seguimiento y tu material. Todo lo que ves se puede imprimir y exportar a Excel para la programación, la memoria o calidad.
+
+### Diario de sesiones
+
+Todas las sesiones del curso, por trimestre.
+
+- Edita la UD, la actividad, los deberes y las incidencias de cada sesión.
+- Marca «No impartida» en las que no se dieron (huelga, excursión, actividad del centro…) y su motivo.
+- Para cargar la planificación de golpe: «Descargar plantilla» (sale con tus sesiones y fechas), rellénala en Excel y súbela con «Importar Excel / CSV».
+
+### Unidades didácticas
+
+La tabla de UD de tu programación: número, título, RA, trimestre y horas previstas. FPulse compara las horas con las sesiones del Diario y las impartidas, y marca el estado de cada UD (no iniciada, en curso, terminada o «se alarga»).
+
+1. «＋ Añadir UD» (o «Crear desde el Diario», o «Crear desde tus instrumentos» si ya tienes instrumentos llamados UD1-IE1…).
+2. Escribe título, trimestre (1, 2 o 3) y horas previstas. El total se compara con las horas del módulo.
+3. Pulsa **▸** en una UD para abrir su ficha:
+   - **RA y CE**: «＋ Añadir un RA a esta UD…» y marca solo los CE que se trabajan en ella. Un CE puede repartirse entre varias UD (al lado verás en qué otras está).
+   - **🏫 Aula / 🏭 Empresa**: en cada CE marcado indica si se trabaja en el centro o en la empresa (formación en empresa / dual).
+   - **Instrumentos de la UD**: «＋ Nuevo instrumento en la UD…». Le pones nombre (puedes elegir el tipo: prueba escrita, práctica con rúbrica, lista de cotejo, proyecto…) y marcas los CE que evalúa; solo salen los CE programados en esa UD. Cuenta en la evaluación del trimestre de la UD: si cambias el trimestre, sus instrumentos le siguen. ✎ lo cambia, «Calificar» te lleva a ponerle notas y ✕ lo quita (avisa si ya tiene notas).
+4. «Repartir en el Diario…» rellena la UD de las sesiones libres según las horas de cada unidad.
+5. **Valorar**: al terminar una UD, anota cómo ha ido (valoración global, contenidos, temporalización, metodología, aspectos positivos, dificultades, pendiente y propuestas de mejora). FPulse añade las horas, las fechas y el % de alumnado que supera cada RA. «Imprimir valoración de las UD» saca el informe con firmas para la memoria; las propuestas de mejora pasan al curso siguiente.
+6. «Copiar la tabla» y **«Exportar a Excel»** (temporalización y valoraciones).
+
+### Trazabilidad
+
+La programación de un vistazo, como una hoja de cálculo: RA → UD → CE → instrumento. Sustituye a la antigua «cobertura de los CE».
+
+- Cada RA, con su color, muestra las UD que lo trabajan. En cada fila: el trimestre, los **CE en el aula** (una columna por letra), los **CE en la empresa**, los **instrumentos de evaluación** de esa UD con las letras de los CE que evalúa cada uno y el **seguimiento** (horas impartidas sobre previstas y estado de la UD).
+- **Horas por RA**: si una UD trabaja varios RA, sus horas se reparten entre ellos según el número de CE de cada uno (por ejemplo, 7 de 10 CE → 70 % de las horas). Debajo pone «7/10 CE de las 18 h de la UD» y al pie de cada RA salen sus horas.
+- Color de cada letra: verde fuerte = con instrumento y notas; verde claro = con instrumento, sin notas aún; amarillo = sin instrumento en esa UD; morado = en la empresa.
+- Al pie de cada RA: CE programados, en empresa, impartidos (en UD terminadas) y, en rojo, los CE que no están en ninguna UD.
+- Debajo, el **listado de todos los instrumentos** del módulo con su UD, evaluación, RA y CE y notas puestas. Avisa de los instrumentos sin UD, de los que no evalúan ningún CE, de los que están en una UD que no existe y de los que cuentan en una evaluación distinta del trimestre de su UD.
+- Si un instrumento de una UD evalúa un CE que no estaba marcado en la UD, se marca solo.
+- «Editar en la tabla»: pulsa una casilla de CE para pasarla de vacía a aula, a empresa y otra vez a vacía. «＋ Trabajar el RA en otra UD…» añade una fila.
+- Filtro por trimestre, «Copiar la tabla», **«Exportar a Excel»** (tres hojas: trazabilidad, instrumentos y resumen por RA) e «Imprimir» en A4 apaisado con firmas.
+
+### Seguimiento
+
+- **Indicadores de calidad**: absentismo, alumnado sobre el umbral, % de aprobados por módulo y por RA, por evaluación o del curso.
+- **Seguimiento de la programación**: % impartido, % del módulo dado, UD en curso y sesiones no impartidas con su motivo, por módulo y trimestre.
+- «Copiar», **«Exportar a Excel»** e «Imprimir»: listo para la memoria o el informe de calidad.
 
 ### Material didáctico
 
@@ -336,13 +382,36 @@ En el módulo 0969 (Proyecto intermodular) se puede marcar un proyecto como inte
 3. Pulsa un archivo para abrirlo. Los PDF e imágenes se ven en una pestaña nueva; los Word se pueden ver aquí; Word, Excel y PowerPoint se abren como copia. Para editar el original, ábrelo desde OneDrive o añádelo como enlace web.
 4. La estrella (☆) marca favoritos. «↻ Actualizar» recarga la carpeta.
 
-## 6. Calificación
+### Informes
+
+La sección Informes reúne todos los documentos de la app, listos para imprimir o guardar en PDF:
+
+| Grupo | Informes |
+| --- | --- |
+| Asistencia | Estadillo de asistencia · Faltas por fechas |
+| Alumnado | Fichas del alumnado · Informes individuales · Informe de diversidad · Equipos de trabajo · Tarjetas de roles |
+| Evaluación | Información inicial al alumnado · Informes de progreso · Informes de recuperación · Hoja para la sesión de evaluación · Mapa de trazabilidad RA → CE → instrumento · Exportar la evaluación a Excel |
+| Programación y calidad | Indicadores de calidad · Seguimiento de la programación · Valoración de las UD · Trazabilidad RA → UD → CE (impresa y en Excel) |
+
+### Exportar a Excel
+
+Para llevar los datos a tu programación, a la memoria final o a calidad, estas pantallas tienen el botón «Exportar a Excel» (un libro .xlsx que se abre en Excel, LibreOffice o Google Sheets):
+
+| Pantalla | Qué sale en el Excel |
+| --- | --- |
+| Programación → Trazabilidad | Trazabilidad RA → UD → CE (aula y empresa, instrumentos, horas), instrumentos y resumen por RA |
+| Programación → Unidades didácticas | Temporalización de las UD y sus valoraciones |
+| Programación → Seguimiento | Seguimiento de la programación (total y por trimestre) e indicadores de calidad |
+| Alumnado → Empresa (dual) | Periodos de cada alumno y seguimientos (se puede volver a importar) |
+| Calificación → Revisión de CE | RA, CE y peso de cada instrumento en cada evaluación y en la nota final |
+
+## 7. Calificación
 
 Tú pones notas de 0 a 10 por CE en cada instrumento; FPulse calcula la nota de cada CE, de cada RA, de cada evaluación y del módulo con los pesos de tu Configuración.
 
 ### Calificar
 
-1. Pestaña Calificar → elige el instrumento en el desplegable.
+1. Calificación → Calificar → elige el instrumento en el desplegable.
 2. Escribe la nota de cada alumno en cada CE (de 0 a 10). La columna «Todos» pone la misma nota en todos los CE de ese instrumento.
 3. Valores especiales:
 
@@ -366,7 +435,7 @@ Cierre de evaluaciones: cada evaluación se cierra sola el día que empieza el t
 
 ### Evaluaciones y boletín
 
-- La pestaña Evaluaciones muestra la 1ª, 2ª y 3ª evaluación, la Final FP 1, la Final FP 2 y la nota de cada RA de todo el grupo.
+- Calificación → Evaluaciones muestra la 1ª, 2ª y 3ª evaluación, la Final FP 1, la Final FP 2 y la nota de cada RA de todo el grupo.
 - «Copiar la tabla» la lleva a una hoja de cálculo.
 - «Hoja para la sesión de evaluación…» junta todos tus módulos de un grupo: nota, RA pendientes, faltas, % de aprobados por módulo y la última observación de cada alumno.
 
@@ -383,7 +452,7 @@ Ejemplo: un módulo con RA1 (40 %) y RA2 (60 %). RA1 tiene un 8 y RA2 un 6,5. La
 - Pérdida de evaluación continua: la evaluación marcada sale NE y se hace una prueba final de los RA no superados. Los RA ya cerrados y aprobados conservan su nota.
 - Final FP 2: van quienes tienen algún RA suspenso en la Final FP 1 y quienes marques para subir nota. Se recupera cada RA completo y en cada RA cuenta la nota más alta. La Final FP 1 no cambia.
 
-### Trazabilidad CE
+### Revisión de CE
 
 Comprueba, criterio a criterio, que todos los CE de cada RA se evalúan. Para cada CE muestra:
 
@@ -399,10 +468,10 @@ Avisos de color:
 
 El «peso en el módulo» (peso del RA × peso del CE en su RA) es informativo: FPulse calcula por niveles (CE → RA → módulo) y llega al mismo resultado cuando todo está calificado.
 
-Desde Trazabilidad CE:
+Desde Revisión de CE (o desde Informes):
 
 - «Imprimir el mapa»: el mapa de RA, CE e instrumentos.
-- «Exportar a Excel…» (también en Configuración), de un módulo o de todos. Cada módulo sale en 4 hojas: RA; RA y CE; Instrumentos (con su peso en la nota del RA, en la 1ª, 2ª y 3ª evaluación y en la final); y Por instrumento. Los totales llevan fórmulas SUMA y dan el 100 %.
+- «Exportar a Excel…» (también en Configuración → Módulo), de un módulo o de todos. Cada módulo sale en 4 hojas: RA; RA y CE; Instrumentos (con su peso en la nota del RA, en la 1ª, 2ª y 3ª evaluación y en la final); y Por instrumento. Los totales llevan fórmulas SUMA y dan el 100 %.
 - «Información inicial al alumnado…»: RA y su ponderación, CE, instrumentos por evaluación y criterios de calificación, con hoja de recibí con la lista de clase. El texto es editable para que diga lo mismo que tu programación («Restaurar el texto por defecto» lo deshace). Puede sacar todos tus módulos de un grupo a la vez. No muestra el peso de cada CE.
 - «Informes de progreso…» tras cada evaluación: uno por alumno con su nota, faltas, situación de cada RA, los criterios por debajo de 5 y lo que tiene que recuperar.
 
@@ -412,13 +481,13 @@ La Orden de 18 de septiembre de 2025, que regula la evaluación de los grados D 
 
 | Artículo | Qué pide | Dónde lo resuelve FPulse |
 | --- | --- | --- |
-| 2.7 | La nota final sale de aplicar la ponderación de la programación a los criterios de evaluación | Cálculo por CE y Trazabilidad CE |
+| 2.7 | La nota final sale de aplicar la ponderación de la programación a los criterios de evaluación | Cálculo por CE, Revisión de CE y Trazabilidad |
 | 5.3 | Informar al alumnado antes de que termine octubre de RA, CE, criterios de calificación, procedimientos e instrumentos | Información inicial al alumnado |
 | 5.4 | Informar al final de cada evaluación del aprovechamiento, progresos y dificultades en los RA | Informes de progreso |
 
 Revisa siempre que lo que entregas coincida con tu programación didáctica, que es el documento de referencia.
 
-## 7. Datos seguros
+## 8. Datos seguros
 
 Tus datos están protegidos por tres capas: el guardado automático en cada cambio, una copia fechada cada día y una copia extra antes de cualquier operación delicada.
 
@@ -432,7 +501,7 @@ Tus datos están protegidos por tres capas: el guardado automático en cada camb
 | Copia manual | Cuando pulsas «Hacer una copia ahora» o «Descargar copia de seguridad (.json)» | Carpeta de copias o Descargas |
 | Nube | Siempre, si la carpeta del curso está en OneDrive o Google Drive | Tu nube |
 
-Para volver a una copia: pestaña Copias → «Abrir copia de seguridad…» y elige el archivo en «copias del cuaderno».
+Para volver a una copia: Configuración → Copias de seguridad → «Abrir copia de seguridad…» y elige el archivo en «copias del cuaderno».
 
 ### Varios ordenadores
 
@@ -457,20 +526,20 @@ No uses «Abrir copia de seguridad» para cambiar de versión. Rehaz el acceso d
 
 ### Preparar el curso siguiente
 
-1. Ajustes → «Preparar el curso siguiente…».
+1. Configuración → Ajustes del curso → «Preparar el curso siguiente…».
 2. Elige una carpeta nueva para el curso que viene (por ejemplo «Seguimiento 27-28»).
-3. Se copian tus módulos, su configuración, la planificación del diario y los proyectos (como plantilla). No se copian asistencia, notas, recuperaciones, observaciones ni incidencias; el alumnado, si quieres.
+3. Se copian tus módulos, su configuración, la planificación del diario, las unidades didácticas (con sus RA, CE, aula/empresa e instrumentos; las propuestas de mejora quedan como referencia) y los proyectos (como plantilla). No se copian asistencia, notas, recuperaciones, observaciones ni incidencias; el alumnado, si quieres.
 4. Pon los festivos del curso nuevo y revisa las fechas de cada módulo.
 
-Los cursos anteriores siguen en el selector de arriba y en Ajustes («Abrir») para consultarlos; su carpeta no se toca. En Ajustes también puedes renombrar un curso, «Cambiar carpeta…» o «Quitar» de la lista (sin borrar archivos).
+Los cursos anteriores siguen en el selector de arriba y en Ajustes del curso («Abrir») para consultarlos; su carpeta no se toca. Allí también puedes renombrar un curso, «Cambiar carpeta…» o «Quitar» de la lista (sin borrar archivos).
 
 ### Copias con fecha de caducidad
 
-- Las copias que se descargan de fpulse.eu funcionan hasta el 30/09/2027 (un curso escolar). Las de la prueba piloto tienen su propia fecha. Durante los 15 días anteriores avisan al abrirse.
+- Las copias que se descargan de fpulse.eu funcionan hasta el 30/09/2027 (un curso escolar). Las de la prueba piloto también; la primera vez piden tu nombre y te dan un código personal que solo vale para ese nombre. El nombre y la fecha se ven arriba, junto a tus módulos. Durante los 15 días anteriores avisan al abrirse.
 - Cuando llegue la fecha, descarga la versión nueva en fpulse.eu y elige tu carpeta de siempre.
 - Al llegar la fecha se bloquean con un mensaje, pero los datos no se pierden: siguen en tu carpeta y se recuperan con la versión nueva eligiendo la misma carpeta.
 
-## 8. Preguntas frecuentes
+## 9. Preguntas frecuentes
 
 Casi todos los problemas se resuelven eligiendo la carpeta correcta o abriendo FPulse con Chrome o Edge.
 
@@ -492,33 +561,41 @@ Casi todos los problemas se resuelven eligiendo la carpeta correcta o abriendo F
 
 ### Notas
 
-**Un CE no cuenta en la nota.** Mira Trazabilidad CE. Lo normal es que no tenga instrumento (aviso rojo) o que falten notas en su evaluación cerrada.
+**Un CE no cuenta en la nota.** Mira Calificación → Revisión de CE. Lo normal es que no tenga instrumento (aviso rojo) o que falten notas en su evaluación cerrada.
 
 **Tiene un 5,6 pero el boletín pone 4.** Tiene algún RA suspenso. Con un RA suspenso el módulo no puede estar aprobado: una nota de 5 o más se queda en 4.
 
 **Un alumno faltó con justificante al examen.** Escribe FJ en Calificar. No cuenta y aparece como prueba pendiente en Hoy hasta que pongas la nota de la nueva prueba.
 
-**¿Qué diferencia hay entre NP y dejarlo vacío?** NP cuenta 0 y pide recuperación. Vacío significa «todavía sin calificar» y no cuenta, salvo cuando su evaluación ya está cerrada (aviso rojo en Trazabilidad).
+**¿Qué diferencia hay entre NP y dejarlo vacío?** NP cuenta 0 y pide recuperación. Vacío significa «todavía sin calificar» y no cuenta, salvo cuando su evaluación ya está cerrada (aviso rojo en Revisión de CE).
 
-**Los pesos de Trazabilidad tienen decimales raros.** Se muestran con dos decimales repartidos para que la suma dé exactamente 100,00 %. El cálculo usa los pesos de tu Configuración.
+**Los pesos de Revisión de CE tienen decimales raros.** Se muestran con dos decimales repartidos para que la suma dé exactamente 100,00 %. El cálculo usa los pesos de tu Configuración.
 
 **El mismo examen evalúa CE de dos RA.** Marca el instrumento en ambos RA. La recuperación de ese instrumento se aplica en los dos.
 
 ### Organización
 
-**Doy el mismo módulo a dos grupos.** Crea dos módulos (el segundo puede copiar la configuración del primero). Se distinguen por el curso y grupo de su Configuración; ponles nombres cortos distintos en Ajustes.
+**Doy el mismo módulo a dos grupos.** Crea dos módulos (el segundo puede copiar la configuración del primero). Se distinguen por el curso y grupo de su Configuración; ponles nombres cortos distintos en Ajustes del curso.
 
 **Me incorporo con el curso empezado.** Usa Alumnado → «Faltas por fechas…» para poner las faltas atrasadas de golpe.
 
 **Quiero cambiar de ordenador.** Copia la carpeta del curso entera y en el otro ordenador elige esa carpeta con «Crear mi curso escolar».
 
-**He estropeado algo en los datos.** Copias → «Abrir copia de seguridad…» y elige en «copias del cuaderno» la copia «cuaderno-datos ANTES DE …» o la diaria del día anterior.
+**He estropeado algo en los datos.** Configuración → Copias de seguridad → «Abrir copia de seguridad…» y elige en «copias del cuaderno» la copia «cuaderno-datos ANTES DE …» o la diaria del día anterior.
 
 **Mis compañeros, ¿pueden usar mi copia?** No. Cada copia es personal e intransferible. Pueden descargar la suya gratis en fpulse.eu, sección «Descargas».
 
+**¿Dónde veo qué CE me faltan por programar o evaluar?** En Programación → Trazabilidad: al pie de cada RA salen en rojo los CE que no están en ninguna UD, y en amarillo los que están en una UD pero sin instrumento.
+
+**Una UD trabaja varios RA y las horas no me cuadran.** En Trazabilidad las horas de la UD se reparten entre sus RA según el número de CE de cada uno; al pie de cada RA ves el total.
+
+**Quiero pasar la trazabilidad o el seguimiento a mi programación o a la memoria.** Usa «Exportar a Excel» en esa pantalla y copia desde Excel lo que necesites.
+
+**Un alumno de dual cambia de empresa a mitad de curso.** Abre su ficha en Alumnado → Empresa (dual) y pulsa «＋ Añadir otro periodo». Cada periodo tiene su empresa, tutor y fechas.
+
 **¿FPulse sustituye a Séneca?** No. FPulse te ayuda a calcular y organizar; las notas y faltas oficiales se pasan a Séneca, revisándolas antes.
 
-## 9. Glosario, condiciones y contacto
+## 10. Glosario, condiciones y contacto
 
 ### Glosario
 
@@ -532,7 +609,9 @@ Casi todos los problemas se resuelven eligiendo la carpeta correcta o abriendo F
 | NP | No presentado sin justificar: cuenta 0 |
 | FJ | Falta justificada a una prueba: no cuenta y queda pendiente |
 | NE | No evaluado (pérdida de evaluación continua) |
-| Trazabilidad | Poder seguir cada nota desde el instrumento hasta el CE, el RA y el módulo |
+| Trazabilidad | Poder seguir cada nota desde el instrumento hasta el CE, el RA y el módulo, y cada CE hasta la UD en que se trabaja |
+| UD | Unidad didáctica de la programación |
+| Dual / FFE | Formación en empresa: periodos del alumnado en empresas colaboradoras |
 | ◆ | Marca de alumnado con medidas de diversidad |
 | ABP | Aprendizaje Basado en Proyectos |
 | Coevaluación | Valoración que se hacen entre sí los miembros de un equipo |
@@ -556,6 +635,19 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 - Servicio de configuración: envía la plantilla de la web (o tu programación) a pedrauu@gmail.com con el asunto «Configuración FPulse» y recibirás un código para descargar tus módulos ya configurados en la sección «Descargas». Es gratuito para el docente, pero tiene un coste (IA y revisión): se agradece un donativo.
 - Tutoriales en vídeo: sección «Tutoriales» de fpulse.eu.
 - Dudas y sugerencias: pedrauu@gmail.com. No envíes datos personales del alumnado.
+
+### Novedades por versión
+
+| Versión | Novedades |
+| --- | --- |
+| 1.72 | «Exportar a Excel» en Trazabilidad, Unidades didácticas (con valoraciones), Seguimiento, Indicadores y Empresa (dual) |
+| 1.71 | Horas de cada UD repartidas entre sus RA según los CE; la cobertura de CE pasa a Trazabilidad; dual con varios periodos por alumno e importación desde Excel; copia de prueba con nombre y código personal |
+| 1.70 | Trazabilidad con los instrumentos de cada UD y listado completo de instrumentos con avisos |
+| 1.69 | Programación → Trazabilidad: RA → UD → CE en el aula y en la empresa, con seguimiento de cada UD |
+| 1.68 | Pantalla con 5 secciones y pestañas; Informes en un solo sitio; UD con sus RA, CE e instrumentos; alumnado común a los módulos del mismo curso; calificar dinámicas cooperativas |
+| 1.64 | Valoración del desarrollo de cada UD, con informe para la memoria |
+| 1.63 | Informe individual en PDF; exportar a Excel los pesos de cada instrumento |
+| 1.62 | Estadillo de asistencia y faltas por fechas |
 
 ## LÍMITES DE ESTE ASISTENTE
 - Este asistente solo responde dudas sobre FPulse. No ve tus datos ni tu ordenador.
