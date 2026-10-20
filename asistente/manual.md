@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.72, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.74, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -14,7 +14,7 @@ Manual de FPulse (versión 1.72, octubre 2026) para profesorado de FP: cada apar
 | 2. Instalación en Windows y Mac | Abrir la app y crear el acceso directo |
 | 3. Crear el curso y configurar módulos | RA, CE, pesos, instrumentos, fechas y horario |
 | 4. Alumnado | Listas, contactos, mayores de edad, bajas, diversidad, informes individuales |
-| 5. Día a día | Pasar lista, estadillo, plano del aula, equipos y proyectos, empresa (dual) |
+| 5. Día a día | Pasar lista, estadillo, faltas por fechas, importar faltas, plano del aula, equipos y proyectos, empresa (dual) y actividades sustitutorias |
 | 6. Programación | Diario, unidades didácticas, trazabilidad, seguimiento, material, informes y Excel |
 | 7. Calificación | Calificar, recuperaciones, evaluaciones, boletín y revisión de CE |
 | 8. Datos seguros | Copias, varios ordenadores, versión nueva, curso siguiente, caducidad |
@@ -282,6 +282,20 @@ Para poner o quitar faltas en bloque: por ejemplo, si te incorporas con el curso
 3. Elige si respetas lo ya anotado o lo sustituyes. Verás cuántas horas se van a cambiar.
 4. Pulsa «Aplicar». Antes se guarda una copia de seguridad automática.
 
+### Importar faltas desde Excel o CSV
+
+Para traer las faltas que tienes en otra hoja (por ejemplo, tu hoja de seguimiento de Excel o un listado exportado) sin escribirlas una a una.
+
+1. Hoy → «Importar faltas…» (junto a «Faltas por fechas…», en un día con clase) o Informes → Asistencia → «Importar faltas de Excel o CSV».
+2. Pulsa «Elegir archivo…» y elige un Excel (.xlsx o .xlsm) o un CSV. Sirven dos formas:
+   - **Una fila por falta**: columnas «Alumno/a» (o «Apellidos» y «Nombre») y «Fecha»; si quieres, también «Hora» (nº de hora o sesión), «Código» (F, Fj, R o Rj), «Justificada» (Sí/No), «Horas» (cuántas horas faltó) o «Módulo». «Descargar plantilla» te da un CSV de ejemplo con tu alumnado.
+   - **Cuadrícula**: el alumnado en filas y las fechas como títulos de columna, con F, Fj, R, Rj o el número de horas en cada celda (como la hoja «Registro» de las hojas de seguimiento). Si el libro tiene varias hojas, FPulse usa la que se llame «Registro», «Faltas» o «Asistencia»; si no hay ninguna, la primera.
+3. FPulse reconoce los nombres sin tildes y en cualquier orden («Ana García López» = «García López, Ana»). Las fechas valen como 22/09/2026, 22/09 (año del curso) o fecha de Excel. También entiende «I» (injustificada), «J» (justificada) y celdas como «R/A-» (toma la marca de asistencia).
+4. Sin hora, la falta se pone en todas las horas de clase de ese día; con un número de horas, en las primeras.
+5. Antes de aplicar verás «Qué va a pasar»: horas nuevas, las que cambian, nombres que no coinciden, fechas sin clase (festivo, fin de semana o fuera del calendario) y códigos que no entiende.
+6. Elige si respetas lo ya anotado o lo sustituyes. Si das varios módulos del mismo grupo, puedes marcar «Aplicar también a mis otros módulos…»: la falta de un día se pone en las clases de cada módulo ese día (o, si el archivo tiene columna «Módulo», cada fila va a su módulo).
+7. Pulsa «Importar N hora(s)». Antes se guarda una copia de seguridad automática. Las faltas F y Fj quitan la marca de actitud o deberes de esa hora, igual que al pasar lista.
+
 ### Hoy → Plano del aula (fotos)
 
 - Clic en la foto de un alumno para marcar F, Fj, R, Rj, A+, A−, D+ o D− en la sesión de hoy. Es lo mismo que pasar lista. Doble clic abre su ficha.
@@ -328,7 +342,25 @@ Empresa, tutor o tutora laboral, periodos y seguimientos de cada alumno. Son com
 - Seguimientos: «Añadir seguimiento» (visitas, llamadas, correos, reuniones, valoraciones, incidencias). «Escribir al tutor/a laboral» abre el correo en Gmail al tutor del periodo en curso.
 - **Importar desde Excel**: «Descargar plantilla» te da un archivo con tu alumnado ya puesto. Rellénalo con una fila por periodo (repite el nombre para dar varios periodos) y súbelo con «Importar Excel / CSV» (.xlsx o .csv). Da igual escribir «Apellidos, Nombre» o «Nombre Apellidos». FPulse avisa de los nombres que no reconoce y, si un alumno ya tenía periodos, pregunta si los sustituye o añade los nuevos.
 - «Exportar a Excel» saca los periodos y los seguimientos; ese mismo archivo se puede volver a importar. También se imprime.
-- Muestra las notas de los instrumentos de empresa del módulo (los que llevan FFE, empresa o dual en el nombre).
+- Muestra las notas de los instrumentos de empresa del módulo (los que llevan FFE, empresa o dual en el nombre) y, marcadas con (AS), las de las actividades sustitutorias.
+
+### Situación en la fase en empresa y actividades sustitutorias
+
+Para el alumnado que no hace la fase en empresa o no la completa: por ejemplo, porque no ha superado los RA de prevención de riesgos laborales o los de Itinerario para la Empleabilidad I, porque es repetidor y ya hizo un periodo, porque se interrumpe la fase o porque está exento por experiencia laboral. Ese alumnado adquiere en el centro, con actividades sustitutorias, los RA previstos para la empresa.
+
+1. Alumnado → Empresa (dual) → pulsa el nombre del alumno.
+2. Arriba, en «Situación en la fase en empresa», elige:
+   - «Hace la fase en empresa» (lo normal).
+   - «No va a la empresa: actividades sustitutorias».
+   - «Fase interrumpida o incompleta: sustitutorias de los CE no desarrollados».
+   - «Exento/a de la fase (exención total)» o «Exento/a en parte (exención parcial)».
+3. Elige el «Motivo»: RA de prevención o de Itinerario para la Empleabilidad I no superados (art. 17), sin alta en la Seguridad Social, repetidor con un periodo ya realizado (art. 21.3), interrupción por incumplimiento o circunstancia sobrevenida (art. 24), más del 30 % de faltas por causas justificadas (art. 24.3), la empresa no permite desarrollar algunos CE (art. 29.6), exención (arts. 25 y 26) u otro. Puedes poner la fecha «Desde» y el acuerdo del equipo docente.
+4. En Configuración, crea en la UD de empresa los instrumentos de las actividades sustitutorias con «AS1», «AS2»… o la palabra «sustitutoria» en el nombre, y asígnales los mismos CE que los de la empresa.
+5. Al calificar:
+   - Los instrumentos AS solo se califican al alumnado con una situación distinta de «Hace la fase»; al resto le salen desactivados.
+   - A quien «No va a la empresa» o está «Exento/a» del todo dejan de contarle el informe y el cuaderno de la empresa (salen desactivados).
+   - Con la fase incompleta o la exención parcial cuentan los dos: cada CE con lo que tenga calificado.
+   - La situación es la misma en todos los módulos del alumno y se ve en Calificar con una etiqueta junto a su nombre y en la columna «Situación» de Empresa (dual).
 
 ## 6. Programación
 
@@ -421,6 +453,8 @@ Tú pones notas de 0 a 10 por CE en cada instrumento; FPulse calcula la nota de 
 | NP | No presentado sin justificar | Cuenta 0 y pide recuperación |
 | FJ | Faltó con justificación | No cuenta; queda como prueba pendiente hasta que pongas la nota de la nueva prueba |
 | Vacío | Aún sin calificar | No cuenta |
+
+Fase en empresa: si un alumno hace actividades sustitutorias (ver «Situación en la fase en empresa y actividades sustitutorias» en el apartado 5), las casillas de los instrumentos que no le corresponden salen desactivadas y no cuentan en su nota.
 
 Notas desde Google Classroom: «Importar de Classroom…». En Classroom descarga las calificaciones de la clase o de una tarea como CSV y elígelo. Antes de cambiar nada verás qué notas entran y cuáles cambian; confirma con «Importar N nota(s)».
 
@@ -640,6 +674,8 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.74 | Importar faltas desde Excel o CSV (una fila por falta o cuadrícula alumnado × fechas), con vista previa, copia de seguridad y opción de aplicarlas a los otros módulos del grupo |
+| 1.73 | Situación de cada alumno en la fase en empresa (no va, fase incompleta, exento) con su motivo, y calificación con los instrumentos de actividades sustitutorias (AS) |
 | 1.72 | «Exportar a Excel» en Trazabilidad, Unidades didácticas (con valoraciones), Seguimiento, Indicadores y Empresa (dual) |
 | 1.71 | Horas de cada UD repartidas entre sus RA según los CE; la cobertura de CE pasa a Trazabilidad; dual con varios periodos por alumno e importación desde Excel; copia de prueba con nombre y código personal |
 | 1.70 | Trazabilidad con los instrumentos de cada UD y listado completo de instrumentos con avisos |
