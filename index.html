@@ -343,7 +343,7 @@ footer a{color:var(--ink2)}
       </div>
       <div id="dlOk" hidden>
         <p class="dlHola" id="dlHola"></p>
-        <button class="btn pri" type="button" id="dlBtn">⬇ Descargar FPulse 1.74</button>
+        <button class="btn pri" type="button" id="dlBtn" data-ver="1.74">⬇ Descargar FPulse 1.74</button>
         <p class="dlNota" id="dlMsg">Se descarga un único archivo .html. Ábrelo con Chrome o Edge y sigue la <a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">guía de instalación</a>.</p>
         <div class="dlCod">
           <h3>¿Tienes un código de configuración?</h3>
@@ -566,7 +566,8 @@ const TUTORIALES = [
       if (r.status === 401) return caducado();
       if (!r.ok){ const d = await r.json().catch(() => ({})); throw new Error(d.error || 'No se ha podido descargar.'); }
       const cd = r.headers.get('Content-Disposition') || '', mm = cd.match(/filename\*=UTF-8''([^;]+)/);
-      guardarArchivo(await r.blob(), mm ? decodeURIComponent(mm[1]) : 'FPulse.html');
+      const verWeb = (($('dlBtn').dataset.ver) || '').trim(), nomArch = mm ? decodeURIComponent(mm[1]) : 'FPulse.html';
+      guardarArchivo(await r.blob(), verWeb ? nomArch.replace(/^FPulse \d+(\.\d+)+/, 'FPulse ' + verWeb) : nomArch); // la versión del nombre la marca la web
       b.textContent = '✓ Descargado · volver a descargar';
     } catch(x){ alertar(x.message); b.textContent = txt; } b.disabled = false; }
   const alertar = s => { $('dlMsg').innerHTML = '<span style="color:#c03535">' + s.replace(/[<>&]/g, '') + '</span>'; };
