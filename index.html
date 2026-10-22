@@ -99,6 +99,16 @@ section.alt .card,section.alt .step,section.alt .ver,section.alt details{backgro
 .card .ic svg{width:24px;height:24px}
 .card h3{font-size:17px;margin-bottom:6px}
 .card p{margin:0;color:var(--ink2);font-size:15px}
+/* actualizar */
+.updBar{display:block;text-align:center;padding:12px 16px;background:linear-gradient(90deg,var(--teal),var(--teal-d));color:#fff;font-size:16px;text-decoration:none;font-weight:500}
+.updBar b{text-decoration:underline;text-underline-offset:3px}
+.updBar:hover{filter:brightness(1.08)}
+nav a.navUpd{color:var(--teal-d);font-weight:700}
+#actualizar{border-top:4px solid var(--teal)}
+#actualizar .steps .step h3{font-size:18px} #actualizar .steps .step p{font-size:16px}
+#actualizar .step::before{background:var(--teal)}
+.updAviso{margin:22px 0 0;padding:14px 18px;border-radius:var(--r);border:2px solid #e0a020;background:rgba(224,160,32,.12);font-size:16px}
+.updCta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 /* pasos */
 .steps{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .step{position:relative;padding:22px 22px 22px 70px;border:1px solid var(--line);border-radius:var(--r);background:var(--panel)}
@@ -226,12 +236,14 @@ footer a{color:var(--ink2)}
       <a href="#configuracion">Configuración</a>
       <a href="#donativos">Colabora</a>
       <a href="#novedades">Novedades</a>
+      <a class="navUpd" href="#actualizar">Actualizar</a>
       <a class="btn pri" href="#descargas">Descargar</a>
     </nav>
   </div>
 </header>
 
 <main>
+<a class="updBar" href="#actualizar">🔄 ¿Ya usas FPulse? <b>Actualiza a la versión nueva en 3 pasos</b> →</a>
 <section class="hero">
   <div class="wrap">
     <div>
@@ -258,6 +270,23 @@ footer a{color:var(--ink2)}
     </div>
   </div>
   <svg class="pulse" viewBox="0 0 1200 90" preserveAspectRatio="none"><polyline fill="none" stroke="#16c2a3" stroke-width="3" points="0,60 380,60 420,60 440,20 465,85 490,10 515,60 1200,60"/></svg>
+</section>
+
+<section id="actualizar">
+  <div class="wrap">
+    <div class="head"><h2>🔄 ¿Ya usas FPulse? Actualiza en 3 pasos</h2><p>Tus notas, faltas y diario no están en el programa, sino en tu carpeta de datos. Cambias el programa y tus datos siguen ahí.</p></div>
+    <div class="steps">
+      <div class="step"><h3>Descarga la versión nueva</h3><p>Ve a <a href="#descargas">Descargas</a> y regístrate con <b>el mismo correo de siempre</b>. Si ya tienes acceso, el botón de descarga sale al momento. <b>No necesitas ningún código.</b></p></div>
+      <div class="step"><h3>Guárdala junto a la anterior</h3><p>Pon el archivo nuevo en la carpeta donde tienes FPulse.<br><b>Windows:</b> vuelve a hacer doble clic en «Crear acceso directo FPulse» y el icono del Escritorio abrirá la nueva.<br><b>Mac:</b> abre a partir de ahora el archivo nuevo (si le pusiste el icono, pónselo también a este).</p></div>
+      <div class="step"><h3>Ábrela y elige tu carpeta de siempre</h3><p>Al abrirla, elige la <b>misma carpeta de datos</b> que usabas. Todo aparece como lo dejaste. Cuando compruebes que va bien, borra el archivo antiguo.</p></div>
+    </div>
+    <p class="updAviso">⚠️ <b>Nunca borres tu carpeta de datos</b> (la que tiene «cuaderno-datos.json»). El programa se puede cambiar; tus datos no.</p>
+    <div class="updCta">
+      <a class="btn pri" href="#descargas">⬇ Ir a Descargas</a>
+      <a class="btn sec" href="#tutorial-version">▶ Ver el vídeo (46 s)</a>
+      <a class="btn sec" href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">📄 Guía en PDF</a>
+    </div>
+  </div>
 </section>
 
 <section class="tut" id="tutoriales">
@@ -565,6 +594,7 @@ const TUTORIALES = [
   v.addEventListener('ended', () => { if (act < L.length - 1) setTimeout(() => ir(act + 1, true), 900); });
   const h = (location.hash.match(/^#tutorial-(.+)$/) || [])[1], ini = Math.max(0, L.findIndex(x => x.id === h));
   ir(ini, false); if (h) document.getElementById('tutoriales').scrollIntoView();
+  addEventListener('hashchange', () => { const k = (location.hash.match(/^#tutorial-(.+)$/) || [])[1], j = L.findIndex(x => x.id === k); if (j >= 0) { ir(j, true); document.getElementById('tutoriales').scrollIntoView({ behavior: 'smooth' }); } });
   // reproduce en silencio cuando el reproductor entra en pantalla
   new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && v.paused && !v.dataset.ya){ v.dataset.ya = 1; v.play().catch(() => {}); } }), { threshold: .5 }).observe(v);
 })();
