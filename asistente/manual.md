@@ -63,7 +63,7 @@ FPulse no se instala: basta con guardar el archivo .html en una carpeta y abrirl
 
 ### Primera vez
 
-1. Entra en fpulse.eu, sección «Descargas». Regístrate una sola vez (nombre, correo y centro) y pulsa «Descargar FPulse». Se descarga tu copia personal, con tu nombre dentro. Allí tienes también el manual en PDF, la guía de instalación y los archivos del acceso directo.
+1. Entra en fpulse.eu, sección «Descargas». Regístrate una sola vez (nombre, correo y centro) con «Enviar solicitud de descarga». El autor revisa cada solicitud a mano (normalmente en uno o dos días); cuando esté aprobada, vuelve a «Descargas» en el mismo navegador y pulsa «Descargar FPulse». Se descarga tu copia personal, con tu nombre dentro. Allí tienes también el manual en PDF, la guía de instalación y los archivos del acceso directo.
 2. Muévelo de «Descargas» a una carpeta tuya, por ejemplo «Documentos › FPulse».
 3. Clic derecho sobre el archivo → «Abrir con» → «Google Chrome» o «Microsoft Edge».
 4. Lee las condiciones de uso y pulsa «Aceptar y continuar». Si pulsas «No acepto», la app no se abre.
@@ -665,7 +665,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 - FPulse lo crea y mantiene Pedro Serrano Hermoso, profesor de FP. Es una herramienta independiente, no oficial, y una obra registrada.
 - FPulse es gratuito. Quien quiera colaborar con el dominio, la web y el mantenimiento puede hacer un donativo voluntario por PayPal en [paypal.me/PedroSerrano21](https://paypal.me/PedroSerrano21).
-- Se descarga gratis en [fpulse.eu](https://fpulse.eu), sección «Descargas», tras un registro sencillo (nombre, correo y centro). Cada copia lleva el nombre de su titular y funciona hasta el 30/09/2027.
+- Se descarga gratis en [fpulse.eu](https://fpulse.eu), sección «Descargas», tras un registro sencillo (nombre, correo y centro) y la aprobación de la solicitud por el autor (normalmente en uno o dos días). Cada copia lleva el nombre de su titular y funciona hasta el 30/09/2027.
 - Servicio de configuración: envía la plantilla de la web (o tu programación) a pedrauu@gmail.com con el asunto «Configuración FPulse» y recibirás un código para descargar tus módulos ya configurados en la sección «Descargas». Es gratuito para el docente, pero tiene un coste (IA y revisión): se agradece un donativo.
 - Tutoriales en vídeo: sección «Tutoriales» de fpulse.eu.
 - Dudas y sugerencias: pedrauu@gmail.com. No envíes datos personales del alumnado.

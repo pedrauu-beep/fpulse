@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Solicitudes de descarga · FPulse</title>
+<link rel="icon" href="fpulse-icono.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b2d62;--blue:#1a6fb0;--teal:#0e9c83;--red:#c03535;--amber:#b7791f;--ink:#122033;--ink2:#46566b;--line:#dbe4ee;--bg:#f5f8fb;--panel:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--ink:#e8eef6;--ink2:#a9b7c8;--line:#26364b;--bg:#0c1522;--panel:#132033;--blue:#6fb3ea;--teal:#3fd1b5;--red:#ff8f8f;--amber:#f2c060}}
+:root[data-theme="dark"]{--ink:#e8eef6;--ink2:#a9b7c8;--line:#26364b;--bg:#0c1522;--panel:#132033;--blue:#6fb3ea;--teal:#3fd1b5;--red:#ff8f8f;--amber:#f2c060}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 Inter,system-ui,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 60px}
+header{display:flex;align-items:center;gap:10px;font:700 18px Montserrat,sans-serif}
+header img{width:32px;height:32px}
+h1{font:700 26px/1.2 Montserrat,sans-serif;margin:22px 0 4px}
+.muted{color:var(--ink2);font-size:13.5px}
+form.login{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+input[type=password],input[type=search]{flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font:inherit}
+button{font:600 14px Inter,sans-serif;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+button.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+button.ok{border-color:var(--teal);color:var(--teal)} button.no{border-color:var(--red);color:var(--red)}
+button:disabled{opacity:.5;cursor:default}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:18px 0 10px}
+.tabs button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.err{color:var(--red);min-height:1.3em;margin:6px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.card .who{flex:1;min-width:220px}
+.card b{font-size:15.5px} .card .c{word-break:break-all}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:99px;border:1px solid currentColor;margin-left:6px}
+.pendiente{color:var(--amber)} .aprobado{color:var(--teal)} .rechazado{color:var(--red)} .chat{color:var(--ink2)}
+.acts{display:flex;gap:6px;flex-wrap:wrap}
+.vacio{color:var(--ink2);padding:18px 0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="fpulse-icono.svg" alt="">FPulse</header>
+  <h1>Solicitudes de descarga</h1>
+  <p class="muted">Solo para el autor. Las personas aprobadas pueden descargar su copia desde fpulse.eu › Descargas; las demás ven que su solicitud está pendiente o no aprobada.</p>
+
+  <form class="login" id="login">
+    <input type="password" id="clave" placeholder="Contraseña de administrador" autocomplete="current-password" required>
+    <button class="pri" type="submit">Entrar</button>
+  </form>
+  <div class="err" id="err"></div>
+
+  <div id="panel" hidden>
+    <div class="bar">
+      <input type="search" id="buscar" placeholder="Buscar por nombre, correo o centro">
+      <button type="button" id="recargar">↻ Actualizar</button>
+      <button type="button" id="salir">Salir</button>
+    </div>
+    <div class="tabs" id="tabs"></div>
+    <div id="lista"></div>
+  </div>
+</div>
+<script>
+(() => {
+  const U = 'https://fpulse-asistente.pedrauu.workers.dev', $ = id => document.getElementById(id);
+  const SS = { get: k => { try { return sessionStorage.getItem(k); } catch(e){ return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch(e){} }, del: k => { try { sessionStorage.removeItem(k); } catch(e){} } };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fecha = s => { if (!s) return ''; const d = new Date(s); return isNaN(d) ? '' : d.toLocaleString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' }); };
+  const ESTADOS = [['pendiente', 'Pendientes'], ['aprobado', 'Aprobados'], ['rechazado', 'Rechazados'], ['chat', 'Solo asistente']];
+  let clave = SS.get('fpAdm') || '', regs = [], filtro = 'pendiente';
+
+  async function post(b){
+    const r = await fetch(U, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...b, clave }) });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) throw Object.assign(new Error(d.error || 'Error ' + r.status), { status: r.status });
+    return d;
+  }
+  async function cargar(){
+    $('err').textContent = '';
+    try { const d = await post({ accion: 'admin_lista' }); regs = d.registros || []; SS.set('fpAdm', clave);
+      $('login').hidden = true; $('panel').hidden = false; pintar();
+    } catch(x){ $('err').textContent = x.message; if (x.status === 401){ clave = ''; SS.del('fpAdm'); $('login').hidden = false; $('panel').hidden = true; } }
+  }
+  function pintar(){
+    const n = e => regs.filter(r => (r.estado || 'chat') === e).length;
+    $('tabs').innerHTML = ESTADOS.map(([e, t]) => `<button type="button" data-e="${e}" aria-pressed="${e === filtro}">${t} (${n(e)})</button>`).join('');
+    const q = $('buscar').value.trim().toLowerCase();
+    const l = regs.filter(r => (r.estado || 'chat') === filtro && (!q || [r.nombre, r.correo, r.centro].join(' ').toLowerCase().includes(q)))
+      .sort((a, b) => String(b.ultimo || b.fecha).localeCompare(String(a.ultimo || a.fecha)));
+    $('lista').innerHTML = l.length ? l.map(r => { const e = r.estado || 'chat';
+      return `<div class="card"><div class="who"><b>${esc(r.nombre) || '(sin nombre)'}</b><span class="chip ${e}">${esc(e)}</span><br>
+        <span class="c">${esc(r.correo)}</span> · ${esc(r.centro) || '<span class="muted">sin centro</span>'}<br>
+        <span class="muted">Registro: ${fecha(r.fecha)}${r.decidido ? ' · Decidido: ' + fecha(r.decidido) : ''}${r.nota ? ' · ' + esc(r.nota) : ''}${r.avisos ? ' · quiere avisos' : ''}</span></div>
+        <div class="acts" data-c="${esc(r.correo)}">
+          ${e !== 'aprobado' ? '<button class="ok" data-a="aprobado">✓ Aprobar</button>' : ''}
+          ${e !== 'rechazado' ? '<button class="no" data-a="rechazado">✕ Rechazar</button>' : ''}
+          ${e === 'aprobado' || e === 'rechazado' ? '<button data-a="pendiente">Volver a pendiente</button>' : ''}
+          <button data-a="borrar" title="Borra el registro (por ejemplo, si lo pide la persona)">Borrar</button>
+        </div></div>`; }).join('') : '<p class="vacio">No hay registros en esta lista.</p>';
+  }
+  $('login').onsubmit = e => { e.preventDefault(); clave = $('clave').value; $('clave').value = ''; cargar(); };
+  $('tabs').onclick = e => { const b = e.target.closest('button'); if (b){ filtro = b.dataset.e; pintar(); } };
+  $('buscar').oninput = pintar;
+  $('recargar').onclick = cargar;
+  $('salir').onclick = () => { clave = ''; SS.del('fpAdm'); regs = []; $('panel').hidden = true; $('login').hidden = false; };
+  $('lista').onclick = async e => {
+    const b = e.target.closest('button[data-a]'); if (!b) return;
+    const correo = b.parentElement.dataset.c, a = b.dataset.a;
+    if (a === 'borrar' && !confirm('¿Borrar el registro de ' + correo + '? No se puede deshacer.')) return;
+    b.parentElement.querySelectorAll('button').forEach(x => x.disabled = true); $('err').textContent = '';
+    try {
+      if (a === 'borrar'){ await post({ accion: 'admin_borrar', correo }); regs = regs.filter(r => r.correo !== correo); }
+      else { const d = await post({ accion: 'admin_decidir', correo, estado: a }); regs = regs.map(r => r.correo === correo ? d.registro : r); }
+      pintar();
+    } catch(x){ $('err').textContent = x.message; pintar(); }
+  };
+  if (clave) cargar();
+})();
+</script>
+</body>
+</html>

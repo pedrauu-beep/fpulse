@@ -316,7 +316,7 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <div class="head"><h2>Cómo empezar</h2><p>Configuras el módulo una vez con tu programación y a partir de ahí solo pones notas.</p></div>
     <div class="steps">
-      <div class="step"><h3>Descarga tu copia</h3><p>Regístrate en <a href="#descargas">Descargas</a> (un minuto) y baja al momento tu copia personal, gratis.</p></div>
+      <div class="step"><h3>Descarga tu copia</h3><p>Regístrate en <a href="#descargas">Descargas</a> (un minuto). Cuando se apruebe tu solicitud, bajas tu copia personal, gratis.</p></div>
       <div class="step"><h3>Crea tu curso escolar</h3><p>Abre el archivo con Chrome o Edge y elige la carpeta donde se guardará todo.</p></div>
       <div class="step"><h3>Configura tus módulos</h3><p>RA y su ponderación y CE con su peso (también desde CSV). Después, en cada unidad didáctica, sus CE y sus instrumentos.</p></div>
       <div class="step"><h3>Califica y evalúa</h3><p>Pon las notas por CE y FPulse calcula RA, evaluaciones y finales. La guía de uso está dentro de la app.</p></div>
@@ -329,7 +329,7 @@ footer a{color:var(--ink2)}
     <div class="big">
       <span class="eyebrow">Descargas</span>
       <h2>Descarga FPulse</h2>
-      <p>FPulse 1.74 para Windows y Mac. Regístrate una sola vez y descarga al momento tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
+      <p>FPulse 1.74 para Windows y Mac. Regístrate una sola vez y, cuando el autor apruebe tu solicitud (normalmente en uno o dos días), descarga tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
       <div id="dlReg">
         <form id="dlForm" class="dlForm">
           <input type="text" id="dlN" placeholder="Nombre y apellidos" maxlength="80" autocomplete="name" required>
@@ -338,11 +338,12 @@ footer a{color:var(--ink2)}
           <label class="ck"><input type="checkbox" id="dlA" required> <span>Acepto las <a href="#" class="js-cond">condiciones de uso</a> y que mi nombre, correo y centro se guarden para dar acceso a las descargas y al asistente y contactar conmigo sobre FPulse (<a href="legal.html#privacidad" target="_blank">privacidad</a>).</span></label>
           <label class="ck"><input type="checkbox" id="dlV" checked> <span>Quiero recibir avisos de nuevas versiones.</span></label>
           <div class="dlErr" id="dlErr"></div>
-          <button class="btn pri" type="submit">Registrarme y descargar</button>
+          <button class="btn pri" type="submit">Enviar solicitud de descarga</button>
         </form>
       </div>
       <div id="dlOk" hidden>
         <p class="dlHola" id="dlHola"></p>
+        <p class="dlNota" id="dlPend" hidden></p>
         <button class="btn pri" type="button" id="dlBtn" data-ver="1.74">⬇ Descargar FPulse 1.74</button>
         <p class="dlNota" id="dlMsg">Se descarga un único archivo .html. Ábrelo con Chrome o Edge y sigue la <a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">guía de instalación</a>.</p>
         <div class="dlCod">
@@ -552,18 +553,28 @@ const TUTORIALES = [
   const LS = { get: k => { try { return localStorage.getItem(k); } catch(e){ return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch(e){} }, del: k => { try { localStorage.removeItem(k); } catch(e){} } };
   const post = b => fetch(U, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) });
   const guardarArchivo = (blob, nombre) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 4000); };
-  const pintar = () => { const p = LS.get('fpBotPase'), n = LS.get('fpBotNombre') || '';
-    $('dlReg').hidden = !!p; $('dlOk').hidden = !p; if (p) $('dlHola').textContent = '¡Hola' + (n ? ', ' + n.split(' ')[0] : '') + '! Ya puedes descargar tu copia de FPulse.'; };
+  // estado de la solicitud: aprobado → botón de descarga; pendiente / rechazado → aviso (la aprobación la da el autor a mano)
+  const pintar = est => { const p = LS.get('fpBotPase'), n = LS.get('fpBotNombre') || '', ok = est === 'aprobado';
+    $('dlReg').hidden = !!p; $('dlOk').hidden = !p; if (!p) return;
+    const hola = '¡Hola' + (n ? ', ' + n.split(' ')[0] : '') + '! ';
+    $('dlHola').textContent = hola + (ok ? 'Ya puedes descargar tu copia de FPulse.' : est === 'rechazado' ? 'Tu solicitud de descarga no se ha aprobado.' : est ? 'Hemos recibido tu solicitud de descarga.' : 'Comprobando tu solicitud…');
+    $('dlBtn').hidden = !ok; $('dlMsg').hidden = !ok;
+    $('dlPend').hidden = ok || !est; $('dlPend').textContent = est === 'rechazado' ? 'Si crees que es un error, escribe a pedrauu@gmail.com.' : 'Está pendiente de aprobación. Cuando el autor la revise (normalmente en uno o dos días), vuelve a esta página: aquí te aparecerá el botón de descarga. Mientras, puedes usar el asistente.'; };
+  const comprobar = async () => { if (!LS.get('fpBotPase')) return pintar();
+    pintar(''); try { const r = await post({ accion: 'estado', pase: LS.get('fpBotPase') });
+      if (r.status === 401) return caducado(); const d = await r.json().catch(() => ({})); pintar(d.estado || 'pendiente');
+    } catch(x){ pintar('pendiente'); } };
   const caducado = () => { LS.del('fpBotPase'); pintar(); $('dlErr').textContent = 'Tu registro ha caducado. Vuelve a registrarte, por favor.'; };
   $('dlForm').onsubmit = async e => { e.preventDefault(); const b = e.target.querySelector('button'); b.disabled = true; $('dlErr').textContent = '';
     try { const r = await post({ accion: 'registro', nombre: $('dlN').value, correo: $('dlC').value, centro: $('dlE').value, acepta: $('dlA').checked, avisos: $('dlV').checked });
       const d = await r.json().catch(() => ({}));
       if (!r.ok || !d.pase){ $('dlErr').textContent = d.error || 'No se ha podido completar el registro.'; b.disabled = false; return; }
-      LS.set('fpBotPase', d.pase); LS.set('fpBotNombre', d.nombre || ''); pintar(); descargar();
+      LS.set('fpBotPase', d.pase); LS.set('fpBotNombre', d.nombre || ''); pintar(d.estado || 'pendiente'); if (d.estado === 'aprobado') descargar();
     } catch(x){ $('dlErr').textContent = 'Sin conexión. Revisa tu internet e inténtalo de nuevo.'; } b.disabled = false; };
   async function descargar(){ const b = $('dlBtn'), m = $('dlMsg'), txt = b.textContent; b.disabled = true; b.textContent = 'Preparando tu copia…';
     try { const r = await post({ accion: 'descarga', pase: LS.get('fpBotPase') });
       if (r.status === 401) return caducado();
+      if (r.status === 403){ const d = await r.json().catch(() => ({})); b.textContent = txt; b.disabled = false; return pintar(d.estado || 'pendiente'); }
       if (!r.ok){ const d = await r.json().catch(() => ({})); throw new Error(d.error || 'No se ha podido descargar.'); }
       const cd = r.headers.get('Content-Disposition') || '', mm = cd.match(/filename\*=UTF-8''([^;]+)/);
       const verWeb = (($('dlBtn').dataset.ver) || '').trim(), nomArch = mm ? decodeURIComponent(mm[1]) : 'FPulse.html';
@@ -582,7 +593,7 @@ const TUTORIALES = [
     } catch(x){ $('dlCodErr').textContent = 'Sin conexión. Inténtalo de nuevo.'; } b.disabled = false; };
   $('dlSalir').onclick = e => { e.preventDefault(); LS.del('fpBotPase'); LS.del('fpBotNombre'); pintar(); };
   document.querySelectorAll('.js-cond').forEach(a => a.onclick = e => { e.preventDefault(); window.open('legal.html#aviso', '_blank'); });
-  pintar();
+  comprobar();
 })();
 </script>
 <!-- ===== Asistente FPulse (chat) ===== -->
@@ -665,7 +676,7 @@ const TUTORIALES = [
     f.onsubmit = async e => { e.preventDefault(); const b = f.querySelector('button'), err = f.querySelector('#fpRegErr'); b.disabled = true; err.textContent = '';
       try { const r = await fetch(URL_ASISTENTE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'registro',
           nombre: f.querySelector('#fpRn').value, correo: f.querySelector('#fpRc').value, centro: f.querySelector('#fpRe').value,
-          acepta: f.querySelector('#fpRa').checked, avisos: f.querySelector('#fpRv').checked }) });
+          acepta: f.querySelector('#fpRa').checked, avisos: f.querySelector('#fpRv').checked, origen: 'chat' }) });
         const d = await r.json().catch(() => ({}));
         if (!r.ok || !d.pase){ err.textContent = d.error || 'No se ha podido completar el registro. Inténtalo de nuevo.'; b.disabled = false; return; }
         pase = d.pase; quien = d.nombre || ''; LS.set('fpBotPase', pase); LS.set('fpBotNombre', quien); pintar(); setTimeout(() => inp.focus(), 50);
