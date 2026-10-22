@@ -35,6 +35,9 @@ button:disabled{opacity:.5;cursor:default}
 .acts{display:flex;gap:6px;flex-wrap:wrap}
 .vacio{color:var(--ink2);padding:18px 0}
 .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.alta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:14px 0}
+.alta summary{cursor:pointer;font-weight:600}
+.alta textarea{width:100%;margin:8px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif}
 </style>
 </head>
 <body>
@@ -55,6 +58,12 @@ button:disabled{opacity:.5;cursor:default}
       <button type="button" id="recargar">↻ Actualizar</button>
       <button type="button" id="salir">Salir</button>
     </div>
+    <details class="alta" id="alta">
+      <summary>➕ Dar acceso a correos (por ejemplo, participantes del piloto)</summary>
+      <p class="muted">Uno por línea: solo el correo, o «Nombre y apellidos; correo». Quedan aprobados: al registrarse en Descargas con ese correo, descargan al momento.</p>
+      <textarea id="altaTxt" rows="6" placeholder="José Alcalá Zambrana; jose@ejemplo.es&#10;eva@ejemplo.es"></textarea>
+      <div class="bar"><button class="pri" type="button" id="altaBtn">Dar acceso</button><span class="muted" id="altaMsg"></span></div>
+    </details>
     <div class="tabs" id="tabs"></div>
     <div id="lista"></div>
   </div>
@@ -113,6 +122,19 @@ button:disabled{opacity:.5;cursor:default}
       pintar();
     } catch(x){ $('err').textContent = x.message; pintar(); }
   };
+  $('altaBtn').onclick = async () => {
+    const lista = $('altaTxt').value.split(/\n+/).map(l => l.trim()).filter(Boolean).map(l => {
+      const m = l.split(/[;\t]/).map(s => s.trim()); const c = m.find(s => s.includes('@')) || m[0];
+      return { correo: c.replace(/^<|>$/g, ''), nombre: m.filter(s => s !== c).join(' ') };
+    });
+    if (!lista.length){ $('altaMsg').textContent = 'Escribe al menos un correo.'; return; }
+    $('altaBtn').disabled = true; $('altaMsg').textContent = 'Guardando…';
+    try { const d = await post({ accion: 'admin_prealta', lista });
+      for (const r of d.hechos){ const i = regs.findIndex(x => x.correo === r.correo); if (i >= 0) regs[i] = r; else regs.push(r); }
+      $('altaMsg').textContent = '✓ ' + d.hechos.length + ' con acceso.' + (d.malos.length ? ' Revisa: ' + d.malos.join(', ') : '');
+      if (!d.malos.length) $('altaTxt').value = ''; filtro = 'aprobado'; pintar();
+    } catch(x){ $('altaMsg').textContent = x.message; }
+    $('altaBtn').disabled = false; };
   if (clave) cargar();
 })();
 </script>
