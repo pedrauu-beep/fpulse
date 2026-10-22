@@ -73,7 +73,7 @@ FPulse no se instala: basta con guardar el archivo .html en una carpeta y abrirl
 
 **Windows**
 
-1. En la carpeta que te envió el autor hay un archivo «Crear acceso directo FPulse.bat» y el icono «fpulse-icono.ico».
+1. Descarga «Crear acceso directo FPulse.bat» y el icono «fpulse-icono.ico» de fpulse.eu, sección «Descargas» (aparecen en «Siguiente paso» nada más descargar FPulse y en «Documentación y extras»).
 2. Ponlos en la misma carpeta que el archivo de FPulse.
 3. Haz doble clic en «Crear acceso directo FPulse.bat». Si Windows avisa de que es un archivo desconocido, pulsa «Más información» → «Ejecutar de todas formas».
 4. Aparece en el escritorio un icono «FPulse» que abre la app con Chrome o Edge.

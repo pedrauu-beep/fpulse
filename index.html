@@ -206,6 +206,10 @@ footer a{color:var(--ink2)}
 .dlLista{margin:6px 0 0;padding-left:18px;font-size:14.5px} .dlLista li{margin:4px 0}
 #descargas .big .ck,#descargas .dlNota,#descargas .dlCod p,#descargas .dlPasos{color:#d6e2f2}
 #descargas .dlCod{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff}
+#descargas .dlSig{margin:16px 0;padding:14px 16px;border-radius:14px;border:1px solid #16c2a3;background:rgba(22,194,163,.12);color:#fff;text-align:left}
+#descargas .dlSig h3{margin:0 0 6px;font-size:17px} #descargas .dlSig p,#descargas .dlSig li{color:#d6e2f2;margin:4px 0}
+#descargas .dlSig ol{padding-left:20px;margin:6px 0} #descargas .dlSig a{color:#9fe8da} #descargas .dlSig .btn{margin:4px 6px 4px 0;padding:6px 14px;font-size:14px;color:#0b2d62;background:#9fe8da;border-color:#9fe8da;text-decoration:none}
+#descargas .dlSig li::before{content:none!important;display:none!important} #descargas .dlSig ol{list-style:decimal} #descargas .dlSig li{padding-left:2px}
 #descargas .big .dlErr{color:#ffb8b8} #descargas .dlOtro a{color:#b9cbe3}
 </style>
 </head>
@@ -346,6 +350,25 @@ footer a{color:var(--ink2)}
         <p class="dlNota" id="dlPend" hidden></p>
         <button class="btn pri" type="button" id="dlBtn" data-ver="1.74">⬇ Descargar FPulse 1.74</button>
         <p class="dlNota" id="dlMsg">Se descarga un único archivo .html. Ábrelo con Chrome o Edge y sigue la <a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">guía de instalación</a>.</p>
+        <div class="dlSig" id="dlSig" hidden>
+          <h3>Siguiente paso: el acceso directo</h3>
+          <div id="dlSigWin">
+            <p>Para abrir FPulse con su icono desde el escritorio:</p>
+            <ol>
+              <li>Descarga estos dos archivos: <a class="btn sec" href="descargas/Crear%20acceso%20directo%20FPulse.bat" download>Acceso directo (.bat)</a> <a class="btn sec" href="descargas/fpulse-icono.ico" download>Icono (.ico)</a></li>
+              <li>Ponlos en la <b>misma carpeta</b> que el archivo de FPulse que acabas de descargar (por ejemplo, «Documentos › FPulse»).</li>
+              <li>Haz doble clic en «Crear acceso directo FPulse.bat». Si Windows avisa, pulsa «Más información» → «Ejecutar de todas formas».</li>
+            </ol>
+          </div>
+          <div id="dlSigMac" hidden>
+            <p>Para tener FPulse con su icono en el Mac:</p>
+            <ol>
+              <li>Descarga el icono: <a class="btn sec" href="descargas/fpulse-icono.png" download>Icono (.png)</a></li>
+              <li>Sigue el apartado «Acceso directo» de la guía de instalación.</li>
+            </ol>
+          </div>
+          <p><a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">📄 Guía de instalación paso a paso (PDF)</a> · <a href="#" id="dlOtroSO">¿Usas otro ordenador?</a></p>
+        </div>
         <div class="dlCod">
           <h3>¿Tienes un código de configuración?</h3>
           <p>Si has usado el <a href="#configuracion">servicio de configuración</a>, escribe el código que te hemos enviado y descarga tus módulos ya preparados.</p>
@@ -579,10 +602,14 @@ const TUTORIALES = [
       const cd = r.headers.get('Content-Disposition') || '', mm = cd.match(/filename\*=UTF-8''([^;]+)/);
       const verWeb = (($('dlBtn').dataset.ver) || '').trim(), nomArch = mm ? decodeURIComponent(mm[1]) : 'FPulse.html';
       guardarArchivo(await r.blob(), verWeb ? nomArch.replace(/^FPulse \d+(\.\d+)+/, 'FPulse ' + verWeb) : nomArch); // la versión del nombre la marca la web
-      b.textContent = '✓ Descargado · volver a descargar';
+      b.textContent = '✓ Descargado · volver a descargar'; sigPaso();
     } catch(x){ alertar(x.message); b.textContent = txt; } b.disabled = false; }
   const alertar = s => { $('dlMsg').innerHTML = '<span style="color:#c03535">' + s.replace(/[<>&]/g, '') + '</span>'; };
   $('dlBtn').onclick = descargar;
+  // tras la descarga: acceso directo según el ordenador (Windows o Mac)
+  let esMac = /Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent || '');
+  const sigPaso = () => { $('dlSig').hidden = false; $('dlSigWin').hidden = esMac; $('dlSigMac').hidden = !esMac; };
+  $('dlOtroSO').onclick = e => { e.preventDefault(); esMac = !esMac; sigPaso(); };
   $('dlCodF').onsubmit = async e => { e.preventDefault(); $('dlCodErr').textContent = ''; const b = e.target.querySelector('button'); b.disabled = true;
     try { const r = await post({ accion: 'configurada', pase: LS.get('fpBotPase'), codigo: $('dlCod').value });
       if (r.status === 401) return caducado();
