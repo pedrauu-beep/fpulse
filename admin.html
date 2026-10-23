@@ -37,6 +37,7 @@ button:disabled{opacity:.5;cursor:default}
 .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .alta{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:14px 0}
 .alta summary{cursor:pointer;font-weight:600}
+.alta .op{display:flex;gap:16px;flex-wrap:wrap;margin:8px 0 0} .alta .op label{display:flex;gap:6px;align-items:center;cursor:pointer}
 .alta textarea{width:100%;margin:8px 0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif}
 </style>
 </head>
@@ -63,6 +64,16 @@ button:disabled{opacity:.5;cursor:default}
       <p class="muted">Uno por línea: solo el correo, o «Nombre y apellidos; correo». Quedan aprobados: al registrarse en Descargas con ese correo, descargan al momento.</p>
       <textarea id="altaTxt" rows="6" placeholder="José Alcalá Zambrana; jose@ejemplo.es&#10;eva@ejemplo.es"></textarea>
       <div class="bar"><button class="pri" type="button" id="altaBtn">Dar acceso</button><span class="muted" id="altaMsg"></span></div>
+    </details>
+    <details class="alta" id="aviso">
+      <summary>📧 Correos para avisar de una versión nueva</summary>
+      <p class="muted" style="margin:8px 0 0">Copia la lista y pégala en el campo <b>CCO</b> de Gmail (así nadie ve los correos de los demás).</p>
+      <div class="op">
+        <label><input type="radio" name="avQ" value="avisos" checked> Aprobados que pidieron avisos</label>
+        <label><input type="radio" name="avQ" value="todos"> Todos los aprobados</label>
+      </div>
+      <textarea id="avTxt" rows="3" readonly></textarea>
+      <div class="bar"><button class="pri" type="button" id="avCopiar">Copiar correos</button><span class="muted" id="avMsg"></span></div>
     </details>
     <div class="tabs" id="tabs"></div>
     <div id="lista"></div>
@@ -135,6 +146,14 @@ button:disabled{opacity:.5;cursor:default}
       if (!d.malos.length) $('altaTxt').value = ''; filtro = 'aprobado'; pintar();
     } catch(x){ $('altaMsg').textContent = x.message; }
     $('altaBtn').disabled = false; };
+  // 23-10: lista de correos para el aviso de versión nueva (se pega en CCO de Gmail)
+  const avLista = () => { const q = (document.querySelector('input[name=avQ]:checked') || {}).value;
+    const l = regs.filter(r => r.estado === 'aprobado' && (q === 'todos' || r.avisos)).map(r => r.correo);
+    $('avTxt').value = l.join(', '); $('avMsg').textContent = l.length + ' correo(s)' + (q === 'avisos' ? ' · los dados de alta con «Dar acceso» cuentan cuando se registran en Descargas' : ''); };
+  document.querySelectorAll('input[name=avQ]').forEach(i => i.onchange = avLista);
+  $('aviso').addEventListener('toggle', () => { if ($('aviso').open) avLista(); });
+  $('avCopiar').onclick = async () => { avLista(); try { await navigator.clipboard.writeText($('avTxt').value); $('avMsg').textContent = '✓ Copiados ' + $('avTxt').value.split(', ').filter(Boolean).length + ' correo(s). Pégalos en CCO.'; }
+    catch(x){ $('avTxt').select(); document.execCommand('copy'); $('avMsg').textContent = '✓ Copiados. Pégalos en CCO.'; } };
   if (clave) cargar();
 })();
 </script>
