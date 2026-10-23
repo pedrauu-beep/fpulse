@@ -101,6 +101,11 @@ section.alt .card,section.alt .step,section.alt .ver,section.alt details{backgro
 .card p{margin:0;color:var(--ink2);font-size:15px}
 footer a.ftAdm{opacity:.55;font-size:.9em}
 footer{padding-bottom:84px!important}
+/* subir configuración */
+.cfgUp form{display:grid;gap:12px;max-width:640px} .cfgUp form .btn{justify-self:start} .cfgUp [hidden]{display:none!important}
+.cfgL{display:grid;gap:5px;font-weight:600;font-size:14.5px;color:var(--ink)}
+.cfgL input,.cfgL select,.cfgL textarea{font:400 15px Inter,system-ui,sans-serif;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+#configuracion .dlErr{color:#c03535;min-height:1.2em;font-size:14px}
 /* actualizar */
 .verBox{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 22px;padding:14px 18px;border-radius:var(--r);background:var(--soft);border:1px solid var(--teal)}
 .verBox .vn{font:800 26px Montserrat,sans-serif;color:var(--teal-d)}
@@ -443,8 +448,23 @@ footer a{color:var(--ink2)}
     <div class="steps">
       <div class="step"><h3>Descarga la plantilla</h3><p>Una hoja de Excel con tres pestañas: datos del módulo y fechas, RA y CE con sus pesos, e instrumentos con la evaluación en la que cuentan. <a href="plantilla-configuracion-fpulse.xlsx" download>Descargar plantilla (.xlsx)</a></p></div>
       <div class="step"><h3>Rellénala o envía tu programación</h3><p>Una plantilla por módulo. Si lo prefieres, envía directamente tu programación didáctica o tus criterios de calificación en Word, PDF o Excel y extraemos los datos de ahí.</p></div>
-      <div class="step"><h3>Envíala por correo</h3><p>A <b>pedrauu@gmail.com</b> con el asunto «Configuración FPulse», indicando tu nombre, tu centro y si usas Windows o Mac.</p></div>
+      <div class="step"><h3>Súbela aquí abajo</h3><p>Con el formulario de esta sección (hasta 3 archivos). Te avisamos por correo cuando esté lista. Si lo prefieres, también puedes enviarla a <b>pedrauu@gmail.com</b>.</p></div>
       <div class="step"><h3>Descarga tu versión</h3><p>Te enviamos un código. En <a href="#descargas">Descargas</a> lo escribes y bajas tus módulos ya configurados, junto con tu copia de FPulse. Solo te queda añadir el alumnado y empezar a calificar.</p></div>
+    </div>
+    <div class="card cfgUp" id="cfgUp" style="margin-top:22px">
+      <h3>📤 Envía tu plantilla o tu programación</h3>
+      <div id="cfgNoReg"><p>Para enviarla necesitas estar registrado (es el mismo registro de Descargas, un minuto).</p><a class="btn pri" href="#descargas">Registrarme en Descargas</a></div>
+      <form id="cfgForm" hidden>
+        <p class="muted" id="cfgQuien"></p>
+        <label class="cfgL">Archivos (Excel, Word, PDF o CSV; hasta 3 y 8 MB en total)<input type="file" id="cfgArch" multiple accept=".xlsx,.xlsm,.xls,.ods,.docx,.doc,.odt,.pdf,.csv" required></label>
+        <label class="cfgL">Módulos que quieres configurar<input type="text" id="cfgMod" maxlength="300" placeholder="Ej.: Sistemas Secuenciales Programables (1º ARI) y SPA (2º ARI)"></label>
+        <label class="cfgL">¿Qué ordenador usas?<select id="cfgSO"><option>Windows</option><option>Mac</option><option>Los dos</option></select></label>
+        <label class="cfgL">Comentarios (opcional)<textarea id="cfgCom" rows="3" maxlength="1000" placeholder="Fechas de evaluación, instrumentos especiales, dudas…"></textarea></label>
+        <label class="ck"><input type="checkbox" id="cfgSin" required> <span>Confirmo que los archivos <b>no contienen datos del alumnado</b>.</span></label>
+        <div class="dlErr" id="cfgErr"></div>
+        <button class="btn pri" type="submit" id="cfgBtn">Enviar para configurar</button>
+      </form>
+      <div id="cfgOk" hidden><p><b>✓ Recibido.</b> Revisaremos tus datos y te escribiremos con tu código de descarga (normalmente en pocos días). Si falta algo, te escribimos antes.</p><p><a href="#" id="cfgOtra">Enviar otra solicitud</a></p></div>
     </div>
     <div class="card" style="margin-top:22px">
       <h3>Antes de enviar</h3>
@@ -785,6 +805,32 @@ const TUTORIALES = [
 // Versión actual: se lee de version.json (el mismo archivo que consulta la app para avisar de versiones nuevas)
 fetch('version.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(w => { if (!w || !w.version) return;
   document.querySelectorAll('.js-ver').forEach(e => e.textContent = w.version); document.querySelectorAll('.js-fecha').forEach(e => e.textContent = w.fecha || ''); }).catch(() => {});
+</script>
+<script>
+// SERVICIO DE CONFIGURACIÓN: subida de la plantilla o la programación (mismo registro que Descargas)
+(() => {
+  const U = 'https://fpulse-asistente.pedrauu.workers.dev', $ = id => document.getElementById(id);
+  const LS = k => { try { return localStorage.getItem(k); } catch(e){ return null; } };
+  const ver = () => { const p = LS('fpBotPase'); $('cfgNoReg').hidden = !!p; $('cfgForm').hidden = !p || !$('cfgOk').hidden;
+    $('cfgQuien').textContent = p ? 'Envías como ' + (LS('fpBotNombre') || 'usuario registrado') + '. Te responderemos al correo con el que te registraste.' : ''; };
+  const b64 = f => new Promise((ok, ko) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1] || ''); r.onerror = ko; r.readAsDataURL(f); });
+  $('cfgForm').onsubmit = async e => { e.preventDefault(); $('cfgErr').textContent = '';
+    const fs = [...$('cfgArch').files];
+    if (!fs.length) return $('cfgErr').textContent = 'Elige al menos un archivo.';
+    if (fs.length > 3) return $('cfgErr').textContent = 'Como máximo 3 archivos.';
+    if (fs.reduce((s, f) => s + f.size, 0) > 8e6) return $('cfgErr').textContent = 'Los archivos pesan demasiado (máximo 8 MB en total).';
+    $('cfgBtn').disabled = true; $('cfgBtn').textContent = 'Enviando…';
+    try { const archivos = await Promise.all(fs.map(async f => ({ nombre: f.name, b64: await b64(f) })));
+      const r = await fetch(U, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accion: 'config_subir', pase: LS('fpBotPase'), archivos, so: $('cfgSO').value, modulos: $('cfgMod').value, comentario: $('cfgCom').value }) });
+      const d = await r.json().catch(() => ({}));
+      if (r.status === 401){ try { localStorage.removeItem('fpBotPase'); } catch(x){} ver(); throw new Error('Tu registro ha caducado. Vuelve a registrarte en Descargas.'); }
+      if (!r.ok) throw new Error(d.error || 'No se ha podido enviar. Escribe a pedrauu@gmail.com.');
+      $('cfgForm').reset(); $('cfgForm').hidden = true; $('cfgOk').hidden = false;
+    } catch(x){ $('cfgErr').textContent = x.message; }
+    $('cfgBtn').disabled = false; $('cfgBtn').textContent = 'Enviar para configurar'; };
+  $('cfgOtra').onclick = e => { e.preventDefault(); $('cfgOk').hidden = true; ver(); };
+  addEventListener('storage', ver); document.addEventListener('visibilitychange', ver); setInterval(ver, 3000); ver();
+})();
 </script>
 </body>
 </html>
