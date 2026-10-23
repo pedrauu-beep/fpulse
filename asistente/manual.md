@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.74, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.77, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -556,6 +556,8 @@ No hace falta exportar ni cargar copias: la versión nueva lee tu carpeta.
 7. Pulsa «Editar archivos» o «Permitir».
 8. Verás «Esta carpeta ya tiene datos de FPulse (N módulos): se recuperan». Confirma el nombre del curso y listo.
 
+Para saber qué versión tienes, mira arriba junto al logo (desde la 1.77) o al final de la Ayuda («FPulse · versión…»). La versión actual está en fpulse.eu, sección «¿Ya usas FPulse? Actualiza en 3 pasos» (fpulse.eu/#actualizar); desde la 1.77, FPulse avisa sola cuando hay una nueva. Los docentes que ya tenían acceso deben registrarse una vez en Descargas con el mismo correo (no hace falta código) y descargan al momento.
+
 No uses «Abrir copia de seguridad» para cambiar de versión. Rehaz el acceso directo apuntando al archivo nuevo. En fpulse.eu hay un vídeo tutorial de este proceso.
 
 ### Preparar el curso siguiente
@@ -674,6 +676,8 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.77 | La versión y su fecha se ven arriba junto al logo; si en fpulse.eu hay una versión más nueva, aparece una franja verde «Hay una versión nueva…» con el enlace «Cómo actualizar en 3 pasos» (fpulse.eu/#actualizar). La × la oculta hasta la siguiente versión. Solo lee el número de versión de la web; no envía datos |
+| 1.75-1.76 | Prueba aplazada por falta justificada: con FJ en una prueba, la nota se escribe en la misma casilla, queda subrayada como aplazada con su fecha y cuenta como primer intento (las recuperaciones R1 y R2 siguen disponibles). Aviso de registro de propiedad intelectual en trámite |
 | 1.74 | Importar faltas desde Excel o CSV (una fila por falta o cuadrícula alumnado × fechas), con vista previa, copia de seguridad y opción de aplicarlas a los otros módulos del grupo |
 | 1.73 | Situación de cada alumno en la fase en empresa (no va, fase incompleta, exento) con su motivo, y calificación con los instrumentos de actividades sustitutorias (AS) |
 | 1.72 | «Exportar a Excel» en Trazabilidad, Unidades didácticas (con valoraciones), Seguimiento, Indicadores y Empresa (dual) |
