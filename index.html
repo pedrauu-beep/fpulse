@@ -102,6 +102,11 @@ section.alt .card,section.alt .step,section.alt .ver,section.alt details{backgro
 footer a.ftAdm{opacity:.55;font-size:.9em}
 footer{padding-bottom:84px!important}
 /* actualizar */
+.verBox{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 22px;padding:14px 18px;border-radius:var(--r);background:var(--soft);border:1px solid var(--teal)}
+.verBox .vn{font:800 26px Montserrat,sans-serif;color:var(--teal-d)}
+.verBox p{flex:1 1 320px;margin:0;color:var(--ink);font-size:15.5px}
+.verBox small{display:block;color:var(--ink2);font-size:14px;margin-top:2px}
+#descargas .verMini{display:inline-block;margin:0 0 10px;padding:4px 12px;border-radius:999px;background:rgba(22,194,163,.18);border:1px solid #16c2a3;color:#fff;font-size:14px}
 .updBar{display:block;text-align:center;padding:12px 16px;background:linear-gradient(90deg,var(--teal),var(--teal-d));color:#fff;font-size:16px;text-decoration:none;font-weight:500}
 .updBar b{text-decoration:underline;text-underline-offset:3px}
 .updBar:hover{filter:brightness(1.08)}
@@ -277,6 +282,7 @@ footer a{color:var(--ink2)}
 <section id="actualizar">
   <div class="wrap">
     <div class="head"><h2>🔄 ¿Ya usas FPulse? Actualiza en 3 pasos</h2><p>Tus notas, faltas y diario no están en el programa, sino en tu carpeta de datos. Cambias el programa y tus datos siguen ahí.</p></div>
+    <div class="verBox"><div class="vn js-ver">1.74</div><p>Versión actual de FPulse · <b class="js-fecha">20/10/2026</b><small>¿Cuál tienes tú? En FPulse, mira arriba junto al logo; en las versiones anteriores, al final de la <b>Ayuda</b> («FPulse · versión…»). Si es más baja, actualiza. Las próximas versiones te avisarán solas cuando haya una nueva.</small></p></div>
     <div class="steps">
       <div class="step"><h3>Descarga la versión nueva</h3><p>Ve a <a href="#descargas">Descargas</a> y regístrate con <b>el mismo correo de siempre</b>. Si ya tienes acceso, el botón de descarga sale al momento. <b>No necesitas ningún código.</b></p></div>
       <div class="step"><h3>Guárdala junto a la anterior</h3><p>Pon el archivo nuevo en la carpeta donde tienes FPulse.<br><b>Windows:</b> vuelve a hacer doble clic en «Crear acceso directo FPulse» y el icono del Escritorio abrirá la nueva.<br><b>Mac:</b> abre a partir de ahora el archivo nuevo (si le pusiste el icono, pónselo también a este).</p></div>
@@ -364,6 +370,7 @@ footer a{color:var(--ink2)}
     <div class="big">
       <span class="eyebrow">Descargas</span>
       <h2>Descarga FPulse</h2>
+      <span class="verMini">Versión actual: <b class="js-ver">1.74</b> · <span class="js-fecha">20/10/2026</span></span>
       <p>FPulse 1.74 para Windows y Mac. Regístrate una sola vez y, cuando el autor apruebe tu solicitud (normalmente en uno o dos días), descarga tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
       <div id="dlReg">
         <form id="dlForm" class="dlForm">
@@ -483,17 +490,17 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <div class="head"><h2>Novedades</h2><p>FPulse mejora con lo que pedimos en el aula.</p></div>
     <div class="log">
-      <div class="ver"><div><div class="v">1.74</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.74</div><div class="d">20 oct 2026</div></div>
         <ul><li><b>Importar faltas desde Excel o CSV</b>: una fila por falta o una cuadrícula con el alumnado en filas y las fechas en columnas. Antes de aplicar enseña qué cambia y guarda copia; puede ponerlas en todos tus módulos del mismo grupo.</li></ul></div>
-      <div class="ver"><div><div class="v">1.73</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.73</div><div class="d">20 oct 2026</div></div>
         <ul><li><b>Actividades sustitutorias</b> de la fase en empresa: indica quién no la hace o no la completa y por qué (PRL o Itinerario I no superados, repetidor, interrupción, exención) y califícale con los instrumentos sustitutorios en lugar de los de la empresa.</li></ul></div>
-      <div class="ver"><div><div class="v">1.72</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.72</div><div class="d">18 oct 2026</div></div>
         <ul><li><b>Exportar a Excel</b> desde Trazabilidad, Unidades didácticas (con sus valoraciones), Seguimiento, Indicadores de calidad y Empresa (dual): lleva los datos a tu programación o a la memoria final.</li></ul></div>
-      <div class="ver"><div><div class="v">1.71</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.71</div><div class="d">18 oct 2026</div></div>
         <ul><li><b>Horas por RA</b>: si una UD trabaja varios RA, sus horas se reparten según los CE de cada uno.</li><li><b>Dual con varios periodos</b> por alumno, en la misma empresa o en otras, e <b>importación desde Excel</b> con plantilla.</li><li>La cobertura de CE pasa a Trazabilidad.</li></ul></div>
-      <div class="ver"><div><div class="v">1.69 · 1.70</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.69 · 1.70</div><div class="d">17 oct 2026</div></div>
         <ul><li><b>Trazabilidad de la programación</b>: RA → UD → CE en el aula y en la empresa, con los instrumentos de cada UD y el seguimiento de horas. Listado de todos los instrumentos con avisos de los que se quedan sin UD o sin CE. Se imprime con firmas.</li></ul></div>
-      <div class="ver"><div><div class="v">1.68</div><div class="d">Octubre 2026</div></div>
+      <div class="ver"><div><div class="v">1.68</div><div class="d">17 oct 2026</div></div>
         <ul><li><b>Pantalla más sencilla</b>: cinco secciones con pestañas.</li><li><b>Informes</b>: todos los documentos en un solo sitio.</li><li><b>UD con sus RA, CE e instrumentos</b>: cada instrumento cuenta en la evaluación del trimestre de su UD.</li><li><b>Alumnado común</b> a los módulos del mismo curso y <b>calificación de dinámicas cooperativas</b>.</li></ul></div>
       <div class="ver"><div><div class="v">1.64</div><div class="d">Octubre 2026</div></div>
         <ul><li><b>Valoración de cada unidad didáctica</b> con informe para la memoria final; las propuestas de mejora pasan al curso siguiente.</li></ul></div>
@@ -770,5 +777,10 @@ const TUTORIALES = [
 </script>
 <!-- ===== fin asistente ===== -->
 
+<script>
+// Versión actual: se lee de version.json (el mismo archivo que consulta la app para avisar de versiones nuevas)
+fetch('version.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(w => { if (!w || !w.version) return;
+  document.querySelectorAll('.js-ver').forEach(e => e.textContent = w.version); document.querySelectorAll('.js-fecha').forEach(e => e.textContent = w.fecha || ''); }).catch(() => {});
+</script>
 </body>
 </html>
