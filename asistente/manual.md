@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.77, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.78, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -676,6 +676,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.78 | «✔ ¿Todo en regla?» en Calificación: revisa este módulo o todos antes de la sesión de evaluación y avisa de errores que afectan a la nota (ponderaciones de RA que no suman 100 %, CE sin instrumento, evaluación cerrada sin calificar a todo el grupo, instrumentos en varias evaluaciones), avisos (pesos de CE, instrumentos sin evaluación, fechas u horas sin configurar, cierre próximo con notas pendientes, alumnado por encima del límite de faltas sin pérdida de evaluación continua marcada, pruebas pendientes por FJ, PEC sin prueba final) y tareas pendientes (RA cerrados por recuperar, alumnado sin notas), cada uno con un botón «Ir a…». No cambia nada por sí solo. «Notas para Séneca…» en Calificación › Evaluaciones: elige 1ª, 2ª, 3ª, Final FP 1 o Final FP 2 y muestra la nota de boletín de cada alumno en el orden de Séneca (apellidos A-Z), con «Copiar columna de notas», «Copiar nombre y nota» e «Imprimir»; NE = no evaluable por pérdida de evaluación continua |
 | 1.77 | La versión y su fecha se ven arriba junto al logo; si en fpulse.eu hay una versión más nueva, aparece una franja verde «Hay una versión nueva…» con el enlace «Cómo actualizar en 3 pasos» (fpulse.eu/#actualizar). La × la oculta hasta la siguiente versión. Solo lee el número de versión de la web; no envía datos |
 | 1.75-1.76 | Prueba aplazada por falta justificada: con FJ en una prueba, la nota se escribe en la misma casilla, queda subrayada como aplazada con su fecha y cuenta como primer intento (las recuperaciones R1 y R2 siguen disponibles). Aviso de registro de propiedad intelectual en trámite |
 | 1.74 | Importar faltas desde Excel o CSV (una fila por falta o cuadrícula alumnado × fechas), con vista previa, copia de seguridad y opción de aplicarlas a los otros módulos del grupo |
