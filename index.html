@@ -287,7 +287,7 @@ footer a{color:var(--ink2)}
 <section id="actualizar">
   <div class="wrap">
     <div class="head"><h2>🔄 ¿Ya usas FPulse? Actualiza en 3 pasos</h2><p>Tus notas, faltas y diario no están en el programa, sino en tu carpeta de datos. Cambias el programa y tus datos siguen ahí.</p></div>
-    <div class="verBox"><div class="vn js-ver">1.80</div><p>Versión actual de FPulse · <b class="js-fecha">26/10/2026</b><small>¿Cuál tienes tú? En FPulse, mira arriba junto al logo; en las versiones anteriores, al final de la <b>Ayuda</b> («FPulse · versión…»). Si es más baja, actualiza. Las próximas versiones te avisarán solas cuando haya una nueva.</small></p></div>
+    <div class="verBox"><div class="vn js-ver">1.83</div><p>Versión actual de FPulse · <b class="js-fecha">27/10/2026</b><small>¿Cuál tienes tú? En FPulse, mira arriba junto al logo; en las versiones anteriores, al final de la <b>Ayuda</b> («FPulse · versión…»). Si es más baja, actualiza. Las próximas versiones te avisarán solas cuando haya una nueva.</small></p></div>
     <div class="steps">
       <div class="step"><h3>Descarga la versión nueva</h3><p>Ve a <a href="#descargas">Descargas</a> y regístrate con <b>el mismo correo de siempre</b>. Si ya tienes acceso, el botón de descarga sale al momento. <b>No necesitas ningún código.</b></p></div>
       <div class="step"><h3>Guárdala junto a la anterior</h3><p>Pon el archivo nuevo en la carpeta donde tienes FPulse.<br><b>Windows:</b> vuelve a hacer doble clic en «Crear acceso directo FPulse» y el icono del Escritorio abrirá la nueva.<br><b>Mac:</b> abre a partir de ahora el archivo nuevo (si le pusiste el icono, pónselo también a este).</p></div>
@@ -375,8 +375,8 @@ footer a{color:var(--ink2)}
     <div class="big">
       <span class="eyebrow">Descargas</span>
       <h2>Descarga FPulse</h2>
-      <span class="verMini">Versión actual: <b class="js-ver">1.80</b> · <span class="js-fecha">26/10/2026</span></span>
-      <p>FPulse 1.80 para Windows y Mac. Regístrate una sola vez y, cuando el autor apruebe tu solicitud (normalmente en uno o dos días), descarga tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
+      <span class="verMini">Versión actual: <b class="js-ver">1.83</b> · <span class="js-fecha">27/10/2026</span></span>
+      <p>FPulse 1.83 para Windows y Mac. Regístrate una sola vez y, cuando el autor apruebe tu solicitud (normalmente en uno o dos días), descarga tu copia personal: lleva tu nombre dentro y funciona hasta el 30/09/2027. Después descargas la versión nueva y tus datos se conservan.</p>
       <div id="dlReg">
         <form id="dlForm" class="dlForm">
           <input type="text" id="dlN" placeholder="Nombre y apellidos" maxlength="80" autocomplete="name" required>
@@ -391,7 +391,7 @@ footer a{color:var(--ink2)}
       <div id="dlOk" hidden>
         <p class="dlHola" id="dlHola"></p>
         <p class="dlNota" id="dlPend" hidden></p>
-        <button class="btn pri" type="button" id="dlBtn" data-ver="1.80">⬇ Descargar FPulse 1.80</button>
+        <button class="btn pri" type="button" id="dlBtn" data-ver="1.83">⬇ Descargar FPulse 1.83</button>
         <p class="dlNota" id="dlMsg">Se descarga un único archivo .html. Ábrelo con Chrome o Edge y sigue la <a href="descargas/FPulse%20-%20Instalacion,%20version%20nueva%20y%20acceso%20directo.pdf" target="_blank">guía de instalación</a>.</p>
         <div class="dlSig" id="dlSig" hidden>
           <h3>Siguiente paso: el acceso directo</h3>
@@ -510,6 +510,8 @@ footer a{color:var(--ink2)}
   <div class="wrap">
     <div class="head"><h2>Novedades</h2><p>FPulse mejora con lo que pedimos en el aula.</p></div>
     <div class="log">
+      <div class="ver"><div><div class="v">1.81 · 1.83</div><div class="d">27 oct 2026</div></div>
+        <ul><li><b>Programación de aula</b>: una ficha por unidad que se rellena sola con trimestre, horas, RA y CE, instrumentos y sesiones del Diario; tú añades contenidos, actividades, metodología y recursos. En PDF o Word.</li><li><b>Programación didáctica</b>: el documento completo del módulo con tus RA, ponderaciones, UD, temporalización, instrumentos y criterios de calificación. Solo escribes los apartados generales.</li><li><b>Plan de formación en la empresa</b>: los RA y CE que trabaja cada alumno en la empresa, con periodos y tutor laboral, y el seguimiento de los CE ya trabajados.</li><li><b>Informe por trimestre</b>: horas, CE impartidos, resultados por RA y propuestas de mejora, listo para el departamento y la memoria.</li><li><b>Plantillas de instrumentos</b> (rúbrica o lista de cotejo con sus CE) y <b>calendario de las UD</b> por semanas.</li><li><b>Un solo listado de instrumentos</b>: los que creas en Configuración se eligen en cada UD.</li></ul></div>
       <div class="ver"><div><div class="v">1.79 · 1.80</div><div class="d">26 oct 2026</div></div>
         <ul><li><b>Justificaciones al día</b>: con un archivo de ÍTACApp, la importación sustituye por defecto lo anotado, así las faltas que el tutor ha justificado pasan a Fj. Puedes importar, por ejemplo, cada mes.</li><li><b>Faltas desde ÍTACApp</b>: importa directamente el archivo que exporta ÍTACApp (Excel o CSV). Cada falta va a la hora exacta de su tramo horario («08:00 - 09:00») según «Mi horario semanal»; si un alumno falta solo a una hora, solo se marca esa.</li><li><b>Tus marcas se respetan</b>: al importar faltas se conservan las anotaciones de actitud y deberes (A+, A-, D+, D-) que ya tengas en FPulse.</li></ul></div>
       <div class="ver"><div><div class="v">1.78</div><div class="d">23 oct 2026</div></div>

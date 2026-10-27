@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.80, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.83, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -100,7 +100,7 @@ Al pasar a una versión nueva hay que rehacer el acceso directo apuntando al arc
 | Hoy | Pasar lista · Plano del aula |
 | Alumnado | Listado y fichas · Diversidad · Equipos y proyectos · Empresa (dual) |
 | Calificación | Calificar · Recuperaciones · Evaluaciones · Revisión de CE |
-| Programación | Diario de sesiones · Unidades didácticas · Trazabilidad · Seguimiento · Material didáctico |
+| Programación | Diario de sesiones · Unidades didácticas · Trazabilidad · Programación de aula · Programación didáctica · Seguimiento · Material didáctico |
 | Informes | Todos los documentos para imprimir o guardar en PDF, en un solo sitio |
 | Configuración | Módulo · Ajustes del curso · Copias de seguridad |
 
@@ -150,7 +150,7 @@ Elige el módulo arriba y ve a Configuración → Módulo. Rellena, en este orde
 4. Fechas: primer y último día de clase, inicio de cada trimestre, sesiones por día de la semana y horas totales del módulo.
 5. Pulsa «Guardar configuración». Si te has equivocado, «Descartar cambios» lo deja como estaba.
 
-Los instrumentos de evaluación se crean después, en cada unidad didáctica (Programación → Unidades didácticas, apartado 6): así cada instrumento evalúa solo los CE programados en su UD y cuenta en la evaluación del trimestre de la UD. En Configuración → Módulo sigue estando la vista por RA de los instrumentos, para revisar o renombrar.
+Los instrumentos de evaluación se crean después, en cada unidad didáctica (Programación → Unidades didácticas, apartado 6): así cada instrumento evalúa solo los CE programados en su UD y cuenta en la evaluación del trimestre de la UD. En Configuración → Módulo sigue estando la vista por RA de los instrumentos, para revisar o renombrar. Es un único listado para todo el módulo: lo que crees en Configuración («Listado de instrumentos de evaluación») aparece en cada UD al pulsar «＋ Nuevo instrumento» → «Usar uno del listado de instrumentos», y lo que crees en una UD aparece en Configuración. En la vista por RA, cada instrumento indica su UD («· UD 2») o «· sin UD»; si añades a otro RA un instrumento que ya está en una UD, toma esa misma UD.
 
 Antes de guardar, FPulse comprueba que todo cuadre (pesos al 100 %, fechas en orden, CE sin instrumento, instrumentos en más de una evaluación) y te enseña el calendario de sesiones que sale.
 
@@ -343,6 +343,8 @@ Empresa, tutor o tutora laboral, periodos y seguimientos de cada alumno. Son com
 - **Importar desde Excel**: «Descargar plantilla» te da un archivo con tu alumnado ya puesto. Rellénalo con una fila por periodo (repite el nombre para dar varios periodos) y súbelo con «Importar Excel / CSV» (.xlsx o .csv). Da igual escribir «Apellidos, Nombre» o «Nombre Apellidos». FPulse avisa de los nombres que no reconoce y, si un alumno ya tenía periodos, pregunta si los sustituye o añade los nuevos.
 - «Exportar a Excel» saca los periodos y los seguimientos; ese mismo archivo se puede volver a importar. También se imprime.
 - Muestra las notas de los instrumentos de empresa del módulo (los que llevan FFE, empresa o dual en el nombre) y, marcadas con (AS), las de las actividades sustitutorias.
+- **«Plan de formación…»**: un documento por alumno (o para todo el alumnado que hace la fase) con sus periodos, empresa, tutor/a laboral y horario, y los RA y CE que trabaja en la empresa: los marcados 🏭 Empresa en las unidades didácticas, de este módulo o de todos los módulos del grupo. Lleva columnas «UD», «Trabajado» y «Actividades en la empresa / observaciones», y firmas del tutor/a docente, el tutor/a laboral y el alumno/a. No incluye al alumnado que no va a la empresa o está exento.
+- **CE trabajados en la empresa**: en la ficha de cada alumno (pulsa su nombre) marca los CE que ya ha trabajado en la empresa; se guardan con la fecha y salen con ✔ en el plan de formación. «Plan de formación de este alumno/a» lo imprime directamente.
 
 ### Situación en la fase en empresa y actividades sustitutorias
 
@@ -364,7 +366,7 @@ Para el alumnado que no hace la fase en empresa o no la completa: por ejemplo, p
 
 ## 6. Programación
 
-La sección Programación reúne el diario de clase, las unidades didácticas con sus RA, CE e instrumentos, la trazabilidad de la programación, el seguimiento y tu material. Todo lo que ves se puede imprimir y exportar a Excel para la programación, la memoria o calidad.
+La sección Programación reúne el diario de clase, las unidades didácticas con sus RA, CE e instrumentos, la trazabilidad de la programación, la programación de aula, la programación didáctica, el seguimiento y tu material. Todo lo que ves se puede imprimir y exportar a Excel para la programación, la memoria o calidad.
 
 ### Diario de sesiones
 
@@ -383,10 +385,28 @@ La tabla de UD de tu programación: número, título, RA, trimestre y horas prev
 3. Pulsa **▸** en una UD para abrir su ficha:
    - **RA y CE**: «＋ Añadir un RA a esta UD…» y marca solo los CE que se trabajan en ella. Un CE puede repartirse entre varias UD (al lado verás en qué otras está).
    - **🏫 Aula / 🏭 Empresa**: en cada CE marcado indica si se trabaja en el centro o en la empresa (formación en empresa / dual).
-   - **Instrumentos de la UD**: «＋ Nuevo instrumento en la UD…». Le pones nombre (puedes elegir el tipo: prueba escrita, práctica con rúbrica, lista de cotejo, proyecto…) y marcas los CE que evalúa; solo salen los CE programados en esa UD. Cuenta en la evaluación del trimestre de la UD: si cambias el trimestre, sus instrumentos le siguen. ✎ lo cambia, «Calificar» te lleva a ponerle notas y ✕ lo quita (avisa si ya tiene notas).
+   - **Instrumentos de la UD**: «＋ Nuevo instrumento en la UD…». Si ya lo creaste en Configuración, elígelo en «Usar uno del listado de instrumentos» (salen los que aún no se usan o no tienen UD): se marcan sus CE y conserva sus notas. Si no, le pones nombre (puedes elegir el tipo: prueba escrita, práctica con rúbrica, lista de cotejo, proyecto…) y marcas los CE que evalúa; solo salen los CE programados en esa UD. Cuenta en la evaluación del trimestre de la UD: si cambias el trimestre, sus instrumentos le siguen. ✎ lo cambia, «Calificar» te lleva a ponerle notas, «Plantilla» saca su rúbrica o lista de cotejo imprimible y ✕ lo quita (avisa si ya tiene notas).
 4. «Repartir en el Diario…» rellena la UD de las sesiones libres según las horas de cada unidad.
 5. **Valorar**: al terminar una UD, anota cómo ha ido (valoración global, contenidos, temporalización, metodología, aspectos positivos, dificultades, pendiente y propuestas de mejora). FPulse añade las horas, las fechas y el % de alumnado que supera cada RA. «Imprimir valoración de las UD» saca el informe con firmas para la memoria; las propuestas de mejora pasan al curso siguiente.
 6. «Copiar la tabla» y **«Exportar a Excel»** (temporalización y valoraciones).
+7. **«Calendario de las UD»**: una tabla por semanas (columnas) y unidades (filas) con el número de sesiones de cada UD en el Diario, el trimestre de cada semana, las semanas con festivos (●) y las sesiones sin UD. Se imprime en A4 apaisado.
+
+### Programación de aula
+
+Una ficha por unidad didáctica que se rellena sola con lo que ya tienes en FPulse y que tú completas.
+
+- **Lo que toma de FPulse** (se actualiza solo): trimestre, horas previstas, sesiones y fechas del Diario, RA con su ponderación y los CE de la UD (indicando los que se trabajan en la empresa), instrumentos de evaluación con sus CE y evaluación, actividades sustitutorias, la secuenciación de sesiones (las actividades que escribes en el Diario) y, de Alumnado → Diversidad, cuántos alumnos tienen medidas de apoyo o ampliación (sin nombres).
+- **Lo que completas tú** (10 apartados): objetivos y competencias, contenidos, actividades de inicio, desarrollo y cierre, metodología, recursos y espacios, atención a la diversidad, elementos transversales y observaciones. Se guarda al salir de cada recuadro y pasa al curso siguiente.
+- Arriba, cada UD muestra cuántos apartados llevas («UD 3 · 4/10»). «Copiar apartados de otra UD…» rellena solo los apartados vacíos con los de otra UD. «Editar RA, CE e instrumentos de la UD» te lleva a su ficha.
+- «Imprimir / PDF de esta UD», «Imprimir / PDF del módulo» (una primera página con la secuenciación de todas las UD y una página por UD), «Word del módulo» (.doc para retocarlo) y «Calendario».
+
+### Programación didáctica
+
+El documento de la programación del módulo, montado con lo que ya tienes en FPulse: así siempre coincide con lo que evalúas.
+
+- **Sale de FPulse**: RA con su ponderación y evaluaciones, CE con su peso en el RA y la UD donde se trabajan; unidades didácticas con RA y CE, trimestre, horas y fechas (y el total por trimestre); CE que se trabajan en la empresa; instrumentos de evaluación por RA; criterios de calificación y recuperación (los de «Información inicial al alumnado», o los tuyos si los has cambiado allí). Cada bloque tiene un botón «Revisar» que te lleva a donde se edita.
+- **Lo escribes tú** (10 apartados generales del módulo): introducción y contextualización, marco normativo, objetivos generales, competencias, metodología, atención a la diversidad, recursos, elementos transversales, evaluación de la programación y bibliografía. Pasan al curso siguiente.
+- «Imprimir / PDF» y «Word». Los apartados sin escribir salen como «(Por completar)».
 
 ### Trazabilidad
 
@@ -406,6 +426,7 @@ La programación de un vistazo, como una hoja de cálculo: RA → UD → CE → 
 - **Indicadores de calidad**: absentismo, alumnado sobre el umbral, % de aprobados por módulo y por RA, por evaluación o del curso.
 - **Seguimiento de la programación**: % impartido, % del módulo dado, UD en curso y sesiones no impartidas con su motivo, por módulo y trimestre.
 - «Copiar», **«Exportar a Excel»** e «Imprimir»: listo para la memoria o el informe de calidad.
+- **«Informe por trimestre…»**: elige el trimestre y saca el informe de seguimiento del módulo (o de todos tus módulos): horas previstas e impartidas, UD del trimestre con su desviación y valoración, CE programados e impartidos (y los pendientes), % de aprobados de la evaluación y, por RA, evaluados, superan y media, la valoración de las UD y un recuadro de conclusiones y propuestas de mejora que escribes en la misma ventana (se guarda). Lleva firmas del profesor/a y de la jefatura de departamento.
 
 ### Material didáctico
 
@@ -421,9 +442,9 @@ La sección Informes reúne todos los documentos de la app, listos para imprimir
 | Grupo | Informes |
 | --- | --- |
 | Asistencia | Estadillo de asistencia · Faltas por fechas |
-| Alumnado | Fichas del alumnado · Informes individuales · Informe de diversidad · Equipos de trabajo · Tarjetas de roles |
-| Evaluación | Información inicial al alumnado · Informes de progreso · Informes de recuperación · Hoja para la sesión de evaluación · Mapa de trazabilidad RA → CE → instrumento · Exportar la evaluación a Excel |
-| Programación y calidad | Indicadores de calidad · Seguimiento de la programación · Valoración de las UD · Trazabilidad RA → UD → CE (impresa y en Excel) |
+| Alumnado | Fichas del alumnado · Informes individuales · Informe de diversidad · Equipos de trabajo · Tarjetas de roles · Plan de formación en la empresa |
+| Evaluación | Información inicial al alumnado · Informes de progreso · Informes de recuperación · Hoja para la sesión de evaluación · Mapa de trazabilidad RA → CE → instrumento · Plantillas de instrumentos · Exportar la evaluación a Excel |
+| Programación y calidad | Indicadores de calidad · Seguimiento de la programación · Valoración de las UD · Seguimiento por trimestre · Programación didáctica · Programación de aula · Calendario de las UD · Trazabilidad RA → UD → CE (impresa y en Excel) |
 
 ### Exportar a Excel
 
@@ -455,6 +476,8 @@ Tú pones notas de 0 a 10 por CE en cada instrumento; FPulse calcula la nota de 
 | Vacío | Aún sin calificar | No cuenta |
 
 Fase en empresa: si un alumno hace actividades sustitutorias (ver «Situación en la fase en empresa y actividades sustitutorias» en el apartado 5), las casillas de los instrumentos que no le corresponden salen desactivadas y no cuentan en su nota.
+
+Plantilla del instrumento: «Plantilla…» saca la rúbrica (4 niveles: insuficiente, suficiente, notable y sobresaliente, en A4 apaisado) o la lista de cotejo (sí / no / observaciones) del instrumento, con una fila por cada CE que evalúa y la cabecera con módulo, UD y evaluación. Puede salir en blanco o una hoja por alumno con su nombre. Si el nombre del instrumento lleva «cotejo», propone la lista de cotejo.
 
 Notas desde Google Classroom: «Importar de Classroom…». En Classroom descarga las calificaciones de la clase o de una tarea como CSV y elígelo. Antes de cambiar nada verás qué notas entran y cuáles cambian; confirma con «Importar N nota(s)».
 
@@ -676,6 +699,9 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.83 | Plan de formación en la empresa (Empresa (dual) › «Plan de formación…»: periodos, empresa, tutor/a y RA-CE en la empresa de cada alumno, con seguimiento de los CE ya trabajados en su ficha); Programación › Programación didáctica (documento completo con lo de FPulse + 10 apartados generales; PDF y Word); Seguimiento › «Informe por trimestre…» (horas, UD, CE, resultados por RA, valoración y conclusiones); «Plantilla…» de cada instrumento (rúbrica de 4 niveles o lista de cotejo con una fila por CE, en blanco o por alumno); «Calendario de las UD» por semanas con trimestres y festivos |
+| 1.82 | Programación › Programación de aula: una ficha por UD con los datos de FPulse (trimestre, horas, sesiones, RA y CE, instrumentos, sustitutorias, secuenciación del Diario, diversidad) y 10 apartados para completar; PDF por UD o del módulo y Word |
+| 1.81 | Listado único de instrumentos: en la UD, «Usar uno del listado de instrumentos» trae los creados en Configuración; en Configuración se ve la UD de cada instrumento |
 | 1.80 | Con un archivo de ÍTACApp, la importación de faltas marca por defecto «Sustituirlo por lo del archivo», para que las faltas justificadas por el tutor pasen a Fj (las marcas A+, A-, D+, D- se conservan) |
 | 1.79 | Importar faltas desde ÍTACApp: lee el tramo horario («08:00 - 09:00») y pone cada falta en su hora según «Mi horario semanal» (si un alumno falta a una sola hora de un día con varias, solo se marca esa); al importar se conservan las marcas A+, A-, D+ y D- |
 | 1.78 | «✔ ¿Todo en regla?» en Calificación: revisa este módulo o todos antes de la sesión de evaluación y avisa de errores que afectan a la nota (ponderaciones de RA que no suman 100 %, CE sin instrumento, evaluación cerrada sin calificar a todo el grupo, instrumentos en varias evaluaciones), avisos (pesos de CE, instrumentos sin evaluación, fechas u horas sin configurar, cierre próximo con notas pendientes, alumnado por encima del límite de faltas sin pérdida de evaluación continua marcada, pruebas pendientes por FJ, PEC sin prueba final) y tareas pendientes (RA cerrados por recuperar, alumnado sin notas), cada uno con un botón «Ir a…». No cambia nada por sí solo. «Notas para Séneca…» en Calificación › Evaluaciones: elige 1ª, 2ª, 3ª, Final FP 1 o Final FP 2 y muestra la nota de boletín de cada alumno en el orden de Séneca (apellidos A-Z), con «Copiar columna de notas», «Copiar nombre y nota» e «Imprimir»; NE = no evaluable por pérdida de evaluación continua |
