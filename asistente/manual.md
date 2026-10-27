@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.83, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.84, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -363,6 +363,10 @@ Para el alumnado que no hace la fase en empresa o no la completa: por ejemplo, p
    - A quien «No va a la empresa» o está «Exento/a» del todo dejan de contarle el informe y el cuaderno de la empresa (salen desactivados).
    - Con la fase incompleta o la exención parcial cuentan los dos: cada CE con lo que tenga calificado.
    - La situación es la misma en todos los módulos del alumno y se ve en Calificar con una etiqueta junto a su nombre y en la columna «Situación» de Empresa (dual).
+6. Elegir a mano a quién se le califica una actividad sustitutoria (desde la 1.84):
+   - En Calificar, elige el instrumento AS y pulsa «Destinatarios…»: marca los alumnos a los que se les califica (por ejemplo, solo a quien la empresa no le permite ese CE) y pulsa «Guardar». Al resto no le cuenta.
+   - «Según la situación» quita lo elegido a mano y vuelve a decidirlo la Situación de cada alumno.
+7. Poner la nota desde la ficha de dual (desde la 1.84): en Alumnado → Empresa (dual) → nombre del alumno, el bloque «Actividades sustitutorias» muestra cada AS del módulo con sus CE, una casilla «le corresponde» y la nota. La nota se escribe en todos los CE de esa actividad (admite NP y FJ); para notas distintas por CE, usa Calificar.
 
 ## 6. Programación
 
@@ -699,6 +703,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.84 | Actividades sustitutorias con destinatarios: en Calificar, «Destinatarios…» elige a qué alumnado se le califica cada AS («Según la situación» vuelve a lo automático); en la ficha de Empresa (dual) de cada alumno, sus actividades sustitutorias con CE, casilla «le corresponde» y nota |
 | 1.83 | Plan de formación en la empresa (Empresa (dual) › «Plan de formación…»: periodos, empresa, tutor/a y RA-CE en la empresa de cada alumno, con seguimiento de los CE ya trabajados en su ficha); Programación › Programación didáctica (documento completo con lo de FPulse + 10 apartados generales; PDF y Word); Seguimiento › «Informe por trimestre…» (horas, UD, CE, resultados por RA, valoración y conclusiones); «Plantilla…» de cada instrumento (rúbrica de 4 niveles o lista de cotejo con una fila por CE, en blanco o por alumno); «Calendario de las UD» por semanas con trimestres y festivos. Revisión del 27/10: importar faltas reconoce módulos abreviados de ÍTACApp, nombres escritos de otra forma y retrasos con texto largo |
 | 1.82 | Programación › Programación de aula: una ficha por UD con los datos de FPulse (trimestre, horas, sesiones, RA y CE, instrumentos, sustitutorias, secuenciación del Diario, diversidad) y 10 apartados para completar; PDF por UD o del módulo y Word |
 | 1.81 | Listado único de instrumentos: en la UD, «Usar uno del listado de instrumentos» trae los creados en Configuración; en Configuración se ve la UD de cada instrumento |
