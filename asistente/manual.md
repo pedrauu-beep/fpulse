@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.84, octubre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.88, noviembre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -182,6 +182,7 @@ Alumnado → Listado y fichas tiene la lista de clase de cada módulo con el res
 - **Alumnado común**: los módulos del mismo curso (1º, 2º…) comparten la lista de alumnado y sus datos de contacto. Lo que añades en un módulo pasa a los demás del mismo curso. Si alguien tiene un módulo convalidado o no lo cursa, dale de baja solo en ese módulo. «Alumnado común del curso…» trae a este módulo el alumnado y los contactos de los otros.
 - Para corregir un nombre, pulsa ✎ a su lado.
 - «Baja» da de baja a un alumno: desaparece de las listas pero se conservan sus datos. «Recuperar» lo vuelve a dar de alta.
+- 🗑 (Eliminar, desde la 1.88) borra definitivamente a un alumno y todos sus datos del módulo (faltas, notas, observaciones, contacto, diversidad, equipos y proyectos); sirve, por ejemplo, para quien se añadió por error. Si está en otros módulos del mismo curso, pregunta si se elimina también allí. Antes guarda una copia de seguridad en «copias del cuaderno» (si FPulse trabaja con la carpeta del curso). No se puede recuperar desde Bajas; si el alumno solo deja de venir o tiene el módulo convalidado, usa «Baja». En la tabla de Bajas, «Eliminar» borra también los datos guardados de un alumno dado de baja.
 
 ### Contactos y correos
 
@@ -237,6 +238,8 @@ En Hoy, Alumnado, Calificar, Recuperaciones, Evaluaciones y en la cabecera de su
 ## 5. Día a día
 
 En clase se trabaja casi siempre en Hoy → Pasar lista: pasar lista, anotar la sesión y ver los avisos.
+
+**Cita del día** (desde la 1.87): debajo de la fecha, en Hoy, aparece una frase para reflexionar con el grupo (esfuerzo, trabajo, educación, ética, valores, convivencia) con una pregunta. Es la misma para todo el profesorado ese día y no se repite en el curso. Botones: «Proyectar en clase» (pantalla completa; la barra espaciadora muestra u oculta la pregunta; Esc cierra), «Otra cita» (por tema), «Volver a la de hoy», «Copiar» y «Ocultar».
 
 ### Hoy → Pasar lista
 
@@ -703,6 +706,8 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.88 | Eliminar alumnado: 🗑 en Alumnado (o «Eliminar» en Bajas) borra definitivamente a un alumno y sus datos del módulo, o de todos los módulos del curso; antes guarda una copia de seguridad. «Baja» sigue conservando los datos. |
+| 1.87 | Cita del día en Hoy: una frase para reflexionar sobre esfuerzo, trabajo, educación, ética, valores y convivencia, con pregunta para el grupo; Proyectar en clase, Otra cita por tema, Copiar y Ocultar. |
 | 1.84 | Actividades sustitutorias con destinatarios: en Calificar, «Destinatarios…» elige a qué alumnado se le califica cada AS («Según la situación» vuelve a lo automático); en la ficha de Empresa (dual) de cada alumno, sus actividades sustitutorias con CE, casilla «le corresponde» y nota |
 | 1.83 | Plan de formación en la empresa (Empresa (dual) › «Plan de formación…»: periodos, empresa, tutor/a y RA-CE en la empresa de cada alumno, con seguimiento de los CE ya trabajados en su ficha); Programación › Programación didáctica (documento completo con lo de FPulse + 10 apartados generales; PDF y Word); Seguimiento › «Informe por trimestre…» (horas, UD, CE, resultados por RA, valoración y conclusiones); «Plantilla…» de cada instrumento (rúbrica de 4 niveles o lista de cotejo con una fila por CE, en blanco o por alumno); «Calendario de las UD» por semanas con trimestres y festivos. Revisión del 27/10: importar faltas reconoce módulos abreviados de ÍTACApp, nombres escritos de otra forma y retrasos con texto largo |
 | 1.82 | Programación › Programación de aula: una ficha por UD con los datos de FPulse (trimestre, horas, sesiones, RA y CE, instrumentos, sustitutorias, secuenciación del Diario, diversidad) y 10 apartados para completar; PDF por UD o del módulo y Word |
