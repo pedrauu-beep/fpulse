@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.88, noviembre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.89, noviembre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -348,6 +348,18 @@ Empresa, tutor o tutora laboral, periodos y seguimientos de cada alumno. Son com
 - Muestra las notas de los instrumentos de empresa del módulo (los que llevan FFE, empresa o dual en el nombre) y, marcadas con (AS), las de las actividades sustitutorias.
 - **«Plan de formación…»**: un documento por alumno (o para todo el alumnado que hace la fase) con sus periodos, empresa, tutor/a laboral y horario, y los RA y CE que trabaja en la empresa: los marcados 🏭 Empresa en las unidades didácticas, de este módulo o de todos los módulos del grupo. Lleva columnas «UD», «Trabajado» y «Actividades en la empresa / observaciones», y firmas del tutor/a docente, el tutor/a laboral y el alumno/a. No incluye al alumnado que no va a la empresa o está exento.
 - **CE trabajados en la empresa**: en la ficha de cada alumno (pulsa su nombre) marca los CE que ya ha trabajado en la empresa; se guardan con la fecha y salen con ✔ en el plan de formación. «Plan de formación de este alumno/a» lo imprime directamente.
+
+### Aula y empresa (desde la 1.89)
+
+En Alumnado → Empresa (dual), debajo de la tabla, la tarjeta «Aula y empresa» configura cómo se reparte la evaluación entre el centro y la empresa. Sirve para cualquier ciclo: un RA entero en la empresa, un RA repartido (unos CE en el aula y otros en la empresa), CE que se evalúan en los dos sitios y actividades de empresa con CE de varios RA.
+
+1. Instrumentos de empresa: son los que llevan FFE, «empresa», «dual» o «tutor laboral» en el nombre. Una actividad de empresa puede evaluar CE de varios RA: créala en Configuración con el mismo nombre en cada RA.
+2. «Dónde se evalúa cada CE»: Aula, Empresa o Aula y empresa. «Automático» lo toma de las UD (CE marcados 🏭 Empresa) o, si el CE no está en ninguna UD, de sus instrumentos. En «Aula y empresa» escribe el % del aula (por ejemplo 60): la nota del CE es el 60 % de la media de sus instrumentos de aula más el 40 % de la media de los de empresa. Si solo tiene notas de uno de los dos sitios, cuenta ese. Sin %, cuenta la media de todo.
+3. Casilla «Las notas de empresa cuentan en la evaluación en que termina el periodo de cada alumno/a» (marcada por defecto): cada actividad de empresa cuenta en la evaluación en que acaba el periodo de ese alumno; hasta entonces esa evaluación se calcula sin ella. Si el periodo termina después del fin de curso, solo cuenta en la final. Sin fecha de fin, o con la casilla desmarcada, cuenta en la evaluación que diga Configuración.
+4. «Fechas comunes de la fase…»: pone las mismas fechas de inicio y fin a todo el alumnado que hace la fase (conserva la empresa y el tutor de cada uno). A quien tiene varios periodos no se le toca.
+5. Actividades por periodo: en la ficha de dual de cada alumno, la tabla «Actividades de empresa» marca en qué periodo hace cada actividad. Si no marcas ninguna, todas van en todos los periodos.
+6. Calificar: la actividad de empresa con CE de varios RA tiene la columna «Toda la actividad» (una nota para todos sus CE de todos sus RA). Junto al nombre de cada alumno sale «🏭 pendiente hasta dd/mm · Nª ev.».
+7. La tabla «Unidades didácticas y periodos en la empresa» muestra las fechas de cada UD (según el Diario) y cuántos alumnos están en la empresa durante ella.
 
 ### Situación en la fase en empresa y actividades sustitutorias
 
@@ -706,6 +718,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.89 | Aula y empresa configurable (Empresa (dual) › «Aula y empresa»): cada CE en aula, empresa o en los dos sitios con % de aula; actividades de empresa con CE de varios RA y columna «Toda la actividad» en Calificar; la nota de empresa cuenta en la evaluación en que termina el periodo de cada alumno (casilla para desactivarlo); actividades por periodo en la ficha de dual; «Fechas comunes de la fase…»; columna Fechas en las UD |
 | 1.88 | Eliminar alumnado: 🗑 en Alumnado (o «Eliminar» en Bajas) borra definitivamente a un alumno y sus datos del módulo, o de todos los módulos del curso; antes guarda una copia de seguridad. «Baja» sigue conservando los datos. |
 | 1.87 | Cita del día en Hoy: una frase para reflexionar sobre esfuerzo, trabajo, educación, ética, valores y convivencia, con pregunta para el grupo; Proyectar en clase, Otra cita por tema, Copiar y Ocultar. |
 | 1.84 | Actividades sustitutorias con destinatarios: en Calificar, «Destinatarios…» elige a qué alumnado se le califica cada AS («Según la situación» vuelve a lo automático); en la ficha de Empresa (dual) de cada alumno, sus actividades sustitutorias con CE, casilla «le corresponde» y nota |
