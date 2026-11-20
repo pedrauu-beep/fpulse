@@ -359,7 +359,8 @@ En Alumnado → Empresa (dual), debajo de la tabla, la tarjeta «Aula y empresa�
 4. «Fechas comunes de la fase…»: pone las mismas fechas de inicio y fin a todo el alumnado que hace la fase (conserva la empresa y el tutor de cada uno). A quien tiene varios periodos no se le toca.
 5. Actividades por periodo: en la ficha de dual de cada alumno, la tabla «Actividades de empresa» marca en qué periodo hace cada actividad. Si no marcas ninguna, todas van en todos los periodos.
 6. Calificar: la actividad de empresa con CE de varios RA tiene la columna «Toda la actividad» (una nota para todos sus CE de todos sus RA). Junto al nombre de cada alumno sale «🏭 pendiente hasta dd/mm · Nª ev.».
-7. La tabla «Unidades didácticas y periodos en la empresa» muestra las fechas de cada UD (según el Diario) y cuántos alumnos están en la empresa durante ella.
+7. La tabla «Unidades didácticas y periodos en la empresa» muestra las horas de aula y de empresa de cada UD, sus fechas (según el Diario) y cuántos alumnos están en la empresa durante ella.
+8. Horas en el aula y en la empresa: en Programación → Unidades didácticas, cada UD tiene «Horas aula» (se comparan con las sesiones del Diario) y «Horas empresa» (no van al Diario). El total suma las dos y se compara con las horas del módulo. En Configuración, la comprobación de sesiones descuenta las horas de empresa.
 
 ### Situación en la fase en empresa y actividades sustitutorias
 
@@ -718,7 +719,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
-| 1.89 | Aula y empresa configurable (Empresa (dual) › «Aula y empresa»): cada CE en aula, empresa o en los dos sitios con % de aula; actividades de empresa con CE de varios RA y columna «Toda la actividad» en Calificar; la nota de empresa cuenta en la evaluación en que termina el periodo de cada alumno (casilla para desactivarlo); actividades por periodo en la ficha de dual; «Fechas comunes de la fase…»; columna Fechas en las UD |
+| 1.89 | Aula y empresa configurable (Empresa (dual) › «Aula y empresa»): cada CE en aula, empresa o en los dos sitios con % de aula; actividades de empresa con CE de varios RA y columna «Toda la actividad» en Calificar; la nota de empresa cuenta en la evaluación en que termina el periodo de cada alumno (casilla para desactivarlo); actividades por periodo en la ficha de dual; «Fechas comunes de la fase…»; columna Fechas en las UD; columnas «Horas aula» y «Horas empresa» en las UD (20/11) |
 | 1.88 | Eliminar alumnado: 🗑 en Alumnado (o «Eliminar» en Bajas) borra definitivamente a un alumno y sus datos del módulo, o de todos los módulos del curso; antes guarda una copia de seguridad. «Baja» sigue conservando los datos. |
 | 1.87 | Cita del día en Hoy: una frase para reflexionar sobre esfuerzo, trabajo, educación, ética, valores y convivencia, con pregunta para el grupo; Proyectar en clase, Otra cita por tema, Copiar y Ocultar. |
 | 1.84 | Actividades sustitutorias con destinatarios: en Calificar, «Destinatarios…» elige a qué alumnado se le califica cada AS («Según la situación» vuelve a lo automático); en la ficha de Empresa (dual) de cada alumno, sus actividades sustitutorias con CE, casilla «le corresponde» y nota |
