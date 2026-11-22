@@ -1,4 +1,4 @@
-Manual de FPulse (versión 1.90, noviembre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
+Manual de FPulse (versión 1.91, noviembre 2026) para profesorado de FP: cada apartado explica qué hace una parte de la app y, paso a paso, cómo se usa, con los nombres exactos de pestañas y botones.
 
 ## Cómo usar este manual
 
@@ -721,6 +721,7 @@ El texto completo está en Ayuda, dentro de la app, y se acepta la primera vez q
 
 | Versión | Novedades |
 | --- | --- |
+| 1.91 | Corrección: en la 1.90, Programación → Unidades didácticas y Trazabilidad no se abrían (se quedaba la pantalla anterior) si alguna UD aún no tenía sesiones en el Diario |
 | 1.90 | Horas previstas de cada UD repartidas solas en centro y empresa según el peso de los CE de empresa (con «Horas del módulo en la empresa», esas horas se reparten entre las UD); columnas H. centro, H. empresa y Peso en el módulo; «Copiar tabla para la programación» (RA · UD · CE aula · H. centro · CE empresa · H. empresa · Evaluación · Peso); el Diario se compara con las horas de centro |
 | 1.89 | Aula y empresa configurable (Empresa (dual) › «Aula y empresa»): cada CE en aula, empresa o en los dos sitios con % de aula; actividades de empresa con CE de varios RA y columna «Toda la actividad» en Calificar; la nota de empresa cuenta en la evaluación en que termina el periodo de cada alumno (casilla para desactivarlo); actividades por periodo en la ficha de dual; «Fechas comunes de la fase…»; columna Fechas en las UD |
 | 1.88 | Eliminar alumnado: 🗑 en Alumnado (o «Eliminar» en Bajas) borra definitivamente a un alumno y sus datos del módulo, o de todos los módulos del curso; antes guarda una copia de seguridad. «Baja» sigue conservando los datos. |
